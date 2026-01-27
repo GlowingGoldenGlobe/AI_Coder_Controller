@@ -1,0 +1,24 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 605,
+    "preview": "© DEBUGGING VS CODE AGENT INTEGRATION A...\n\nTan Me Wo TEGUCE The PATHE SpaTT Wh TOGE\nfurther ((ate-fimit retries) or add a small status\nbanner in the Ul when Copilot focus succeeds?\n\nGf enn neeeeeeeee",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765874923.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": false,
+    "ok": true,
+    "chars": 299,
+    "preview": "ype ho seen RESIST |\nStarta task with Copilat coding agent\nDescribe your task in natural language.\nCopilot will work in the background and\nGot open a pull request for your review.\n| ,\nluct is unlimite",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765874938.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "summary": {
+    "timestamp": "2025-12-16 02:48:58",
+    "ok": true,
+    "total_chars": 904,
+    "appended": true
+  }
+}

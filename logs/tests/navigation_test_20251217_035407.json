@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.001
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 2.718
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.503
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.637,
+      "detail": {
+        "chars": 29,
+        "preview": "+O\ncat) + Gan) +(2)\n(cates) |"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.603
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-17 03:54:07"
+  }
+}

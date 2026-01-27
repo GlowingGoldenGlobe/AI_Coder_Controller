@@ -1,0 +1,26 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 0,
+    "preview": "",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766117814571591200.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": true,
+    "ok": true,
+    "chars": 0,
+    "preview": "",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766117816820770900.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": false,
+    "reason": ""
+  },
+  "summary": {
+    "timestamp": "2025-12-18 22:16:57",
+    "ok": true,
+    "total_chars": 0,
+    "appended": true
+  }
+}

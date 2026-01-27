@@ -1,0 +1,15 @@
+
+----VERIFY----
+VSBridge: Focus Copilot chat view
+VSBridge: Focus Copilot chat view
+OCR captured 40 chars from Copilot chat
+Verify reply report: C:\Users\yerbr\AI_Coder_Controller\logs\tests\verify_reply_2plus2_20251218_204820.json
+{
+  "timestamp": "2025-12-18 20:48:20",
+  "chars": 40,
+  "preview": "a\nBs\nBuild with Agent\n,F = © F% sapspon\n",
+  "phrase": "KT_VERIFY_42",
+  "contains_phrase": false,
+  "contains_4": false,
+  "source": "chat"
+}

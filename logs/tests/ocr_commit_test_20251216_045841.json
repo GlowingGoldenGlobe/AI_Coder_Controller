@@ -1,0 +1,28 @@
+{
+  "app": {
+    "focused": true,
+    "ok": false,
+    "chars": 0,
+    "preview": "",
+    "image_path": "",
+    "appended_path": "",
+    "skipped": true,
+    "reason": "foreground is VS Code; using chat capture for app text would be misleading"
+  },
+  "chat": {
+    "focused": false,
+    "ok": true,
+    "chars": 142,
+    "preview": "d something, perform it, modify, add it, whatever.\npdate the README accordingly, then run the\n& |\nworkFlow_test_gather_assess. py”\nAGsist\nGr ®",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765882720.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": false,
+    "reason": ""
+  },
+  "summary": {
+    "timestamp": "2025-12-16 04:58:41",
+    "ok": true,
+    "total_chars": 142,
+    "appended": true
+  }
+}

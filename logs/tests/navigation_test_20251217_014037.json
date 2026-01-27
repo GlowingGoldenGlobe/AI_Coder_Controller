@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 5.055
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.741,
+      "detail": {
+        "chars": 562,
+        "preview": "ty [op x\nLLER PROJECT FUNCTIONALITY\nvere supposed to be able to\n1g errors, where if you de not\nthe workflow, errors must be\n| the project must be\ntt if an error"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-17 01:40:37"
+  }
+}

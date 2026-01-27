@@ -1,0 +1,26 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 311,
+    "preview": "|_OK_1763891548 on the Tirst line, then\nimprove the Al_Coder_Controller self-\nJentify fragile links in the workflow.\n's that reduce cascading errors and\nment step where outputs are validated\n1anges fr",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765893781.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": false,
+    "ok": true,
+    "chars": 85,
+    "preview": "observe.\n>-focus reliability\nIFyou solved it, then test it\n=\ns.py”\nGr® |\nI\nstakes, ZZ",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765893783.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": true,
+    "reason": "foreground is not VS Code (title='Improving AI Coder Controller Workflow', class='WinUIDesktopWin32WindowClass')"
+  },
+  "summary": {
+    "timestamp": "2025-12-16 08:03:03",
+    "ok": true,
+    "total_chars": 396,
+    "appended": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.001
+    },
+    {
+      "name": "focus_terminal",
+      "ok": false,
+      "duration_s": 6.814
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 2.606
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": false,
+      "duration_s": 14.031
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 4.993,
+      "detail": {
+        "chars": 144,
+        "preview": "arn (update storage json, read), Improve (modify\nw to include a verify-after-improve step that re-\n&\nworkFlow_test_gather_assess.py”\nL\nGr®\nists,"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.601
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "focus_terminal",
+        "ok": false,
+        "duration_s": 6.814
+      },
+      {
+        "name": "focus_chat_only",
+        "ok": false,
+        "duration_s": 14.031
+      }
+    ],
+    "timestamp": "2025-12-16 06:20:36"
+  }
+}

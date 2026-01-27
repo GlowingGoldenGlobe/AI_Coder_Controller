@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.933
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.684,
+      "detail": {
+        "chars": 265,
+        "preview": "20k place and text was in the wrong input field,\n= each tab and text input and enter key event.\n3n observe succeeds, and add logging +\nRy |\ntest_gath . L 3\n| te"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 07:06:42"
+  }
+}

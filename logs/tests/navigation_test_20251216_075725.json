@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.911
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.644,
+      "detail": {
+        "chars": 60,
+        "preview": "rn when you started the input te\ncy\nspy\" |\nAGsist\n362-1\nGr ®"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 07:57:25"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-12-18 20:36:16",
+  "elements_count": 31,
+  "preview_elements": "[{'type': 'button', 'bbox': {'left': 0, 'top': 0, 'width': 395, 'height': 942}, 'score': 372090.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 830, 'width': 381, 'height': 98}, 'score': 37338.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 578, 'width': 307, 'height': 19}, 'score': 5833.0}, {'type': 'button', 'bbox': {'left': 29, 'top': 555, 'width': 188, 'height': 19}, 'score': 3572.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 149, 'width': 169, 'height': 19}, 'score': 3211.0}]",
+  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766111776039853100.png",
+  "chars": 45,
+  "preview": "a\nBs\nBuild with Agent\nnext\nP92 © @ FY sygpoe\n"
+}

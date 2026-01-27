@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "index": 0,
+      "timestamp": 1766111715282,
+      "image": "logs\\ocr_curated_0.92\\multi\\capture_copilot_chat_1766111715400116200.png",
+      "elements_count": 44,
+      "templates": []
+    },
+    {
+      "index": 1,
+      "timestamp": 1766111716140,
+      "image": "logs\\ocr_curated_0.92\\multi\\capture_copilot_chat_1766111716191052300.png",
+      "elements_count": 44,
+      "templates": []
+    },
+    {
+      "index": 2,
+      "timestamp": 1766111716899,
+      "image": "logs\\ocr_curated_0.92\\multi\\capture_copilot_chat_1766111716941918600.png",
+      "elements_count": 47,
+      "templates": []
+    },
+    {
+      "index": 3,
+      "timestamp": 1766111717650,
+      "image": "logs\\ocr_curated_0.92\\multi\\capture_copilot_chat_1766111717691427800.png",
+      "elements_count": 47,
+      "templates": []
+    },
+    {
+      "index": 4,
+      "timestamp": 1766111718393,
+      "image": "logs\\ocr_curated_0.92\\multi\\capture_copilot_chat_1766111718442530800.png",
+      "elements_count": 47,
+      "templates": []
+    }
+  ],
+  "aggregate": {
+    "captures": 5,
+    "elements_counts": [
+      44,
+      44,
+      47,
+      47,
+      47
+    ],
+    "elements_mean": 45.8,
+    "template_counts": {}
+  }
+}

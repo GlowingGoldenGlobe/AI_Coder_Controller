@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": false,
+      "duration_s": 1.212
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.503
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.78,
+      "detail": {
+        "chars": 989,
+        "preview": "te @ | x\nPROVING Al_CODER_ CONTROLLER PROIECT FUNCTIONALITY\nummary.\nIded 1 todo\nited + vsbridgepy +136 -44\narting: Improve workflow assessment (4/5)\nited + navi"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "terminal_echo",
+        "ok": false,
+        "duration_s": 1.212
+      }
+    ],
+    "timestamp": "2025-12-17 01:55:44"
+  }
+}

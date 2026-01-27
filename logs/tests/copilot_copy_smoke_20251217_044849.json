@@ -1,0 +1,192 @@
+{
+  "ts": "2025-12-17 04:48:49",
+  "ok": false,
+  "token": "PROMPT_TOKEN_1765965366",
+  "use_sendkeys": "1",
+  "tab": 0,
+  "shift_tab": 0,
+  "tab_cycle": 0,
+  "max_walk": 18,
+  "baseline": {
+    "chars": 1441,
+    "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... improve workflow:\n1, Enable Context-Aware Decision Trees\nay\n+ Build adaptive deci",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968509.png",
+    "method": "bbox"
+  },
+  "copy": {
+    "ok": false,
+    "expected": "PROMPT_TOKEN_1765965366",
+    "steps": 0,
+    "copied": true,
+    "sentinel": "COPILOT_SENTINEL_1765968513",
+    "sentinel_set": true,
+    "clipboard_chars": 0,
+    "clipboard_preview": "",
+    "clipboard_contains_expected": false,
+    "focus_moves": [
+      {
+        "move": "start",
+        "i": 0,
+        "expected_visible": true,
+        "chars": 1441,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968511.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "pre_copy_confirm",
+        "i": 999,
+        "expected_visible": true,
+        "chars": 1441,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968512.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "pagedown_seed:after",
+        "i": 2000,
+        "expected_visible": true,
+        "chars": 1441,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968514.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "seed_observe",
+        "i": 2001,
+        "expected_visible": true,
+        "chars": 1441,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968515.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "tab:walk:after",
+        "i": 5000,
+        "expected_visible": false,
+        "chars": 163,
+        "preview": "e 3 concrete\nf-improve workflow.\ntroller self-\n| context and task |\nging prior outcomes\njorkflow change.\novemenis don\u2019t\nw when confidence is\nsparent, aligning\n\u00ae 0)",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765968518.png",
+        "method": "region",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "tab:confirm",
+        "i": 5000,
+        "expected_visible": false,
+        "chars": 177,
+        "preview": "e 3 concrete\nf-improve workflow.\ntroller self-\n| context and task |\nging prior outcomes\njorkflow change.\novemenis don\u2019t\nw when confidence is\nsparent, aligning\n| More options | |",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765968519.png",
+        "method": "region",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:walk:after",
+        "i": 5500,
+        "expected_visible": true,
+        "chars": 1400,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968520.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:confirm",
+        "i": 5500,
+        "expected_visible": true,
+        "chars": 1400,
+        "preview": "Labs\nExperimental Al initiatives: TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Cader_Controller self-improve workflow.\nrrsations\nf4b8cbeGa2cd\n36 Hash Rt it os\ndel Benchmark Com... i",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968521.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "copy",
+        "attempt": 1,
+        "copied_keypress_ok": true,
+        "expected_visible": true
+      },
+      {
+        "move": "copy_fallback_ctrl_insert",
+        "attempt": 1,
+        "copied_keypress_ok": true,
+        "expected_visible": true
+      },
+      {
+        "move": "shift_tab:walk:after",
+        "i": 5501,
+        "expected_visible": true,
+        "chars": 1519,
+        "preview": "Labs\nExperimertol Al iniitives TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Coder_Controller self-improve workflow.\nrsations\n\u2014 fab8cBeGa2co\n36 Hash Re it os\nSHeshRequest | Here are ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968523.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:confirm",
+        "i": 5501,
+        "expected_visible": true,
+        "chars": 1519,
+        "preview": "Labs\nExperimertol Al iniitives TOKEN: PROMPT_TOKEN_1765965366Then provide 3 concrete\nsuggestions to improve the Al_Coder_Controller self-improve workflow.\nrsations\n\u2014 fab8cBeGa2co\n36 Hash Re it os\nSHeshRequest | Here are ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765968525.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "copy",
+        "attempt": 1,
+        "copied_keypress_ok": true,
+        "expected_visible": true
+      },
+      {
+        "move": "copy_fallback_ctrl_insert",
+        "attempt": 1,
+        "copied_keypress_ok": true,
+        "expected_visible": true
+      },
+      {
+        "move": "shift_tab:walk:after",
+        "i": 5502,
+        "expected_visible": false,
+        "chars": 166,
+        "preview": "e 3 concrete\nf-improve workflow.\ntroller self-\n| context and task |\nging prior outcomes\njorkflow change.\novemenis don\u2019t\nw when confidence is\nsparent, aligning\n+ & O |",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765968527.png",
+        "method": "region",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:confirm",
+        "i": 5502,
+        "expected_visible": false,
+        "chars": 166,
+        "preview": "e 3 concrete\nf-improve workflow.\ntroller self-\n| context and task |\nging prior outcomes\njorkflow change.\novemenis don\u2019t\nw when confidence is\nsparent, aligning\n+ & O |",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765968528.png",
+        "method": "region",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      }
+    ],
+    "error": "lost_expected_before_copy"
+  },
+  "clipboard_path": null,
+  "clipboard": {
+    "chars": 27,
+    "preview": "COPILOT_SENTINEL_1765968513",
+    "contains_token": false
+  }
+}

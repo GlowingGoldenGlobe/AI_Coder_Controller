@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.98
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.492
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.242
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.81,
+      "detail": {
+        "chars": 492,
+        "preview": "If you tell me whether you want automatic inclusion in the main\nworkflow or just a standalone control test, | can implement that\nwiring next\nMain\n\"ll rerun the "
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 20:36:02"
+  }
+}

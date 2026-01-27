@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.938
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.707
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.422
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.831,
+      "detail": {
+        "chars": 381,
+        "preview": "Keep trying. Maybe there are conflicts with control usage.\n‘See if the workflow works.\nThe terminal is awaiting input.\nTerminal will be reused by tasks, press a"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 22:07:03"
+  }
+}

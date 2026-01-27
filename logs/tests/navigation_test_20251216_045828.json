@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.615
+    },
+    {
+      "name": "copilot_app_ask",
+      "ok": true,
+      "duration_s": 1.887
+    },
+    {
+      "name": "ocr_copilot_app",
+      "ok": true,
+      "duration_s": 1.547,
+      "detail": {
+        "chars": 141,
+        "preview": "d something, perform it, modify, add it, whatever.\npdate the README accordingly, then run the\n&\nworkFlow_test_gather_assess.py” |\nL\nGr®\nists,"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.601
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 04:58:28"
+  }
+}

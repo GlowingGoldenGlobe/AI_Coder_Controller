@@ -1,0 +1,26 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 0,
+    "preview": "",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766110695990813100.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": false,
+    "ok": true,
+    "chars": 0,
+    "preview": "",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766110701411475800.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": true,
+    "reason": "foreground is not VS Code (title='Copilot', class='WinUIDesktopWin32WindowClass')"
+  },
+  "summary": {
+    "timestamp": "2025-12-18 20:18:21",
+    "ok": true,
+    "total_chars": 0,
+    "appended": true
+  }
+}

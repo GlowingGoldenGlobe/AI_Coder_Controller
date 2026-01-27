@@ -1,0 +1,429 @@
+{
+  "started": "2025-12-17 03:49:26",
+  "steps": [
+    {
+      "name": "navigation_test",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "Focused VS Code window\nStep: focus_vscode -> True (0.00s)\nVSBridge: Focus terminal\nStep: focus_terminal -> False (2.01s)\nVSBridge: Run terminal command: echo NAV TEST\nFocused VS Code window\nVSBridge: Focus terminal\nFocused VS Code window\nStep: terminal_echo -> False (2.81s)\nFocused VS Code window\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nStep: focus_chat_only -> False (3.71s)\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nOCR captured 135 chars from Copilot chat\nStep: ocr_vscode_chat -> True (4.87s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> True (0.60s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251217_034940.json\n",
+        "stderr": "",
+        "seconds": 14.23,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "ocr_commit_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "VSBridge: Focus Windows Copilot app\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nFocused VS Code window\nOCR commit test report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\ocr_commit_test_20251217_034947.json\n{\n  \"app\": {\n    \"focused\": true,\n    \"ok\": true,\n    \"chars\": 145,\n    \"preview\": \"\u00b0 3 concrete\\n\\nf-improve workflow.\\nsstions. Here's a quick\\nller\u2019s learning rate\\nvoids stagnation,\\n\\nest potential changes\\ncord the root causes\\n\\nZa)\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765964981.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\"\n  },\n  \"chat\": {\n    \"focused\": false,\n    \"ok\": true,\n    \"chars\": 1328,\n    \"preview\": \"+y @- | ox\\nPROVING Al CODER CONTROLLER PROJECT FUNCTIONALTY\\nVWsers\\\\yerbrial_Coder_controller\\\\I\\nogs\\\\tests\\\\copilot_app_interaction_\\n20251217_834739.json\\nvsBridge: Focus Copilot chat view\\nFocused VS Code\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765964987.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\",\n    \"skipped\": true,\n    \"reason\": \"foreground is not VS Code (title='SHA256 Hash Request', class='WinUIDesktopWin32WindowClass')\"\n  },\n  \"summary\": {\n    \"timestamp\": \"2025-12-17 03:49:47\",\n    \"ok\": true,\n    \"total_chars\": 1473,\n    \"appended\": true\n  }\n}\n",
+        "stderr": "",
+        "seconds": 6.74,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/ocr_commit_test.py"
+        ]
+      },
+      "pass": true,
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251217_033638.json",
+        "logs\\tests\\ocr_commit_test_20251217_034909.json",
+        "logs\\tests\\ocr_commit_test_20251217_034947.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Chat evidence: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\chat_evidence_20251217_034952.json\n{\n  \"chars\": 173,\n  \"preview\": \"sstions. Here's a quick\\n\\nller\u2019s learning rate\\n\\nvoids stagnation,\\n\\nest potential changes\\n\\npting production\\n\\ncord the root causes\\n\\nractions, ensuring\\n\\n\u00bbsparent, aligning\\n+20 |\",\n  \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765964992.png\"\n}\n",
+        "stderr": "",
+        "seconds": 5.5,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/gather_chat_evidence.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "copilot_app_interaction",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "VSBridge: Focus Windows Copilot app\nOCR captured 1318 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 1324 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Copilot app asked\nVSBridge: Focus Windows Copilot app\nOCR captured 122 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 122 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 1330 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 178 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 179 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 1324 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 3059 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 3048 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 3048 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 2943 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 3038 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 2980 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 2561 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 1002 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 2635 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nOCR captured 2661 chars from Copilot app\nVSBridge: Focus Windows Copilot app\nCopilot app interaction report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\copilot_app_interaction_20251217_035055.json\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nOCR captured 1192 chars from Copilot chat\n",
+        "stderr": "",
+        "seconds": 67.3,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/copilot_app_interaction_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "observe_and_react",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 4.88,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "12",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_before",
+      "count": 195,
+      "samples": [
+        {
+          "ts": "2025-12-17T03:50:55.951Z",
+          "event": "focus_attempt",
+          "target": "vscode",
+          "ok": true,
+          "method": "title_match"
+        },
+        {
+          "ts": "2025-12-17T03:50:56.453Z",
+          "event": "foreground_not_vscode_before_send",
+          "command": "Chat: Focus on Chat View"
+        },
+        {
+          "ts": "2025-12-17T03:51:00.165Z",
+          "event": "copilot_app_verify_failed",
+          "reason": "expected_hash_missing",
+          "expected_hash": "0373d5d95d43",
+          "best_candidate": null,
+          "best_distance": null,
+          "saw_token": false,
+          "chars": 2661
+        }
+      ]
+    },
+    {
+      "name": "remediate_errors",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 2.49,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_after",
+      "count": 195,
+      "samples": [
+        {
+          "ts": "2025-12-17T03:50:55.951Z",
+          "event": "focus_attempt",
+          "target": "vscode",
+          "ok": true,
+          "method": "title_match"
+        },
+        {
+          "ts": "2025-12-17T03:50:56.453Z",
+          "event": "foreground_not_vscode_before_send",
+          "command": "Chat: Focus on Chat View"
+        },
+        {
+          "ts": "2025-12-17T03:51:00.165Z",
+          "event": "copilot_app_verify_failed",
+          "reason": "expected_hash_missing",
+          "expected_hash": "0373d5d95d43",
+          "best_candidate": null,
+          "best_distance": null,
+          "saw_token": false,
+          "chars": 2661
+        }
+      ]
+    },
+    {
+      "name": "scan_error_events_errorlike",
+      "count": 10,
+      "samples": [
+        {
+          "ts": "2025-12-17T03:50:47.075Z",
+          "event": "navigation_step_failed",
+          "step": "terminal_echo",
+          "duration_s": 2.823,
+          "detail": {},
+          "error": ""
+        },
+        {
+          "ts": "2025-12-17T03:50:50.786Z",
+          "event": "navigation_step_failed",
+          "step": "focus_chat_only",
+          "duration_s": 3.711,
+          "detail": {},
+          "error": ""
+        },
+        {
+          "ts": "2025-12-17T03:51:00.165Z",
+          "event": "copilot_app_verify_failed",
+          "reason": "expected_hash_missing",
+          "expected_hash": "0373d5d95d43",
+          "best_candidate": null,
+          "best_distance": null,
+          "saw_token": false,
+          "chars": 2661
+        }
+      ]
+    },
+    {
+      "name": "scan_error_events_warnlike",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "assert_palette_events_clean",
+      "count": 22,
+      "pass": false
+    },
+    {
+      "name": "monitor_live",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Saved video: logs\\screens\\workflow_out.mp4\nMarked assessed: logs\\screens\\workflow_out.mp4.assessed\n",
+        "stderr": "",
+        "seconds": 3.49,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/monitor_live.py",
+          "--seconds",
+          "3",
+          "--fps",
+          "10",
+          "--out",
+          "logs\\screens\\workflow_out.mp4",
+          "--backend",
+          "mss",
+          "--mark-assessed"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cleanup",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Scanned: 16, Deleted: 11\n",
+        "stderr": "",
+        "seconds": 0.07,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/cleanup_run.py"
+        ]
+      },
+      "pass": true,
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "final_foreground_check",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_final.jsonl\n",
+        "stderr": "",
+        "seconds": 2.19,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "350",
+          "--log",
+          "logs\\tests\\observe_react_final.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "final_close_summary",
+      "closes": 0,
+      "close_failed": 0,
+      "pass": true
+    },
+    {
+      "name": "learn_from_run",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Learned from 0 error events; lessons appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\lessons.jsonl\nSolutions appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\solutions.jsonl\n",
+        "stderr": "",
+        "seconds": 0.1,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/learn_from_run.py",
+          "--since-ts",
+          "2025-12-17 03:49:26"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "improve_modules",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "No banned palette commands; nothing to improve.\n",
+        "stderr": "",
+        "seconds": 0.08,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/improve_modules_from_policy.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "navigation_test_verify",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "Focused VS Code window\nStep: focus_vscode -> True (0.00s)\nVSBridge: Focus terminal\nStep: focus_terminal -> False (2.01s)\nVSBridge: Run terminal command: echo NAV TEST\nFocused VS Code window\nVSBridge: Focus terminal\nFocused VS Code window\nStep: terminal_echo -> False (2.81s)\nFocused VS Code window\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nStep: focus_chat_only -> False (3.71s)\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nOCR captured 1242 chars from Copilot chat\nStep: ocr_vscode_chat -> True (5.18s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> True (0.60s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251217_035134.json\n",
+        "stderr": "",
+        "seconds": 14.58,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "assert_palette_events_clean_verify",
+      "count": 11,
+      "pass": false
+    }
+  ],
+  "artifacts": [
+    "logs\\tests\\navigation_test_20251217_034940.json",
+    "projects/Self-Improve/improvements.md",
+    "logs\\tests\\chat_evidence_20251217_034952.json",
+    "logs\\tests\\observe_react_workflow.jsonl",
+    "logs\\screens\\workflow_out.mp4",
+    "logs\\screens\\workflow_out.mp4.assessed",
+    "logs\\tests\\observe_react_final.jsonl",
+    "projects/Self-Improve/lessons.jsonl",
+    "projects/Self-Improve/solutions.jsonl",
+    "projects/Self-Improve/error_commands.json"
+  ],
+  "pass": false,
+  "successes": [
+    {
+      "name": "ocr_commit_test",
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251217_034947.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "file": "logs\\tests\\chat_evidence_20251217_034952.json"
+    },
+    {
+      "name": "observe_and_react",
+      "log": "logs\\tests\\observe_react_workflow.jsonl"
+    },
+    {
+      "name": "monitor_live",
+      "out": "logs\\screens\\workflow_out.mp4",
+      "marker": "logs\\screens\\workflow_out.mp4.assessed"
+    },
+    {
+      "name": "cleanup",
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "learn_from_run"
+    },
+    {
+      "name": "improve_modules"
+    }
+  ],
+  "errors": [
+    {
+      "name": "navigation_test",
+      "returncode": 1,
+      "stderr_tail": ""
+    },
+    {
+      "name": "copilot_app_interaction",
+      "returncode": 1,
+      "stderr_tail": ""
+    },
+    {
+      "name": "error_events_detected",
+      "count": 10,
+      "samples": [
+        {
+          "ts": "2025-12-17T03:50:47.075Z",
+          "event": "navigation_step_failed",
+          "step": "terminal_echo",
+          "duration_s": 2.823,
+          "detail": {},
+          "error": ""
+        },
+        {
+          "ts": "2025-12-17T03:50:50.786Z",
+          "event": "navigation_step_failed",
+          "step": "focus_chat_only",
+          "duration_s": 3.711,
+          "detail": {},
+          "error": ""
+        },
+        {
+          "ts": "2025-12-17T03:51:00.165Z",
+          "event": "copilot_app_verify_failed",
+          "reason": "expected_hash_missing",
+          "expected_hash": "0373d5d95d43",
+          "best_candidate": null,
+          "best_distance": null,
+          "saw_token": false,
+          "chars": 2661
+        }
+      ]
+    },
+    {
+      "name": "assert_palette_events_clean",
+      "bad_count": 22
+    },
+    {
+      "name": "assert_palette_events_clean_verify",
+      "bad_count": 11
+    }
+  ],
+  "warnings": [],
+  "finished": "2025-12-17 03:51:17"
+}

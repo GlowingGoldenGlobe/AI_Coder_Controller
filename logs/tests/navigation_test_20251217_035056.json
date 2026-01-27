@@ -1,0 +1,59 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.002
+    },
+    {
+      "name": "focus_terminal",
+      "ok": false,
+      "duration_s": 2.006
+    },
+    {
+      "name": "terminal_echo",
+      "ok": false,
+      "duration_s": 2.823
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": false,
+      "duration_s": 3.711
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 5.07,
+      "detail": {
+        "chars": 1047,
+        "preview": "+y @- | ox\nPROVING Al CODER CONTROLLER PROJECT FUNCTIONALTY\nrecked file for errors\n© C:/Users/yerbr/AI_Coder_Controller/Scr (Rv\nipts/python.exe\nScripts/copilot_"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.603
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "focus_terminal",
+        "ok": false,
+        "duration_s": 2.006
+      },
+      {
+        "name": "terminal_echo",
+        "ok": false,
+        "duration_s": 2.823
+      },
+      {
+        "name": "focus_chat_only",
+        "ok": false,
+        "duration_s": 3.711
+      }
+    ],
+    "timestamp": "2025-12-17 03:50:56"
+  }
+}

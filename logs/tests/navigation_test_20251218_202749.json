@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 1.255
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 5.439
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.45
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.956,
+      "detail": {
+        "chars": 1463,
+        "preview": "Your tests have not yet included using the mouse and\nkeys. Actions have not yet been occurring to commit\nevents in the workflow about objects in the Copilot\nwin"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 20:27:49"
+  }
+}

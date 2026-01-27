@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.914
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.634,
+      "detail": {
+        "chars": 175,
+        "preview": "you point to the modules where TAB is used.\nidrr't do OCR before each tab and text event. Fal.\n&\nworkFlow_test_gather_assess.py”\nKeep All Edits (Cot+Enter) JO\nG"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 06:57:35"
+  }
+}

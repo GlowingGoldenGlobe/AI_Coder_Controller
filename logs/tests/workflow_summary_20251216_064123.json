@@ -1,0 +1,277 @@
+{
+  "started": "2025-12-16 06:40:23",
+  "steps": [
+    {
+      "name": "navigation_test",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 114, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 43, in main\n    vs.set_ocr(ocr)\n               ^^^\nUnboundLocalError: cannot access local variable 'ocr' where it is not associated with a value\n",
+        "seconds": 0.27,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "ocr_commit_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "VSBridge: Focus Windows Copilot app\nFocused VS Code window\nVSBridge: Command Palette -> Open View: GitHub Copilot Chat\nVSBridge: Command Palette -> GitHub Copilot Chat: Focus on Chat View\nVSBridge: Command Palette -> GitHub Copilot: Open Chat\nVSBridge: Command Palette -> View: Focus on Chat\nVSBridge: Command Palette -> Copilot Chat: Focus on Chat View\nVSBridge: Command Palette -> Copilot: Open Chat\nVSBridge: Command Palette -> GitHub Copilot Chat: Open in Side Bar\nVSBridge: Command Palette -> View: Show Primary Side Bar\nFailed to focus Copilot Chat via palette commands\nFocused VS Code window\nOCR commit test report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\ocr_commit_test_20251216_064041.json\n{\n  \"app\": {\n    \"focused\": true,\n    \"ok\": true,\n    \"chars\": 331,\n    \"preview\": \"= T_OK_1765888210 on the Tirst line,\\nns to improve the Al_Coder_Controller\\nit, Starting with core stability checks,\\ntal enhancements,\\nis never compromised by higher-level\\ne controller, run them in a s\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765888825.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\"\n  },\n  \"chat\": {\n    \"focused\": false,\n    \"ok\": true,\n    \"chars\": 356,\n    \"preview\": \"error, tor later assessment and improvement\\nar key in Copilot, AND WAIT LONG ENOUGH FOR\\nO IT, Observe OCR a couple of times to verify i\\ninfo gathered (accomplish Gather Info step of\\n&\\nworkFlow_test_ga\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765888841.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\",\n    \"skipped\": true,\n    \"reason\": \"foreground is not VS Code (title='Improving AI Coder Controller Workflow', class='WinUIDesktopWin32WindowClass')\"\n  },\n  \"summary\": {\n    \"timestamp\": \"2025-12-16 06:40:41\",\n    \"ok\": true,\n    \"total_chars\": 687,\n    \"appended\": true\n  }\n}\n",
+        "stderr": "",
+        "seconds": 18.29,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/ocr_commit_test.py"
+        ]
+      },
+      "pass": true,
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251216_062837.json",
+        "logs\\tests\\ocr_commit_test_20251216_063032.json",
+        "logs\\tests\\ocr_commit_test_20251216_064041.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Chat evidence: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\chat_evidence_20251216_064059.json\n{\n  \"chars\": 348,\n  \"preview\": \"error, tor later assessment and improvement\\nkey in Copilot, AND WAIT LONG ENOUGH FOR\\nOT. Observe OCR a couple of times to verify\\ninfo gathered (accomplish Gather Info step of\\n&\\nworkFlow_test_gather_assess. py\u201d\\n+10\\nast\\nGr\u00ae\\ntee [ox\\nicy Bypass -Command \\\"& cyy &- Pwsh\\ngather_assess. py\u201d [4 python\\nicy Bypass -Command \\\"& C |\\n-gather_assess. py\\\"\\nstakes,\",\n  \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765888859.png\"\n}\n",
+        "stderr": "",
+        "seconds": 17.56,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/gather_chat_evidence.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "copilot_app_interaction",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "VSBridge: Focus Windows Copilot app\nVSBridge: Copilot app asked\nVSBridge: Focus Windows Copilot app\nOCR captured 370 chars from Copilot app\nCopilot app interaction report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\copilot_app_interaction_20251216_064106.json\n",
+        "stderr": "",
+        "seconds": 7.16,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/copilot_app_interaction_test.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "observe_and_react",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 4.88,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "12",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_before",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "scan_error_events_after",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "assert_palette_events_clean",
+      "count": 0,
+      "pass": true
+    },
+    {
+      "name": "monitor_live",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Saved video: logs\\screens\\workflow_out.mp4\nMarked assessed: logs\\screens\\workflow_out.mp4.assessed\n",
+        "stderr": "",
+        "seconds": 3.45,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/monitor_live.py",
+          "--seconds",
+          "3",
+          "--fps",
+          "10",
+          "--out",
+          "logs\\screens\\workflow_out.mp4",
+          "--backend",
+          "mss",
+          "--mark-assessed"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cleanup",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Scanned: 12, Deleted: 8\n",
+        "stderr": "",
+        "seconds": 0.08,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/cleanup_run.py"
+        ]
+      },
+      "pass": true,
+      "deleted_video": true,
+      "deleted_marker": false
+    },
+    {
+      "name": "final_foreground_check",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_final.jsonl\n",
+        "stderr": "",
+        "seconds": 2.18,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "350",
+          "--log",
+          "logs\\tests\\observe_react_final.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "final_close_summary",
+      "closes": 0,
+      "close_failed": 0,
+      "pass": true
+    },
+    {
+      "name": "learn_from_run",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Learned from 0 error events; lessons appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\lessons.jsonl\nSolutions appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\solutions.jsonl\n",
+        "stderr": "",
+        "seconds": 0.07,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/learn_from_run.py",
+          "--since-ts",
+          "2025-12-16 06:40:23"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "improve_modules",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "No banned palette commands; nothing to improve.\n",
+        "stderr": "",
+        "seconds": 0.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/improve_modules_from_policy.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "navigation_test_verify",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 114, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 43, in main\n    vs.set_ocr(ocr)\n               ^^^\nUnboundLocalError: cannot access local variable 'ocr' where it is not associated with a value\n",
+        "seconds": 0.21,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "assert_palette_events_clean_verify",
+      "count": 0,
+      "pass": true
+    }
+  ],
+  "artifacts": [
+    "projects/Self-Improve/improvements.md",
+    "logs\\tests\\chat_evidence_20251216_064059.json",
+    "logs\\tests\\observe_react_workflow.jsonl",
+    "logs\\screens\\workflow_out.mp4",
+    "logs\\screens\\workflow_out.mp4.assessed",
+    "logs\\tests\\observe_react_final.jsonl",
+    "projects/Self-Improve/lessons.jsonl",
+    "projects/Self-Improve/solutions.jsonl"
+  ],
+  "pass": false,
+  "successes": [
+    {
+      "name": "ocr_commit_test",
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251216_064041.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "file": "logs\\tests\\chat_evidence_20251216_064059.json"
+    },
+    {
+      "name": "observe_and_react",
+      "log": "logs\\tests\\observe_react_workflow.jsonl"
+    },
+    {
+      "name": "monitor_live",
+      "out": "logs\\screens\\workflow_out.mp4",
+      "marker": "logs\\screens\\workflow_out.mp4.assessed"
+    },
+    {
+      "name": "cleanup",
+      "deleted_video": true,
+      "deleted_marker": false
+    },
+    {
+      "name": "learn_from_run"
+    },
+    {
+      "name": "improve_modules"
+    }
+  ],
+  "errors": [
+    {
+      "name": "navigation_test",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 114, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\scripts\\navigation_test.py\", line 43, in main\n    vs.set_ocr(ocr)\n               ^^^\nUnboundLocalError: cannot access local variable 'ocr' where it is not associated with a value\n"
+    }
+  ],
+  "finished": "2025-12-16 06:41:20"
+}

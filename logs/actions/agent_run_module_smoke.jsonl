@@ -1,0 +1,3 @@
+{"ts":"2025-12-16T01:28:24.493Z","event":"agent_terminal","op":"run_command","cmd_preview":"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe -m scripts.test_module"}
+{"ts":"2025-12-16T01:28:26.800Z","event":"agent_terminal","op":"run_command","ok":true}
+{"ts":"2025-12-16T01:28:26.801Z","event":"smoke_run_module","module":"scripts.test_module","ok":true}

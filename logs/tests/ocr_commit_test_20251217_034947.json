@@ -1,0 +1,26 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 145,
+    "preview": "° 3 concrete\n\nf-improve workflow.\nsstions. Here's a quick\nller’s learning rate\nvoids stagnation,\n\nest potential changes\ncord the root causes\n\nZa)",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765964981.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": false,
+    "ok": true,
+    "chars": 1328,
+    "preview": "+y @- | ox\nPROVING Al CODER CONTROLLER PROJECT FUNCTIONALTY\nVWsers\\yerbrial_Coder_controller\\I\nogs\\tests\\copilot_app_interaction_\n20251217_834739.json\nvsBridge: Focus Copilot chat view\nFocused VS Code",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765964987.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": true,
+    "reason": "foreground is not VS Code (title='SHA256 Hash Request', class='WinUIDesktopWin32WindowClass')"
+  },
+  "summary": {
+    "timestamp": "2025-12-17 03:49:47",
+    "ok": true,
+    "total_chars": 1473,
+    "appended": true
+  }
+}

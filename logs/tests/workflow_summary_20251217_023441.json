@@ -1,0 +1,388 @@
+{
+  "started": "2025-12-17 02:34:07",
+  "steps": [
+    {
+      "name": "navigation_test",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "Focused VS Code window\nStep: focus_vscode -> True (0.00s)\nVSBridge: Focus terminal\nFailed to focus terminal via fallbacks\nStep: focus_terminal -> False (0.40s)\nVSBridge: Run terminal command: echo NAV TEST\nFocused VS Code window\nVSBridge: Focus terminal\nFailed to focus terminal via fallbacks\nFocused VS Code window\nStep: terminal_echo -> False (1.20s)\nFocused VS Code window\nStep: focus_chat_only -> False (0.00s)\nOCR exception: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\nStep: ocr_vscode_chat -> True (0.00s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> False (0.40s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251217_023409.json\n",
+        "stderr": "",
+        "seconds": 2.31,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "ocr_commit_test",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "VSBridge: Focus Windows Copilot app\nFailed to focus Copilot app via Win+C\n",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 243, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 225, in main\n    chat_info = capture_chat()\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 153, in capture_chat\n    ok_focus = vs.focus_copilot_chat_view()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\n",
+        "seconds": 3.92,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/ocr_commit_test.py"
+        ]
+      },
+      "pass": false,
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251217_015547.json",
+        "logs\\tests\\ocr_commit_test_20251217_015746.json",
+        "logs\\tests\\ocr_commit_test_20251217_015913.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\gather_chat_evidence.py\", line 65, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\gather_chat_evidence.py\", line 46, in main\n    vs.focus_copilot_chat_view()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\n",
+        "seconds": 0.57,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/gather_chat_evidence.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "copilot_app_interaction",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "VSBridge: Focus Windows Copilot app\nFailed to focus Copilot app via Win+C\nVSBridge: Focus Windows Copilot app\nFailed to focus Copilot app via Win+C\nVSBridge: Focus Windows Copilot app\nFailed to focus Copilot app via Win+C\n",
+        "stderr": "",
+        "seconds": 6.23,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/copilot_app_interaction_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "observe_and_react",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 4.88,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "12",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_before",
+      "count": 19,
+      "samples": [
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "focus_attempt",
+          "target": "copilot_app",
+          "ok": false,
+          "method": "failed"
+        },
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:20.135Z",
+          "event": "copilot_app_not_foreground_when_send",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "name": "remediate_errors",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 2.47,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_after",
+      "count": 19,
+      "samples": [
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "focus_attempt",
+          "target": "copilot_app",
+          "ok": false,
+          "method": "failed"
+        },
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:20.135Z",
+          "event": "copilot_app_not_foreground_when_send",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "name": "scan_error_events_errorlike",
+      "count": 8,
+      "samples": [
+        {
+          "ts": "2025-12-17T02:34:15.325Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:17.329Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        }
+      ]
+    },
+    {
+      "name": "scan_error_events_warnlike",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "assert_palette_events_clean",
+      "count": 0,
+      "pass": true
+    },
+    {
+      "name": "monitor_live",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Saved video: logs\\screens\\workflow_out.mp4\nMarked assessed: logs\\screens\\workflow_out.mp4.assessed\n",
+        "stderr": "",
+        "seconds": 3.41,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/monitor_live.py",
+          "--seconds",
+          "3",
+          "--fps",
+          "10",
+          "--out",
+          "logs\\screens\\workflow_out.mp4",
+          "--backend",
+          "mss",
+          "--mark-assessed"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cleanup",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Scanned: 34, Deleted: 29\n",
+        "stderr": "",
+        "seconds": 0.08,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/cleanup_run.py"
+        ]
+      },
+      "pass": true,
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "final_foreground_check",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_final.jsonl\n",
+        "stderr": "",
+        "seconds": 2.18,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "350",
+          "--log",
+          "logs\\tests\\observe_react_final.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "final_close_summary",
+      "closes": 0,
+      "close_failed": 0,
+      "pass": true
+    },
+    {
+      "name": "learn_from_run",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Learned from 0 error events; lessons appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\lessons.jsonl\nSolutions appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\solutions.jsonl\n",
+        "stderr": "",
+        "seconds": 0.08,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/learn_from_run.py",
+          "--since-ts",
+          "2025-12-17 02:34:07"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "improve_modules",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "No banned palette commands; nothing to improve.\n",
+        "stderr": "",
+        "seconds": 0.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/improve_modules_from_policy.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "navigation_test_verify",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "Focused VS Code window\nStep: focus_vscode -> True (0.00s)\nVSBridge: Focus terminal\nFailed to focus terminal via fallbacks\nStep: focus_terminal -> False (0.40s)\nVSBridge: Run terminal command: echo NAV TEST\nFocused VS Code window\nVSBridge: Focus terminal\nFailed to focus terminal via fallbacks\nFocused VS Code window\nStep: terminal_echo -> False (1.20s)\nFocused VS Code window\nStep: focus_chat_only -> False (0.00s)\nOCR exception: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\nStep: ocr_vscode_chat -> True (0.00s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> False (0.40s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251217_023441.json\n",
+        "stderr": "",
+        "seconds": 2.23,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "assert_palette_events_clean_verify",
+      "count": 0,
+      "pass": true
+    }
+  ],
+  "artifacts": [
+    "logs\\tests\\navigation_test_20251217_023409.json",
+    "projects/Self-Improve/improvements.md",
+    "logs\\tests\\observe_react_workflow.jsonl",
+    "logs\\screens\\workflow_out.mp4",
+    "logs\\screens\\workflow_out.mp4.assessed",
+    "logs\\tests\\observe_react_final.jsonl",
+    "projects/Self-Improve/lessons.jsonl",
+    "projects/Self-Improve/solutions.jsonl",
+    "projects/Self-Improve/error_commands.json"
+  ],
+  "pass": false,
+  "successes": [
+    {
+      "name": "observe_and_react",
+      "log": "logs\\tests\\observe_react_workflow.jsonl"
+    },
+    {
+      "name": "monitor_live",
+      "out": "logs\\screens\\workflow_out.mp4",
+      "marker": "logs\\screens\\workflow_out.mp4.assessed"
+    },
+    {
+      "name": "cleanup",
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "learn_from_run"
+    },
+    {
+      "name": "improve_modules"
+    }
+  ],
+  "errors": [
+    {
+      "name": "navigation_test",
+      "returncode": 1,
+      "stderr_tail": ""
+    },
+    {
+      "name": "ocr_commit_test",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 243, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 225, in main\n    chat_info = capture_chat()\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\ocr_commit_test.py\", line 153, in capture_chat\n    ok_focus = vs.focus_copilot_chat_view()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\n"
+    },
+    {
+      "name": "gather_chat_evidence",
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\gather_chat_evidence.py\", line 65, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\gather_chat_evidence.py\", line 46, in main\n    vs.focus_copilot_chat_view()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'VSBridge' object has no attribute 'focus_copilot_chat_view'\n"
+    },
+    {
+      "name": "copilot_app_interaction",
+      "returncode": 1,
+      "stderr_tail": ""
+    },
+    {
+      "name": "error_events_detected",
+      "count": 8,
+      "samples": [
+        {
+          "ts": "2025-12-17T02:34:15.325Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:17.329Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        },
+        {
+          "ts": "2025-12-17T02:34:19.334Z",
+          "event": "copilot_app_focus_failed_foreground",
+          "note": "Could not make Copilot app the foreground window"
+        }
+      ]
+    }
+  ],
+  "warnings": [],
+  "finished": "2025-12-17 02:34:37"
+}

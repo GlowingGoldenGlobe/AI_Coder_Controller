@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.001
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.616
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 8.653
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.601,
+      "detail": {
+        "chars": 425,
+        "preview": "jer, for later assessment and improvement.\nin Copilot, AND WAIT LONG ENOUGH FOR\nIv. Observe OCR a couple af times to verify\nfo gathered (accomplish Gather Info "
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": false,
+      "duration_s": 0.401
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "scroll_chat_down",
+        "ok": false,
+        "duration_s": 0.401
+      }
+    ],
+    "timestamp": "2025-12-16 06:45:42"
+  }
+}

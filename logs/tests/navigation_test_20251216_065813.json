@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.001
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.927
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.677,
+      "detail": {
+        "chars": 148,
+        "preview": "LIL OID NEN IE\nidn’t do OCR before each tab and text event, Fail.\ncy\nworkFlow_test_gather_assess. py”\nAGsist\n37-0\nte suggestions to improve the\nGr ®"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 06:58:13"
+  }
+}

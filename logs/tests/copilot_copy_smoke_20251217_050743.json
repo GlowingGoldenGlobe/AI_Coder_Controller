@@ -1,0 +1,101 @@
+{
+  "ts": "2025-12-17 05:07:43",
+  "ok": true,
+  "reason": "generic_copy_no_target",
+  "token": "",
+  "hex12": "",
+  "target": "",
+  "use_sendkeys": "1",
+  "tab": 0,
+  "shift_tab": 2,
+  "tab_cycle": 12,
+  "max_walk": 40,
+  "baseline": {
+    "chars": 1456,
+    "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make smarter choices by leveraging prior outcomes\ncing Al Coder Controller... and situa",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969658.png",
+    "method": "bbox"
+  },
+  "copy": {
+    "ok": true,
+    "expected": "",
+    "steps": 0,
+    "copied": true,
+    "sentinel": "COPILOT_SENTINEL_1765969659",
+    "sentinel_set": true,
+    "enter_copy_attempted": false,
+    "clipboard_chars": 108,
+    "clipboard_preview": "I started the page, Enhancing AI Coder Controller Workflow. You can edit it now, or come back to it later.\r\n",
+    "clipboard_contains_expected": false,
+    "focus_moves": [
+      {
+        "move": "start",
+        "i": 0,
+        "expected_visible": true,
+        "chars": 1456,
+        "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make sm",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969659.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "pagedown_seed:after",
+        "i": 2000,
+        "expected_visible": true,
+        "chars": 1456,
+        "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make sm",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969660.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "seed_observe",
+        "i": 2001,
+        "expected_visible": true,
+        "chars": 1456,
+        "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make sm",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969661.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:warmup:after",
+        "i": 3100,
+        "expected_visible": true,
+        "chars": 1441,
+        "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make sm",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969661.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:warmup_confirm",
+        "i": 3200,
+        "expected_visible": true,
+        "chars": 1455,
+        "preview": "Labs 1, Enable Context-Aware Decision Trees\nExperimental Al initiatives - . sj 7 sctari\n+ Build adaptive decision trees that adjust based on historical context and task\ncomplexity.\n+ This allows the controller to make sm",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765969662.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "copy",
+        "attempt": 1,
+        "copied_keypress_ok": true,
+        "expected_visible": true
+      }
+    ],
+    "generic_copy": true
+  },
+  "clipboard_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\copilot_clipboard_20251217_050743.txt",
+  "clipboard": {
+    "chars": 108,
+    "preview": "I started the page, Enhancing AI Coder Controller Workflow. You can edit it now, or come back to it later.\r\n",
+    "contains_target": false
+  }
+}

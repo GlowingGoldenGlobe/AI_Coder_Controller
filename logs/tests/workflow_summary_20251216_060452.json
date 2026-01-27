@@ -1,0 +1,218 @@
+{
+  "started": "2025-12-16 06:04:21",
+  "steps": [
+    {
+      "name": "navigation_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Focused VS Code window\nStep: focus_vscode -> True (0.00s)\nVSBridge: Focus terminal\nStep: focus_terminal -> True (0.40s)\nVSBridge: Run terminal command: echo NAV TEST\nVSBridge: Focus terminal\nStep: terminal_echo -> True (1.32s)\nFocused VS Code window\nFocused VS Code window\nVSBridge: Command Palette -> Open View: GitHub Copilot Chat\nStep: focus_chat_only -> True (1.56s)\nFocused VS Code window\nVSBridge: Command Palette -> Open View: GitHub Copilot Chat\nOCR captured 97 chars from Copilot chat\nStep: ocr_vscode_chat -> True (2.70s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> True (0.50s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251216_060427.json\n",
+        "stderr": "",
+        "seconds": 6.75,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "ocr_commit_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "VSBridge: Focus Windows Copilot app\nFocused VS Code window\nVSBridge: Command Palette -> Open View: GitHub Copilot Chat\nOCR commit test report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\ocr_commit_test_20251216_060432.json\n{\n  \"app\": {\n    \"focused\": true,\n    \"ok\": true,\n    \"chars\": 96,\n    \"preview\": \"Perform optional tuning, as described, above.\\n&\\nworkFlow_test_gather_assess.py\u201d\\n22\\nL\\nGr\u00ae\\nstakes,\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765886669.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\"\n  },\n  \"chat\": {\n    \"focused\": true,\n    \"ok\": true,\n    \"chars\": 96,\n    \"preview\": \"Perform optional tuning, as described, above.\\n&\\nworkFlow_test_gather_assess.py\u201d\\n22\\nL\\nGr\u00ae\\nstakes,\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765886672.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\",\n    \"skipped\": false,\n    \"reason\": \"\"\n  },\n  \"summary\": {\n    \"timestamp\": \"2025-12-16 06:04:32\",\n    \"ok\": true,\n    \"total_chars\": 192,\n    \"appended\": true\n  }\n}\n",
+        "stderr": "",
+        "seconds": 4.37,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/ocr_commit_test.py"
+        ]
+      },
+      "pass": true,
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251216_054503.json",
+        "logs\\tests\\ocr_commit_test_20251216_055721.json",
+        "logs\\tests\\ocr_commit_test_20251216_060432.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Chat evidence: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\chat_evidence_20251216_060435.json\n{\n  \"chars\": 96,\n  \"preview\": \"Perform optional tuning, as described, above.\\n&\\nworkFlow_test_gather_assess.py\u201d\\n22\\nL\\nGr\u00ae\\nstakes,\",\n  \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\copilot_chat_1765886675.png\"\n}\n",
+        "stderr": "",
+        "seconds": 3.33,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/gather_chat_evidence.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "observe_and_react",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 4.88,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "12",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_before",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "scan_error_events_after",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "monitor_live",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Saved video: logs\\screens\\workflow_out.mp4\nMarked assessed: logs\\screens\\workflow_out.mp4.assessed\n",
+        "stderr": "",
+        "seconds": 3.46,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/monitor_live.py",
+          "--seconds",
+          "3",
+          "--fps",
+          "10",
+          "--out",
+          "logs\\screens\\workflow_out.mp4",
+          "--backend",
+          "mss",
+          "--mark-assessed"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cleanup",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Scanned: 8, Deleted: 4\n",
+        "stderr": "",
+        "seconds": 0.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/cleanup_run.py"
+        ]
+      },
+      "pass": false,
+      "deleted_video": false,
+      "deleted_marker": false
+    },
+    {
+      "name": "final_foreground_check",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_final.jsonl\n",
+        "stderr": "",
+        "seconds": 2.18,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "350",
+          "--log",
+          "logs\\tests\\observe_react_final.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "final_close_summary",
+      "closes": 0,
+      "close_failed": 0,
+      "pass": true
+    },
+    {
+      "name": "learn_from_run",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Learned from 0 error events; lessons appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\lessons.jsonl\nSolutions appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\solutions.jsonl\n",
+        "stderr": "",
+        "seconds": 0.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/learn_from_run.py",
+          "--since-ts",
+          "2025-12-16 06:04:21"
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "artifacts": [
+    "projects/Self-Improve/improvements.md",
+    "logs\\tests\\chat_evidence_20251216_060435.json",
+    "logs\\tests\\observe_react_workflow.jsonl",
+    "logs\\screens\\workflow_out.mp4",
+    "logs\\screens\\workflow_out.mp4.assessed",
+    "logs\\tests\\observe_react_final.jsonl",
+    "projects/Self-Improve/lessons.jsonl",
+    "projects/Self-Improve/solutions.jsonl"
+  ],
+  "pass": false,
+  "successes": [
+    {
+      "name": "navigation_test",
+      "seconds": 6.75
+    },
+    {
+      "name": "ocr_commit_test",
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251216_060432.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "file": "logs\\tests\\chat_evidence_20251216_060435.json"
+    },
+    {
+      "name": "observe_and_react",
+      "log": "logs\\tests\\observe_react_workflow.jsonl"
+    },
+    {
+      "name": "monitor_live",
+      "out": "logs\\screens\\workflow_out.mp4",
+      "marker": "logs\\screens\\workflow_out.mp4.assessed"
+    },
+    {
+      "name": "learn_from_run"
+    }
+  ],
+  "errors": [
+    {
+      "name": "cleanup",
+      "returncode": 0,
+      "stderr_tail": ""
+    }
+  ],
+  "finished": "2025-12-16 06:04:49"
+}

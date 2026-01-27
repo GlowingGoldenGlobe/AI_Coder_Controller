@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.95
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.13
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.008
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.668,
+      "detail": {
+        "chars": 353,
+        "preview": "Workflow test. Run.\nrl run the predefined “Test/Gather/Assess Workflow” task for\nyour workspace and report whether it completes successfully.\nThe terminal is aw"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 20:18:14"
+  }
+}

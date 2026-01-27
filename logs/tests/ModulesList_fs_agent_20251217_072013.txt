@@ -1,0 +1,76 @@
+---
+[# Filesystem Summary]
+Root: C:\Users\yerbr\AI_Coder_Controller
+Generated: 2025-12-17T07:20:13
+Mode: fs
+CLI Include Glob: README*, src/*.py, config/*, docs/*.md, Scripts/*.py, Scripts/*.ps1
+Directories: 4
+Files: 28
+
+---
+[# Ignored Items]
+Use Default Ignores: True
+Ignored Directories (basenames):
+- .git
+- .hg
+- .svn
+- .venv
+- Include
+- Lib
+- Scripts
+- __pycache__
+- venv
+Ignored File Extensions:
+- .dll
+- .exe
+- .pyc
+- .pyd
+- .pyo
+- .so
+Ignored Directory Globs:
+Ignored File Globs:
+Included File Globs (whitelist):
+- README*
+- Scripts/*.ps1
+- Scripts/*.py
+- config/*
+- docs/*.md
+- src/*.py
+
+---
+[# dir .]
+- README.md | 17028 bytes | modified 2025-12-17T07:01:57
+---
+[# dir config]
+- config\chat_input_template.png | 5916 bytes | modified 2025-12-16T05:09:51
+- config\instructions.md | 584 bytes | modified 2025-12-14T15:54:24
+- config\objectives.md | 279 bytes | modified 2025-12-16T02:46:24
+- config\objectives_test.md | 194 bytes | modified 2025-12-15T03:54:13
+- config\ocr.json | 551 bytes | modified 2025-12-17T02:13:43
+- config\policy_rules.json | 2133 bytes | modified 2025-12-17T01:23:54
+- config\ui_state.json | 296 bytes | modified 2025-12-16T01:37:38
+---
+[# dir docs]
+- docs\PHI4_Commit_Tuning.md | 3555 bytes | modified 2025-12-15T04:14:08
+- docs\SETUP_OCR.md | 1490 bytes | modified 2025-12-15T02:53:08
+- docs\VSCode_Agent_Integration.md | 2998 bytes | modified 2025-12-15T04:08:11
+---
+[# dir src]
+- src\agent_terminal.py | 4128 bytes | modified 2025-12-16T01:35:18
+- src\capture.py | 5433 bytes | modified 2025-12-16T01:50:22
+- src\cleanup.py | 5518 bytes | modified 2025-12-16T07:54:57
+- src\control.py | 7429 bytes | modified 2025-12-17T02:10:17
+- src\image_compose.py | 2834 bytes | modified 2025-12-15T03:51:31
+- src\jsonlog.py | 987 bytes | modified 2025-12-15T04:06:39
+- src\main.py | 51763 bytes | modified 2025-12-17T01:36:37
+- src\messaging.py | 7591 bytes | modified 2025-12-17T01:38:21
+- src\ocr.py | 9475 bytes | modified 2025-12-17T05:15:57
+- src\ocr_observer.py | 2066 bytes | modified 2025-12-16T01:43:05
+- src\phi4_client.py | 5279 bytes | modified 2025-12-16T01:17:40
+- src\phi4_planner.py | 2296 bytes | modified 2025-12-15T03:47:13
+- src\policy.py | 7870 bytes | modified 2025-12-17T01:20:25
+- src\self_improve.py | 2411 bytes | modified 2025-12-15T03:30:25
+- src\ui.py | 13965 bytes | modified 2025-12-16T02:46:22
+- src\vsbridge.py | 143574 bytes | modified 2025-12-17T07:20:03
+- src\windows.py | 18407 bytes | modified 2025-12-17T04:34:19
+

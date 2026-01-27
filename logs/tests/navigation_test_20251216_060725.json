@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.401
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.316
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 1.561
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.736,
+      "detail": {
+        "chars": 315,
+        "preview": "workflow didn't force your performance to i\nw needs te be modified, so that you will have the\ned to bypass a command, YOU MUST LOG THE\ndicative of needing such "
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.502
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 06:07:25"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-12-18 20:23:22",
+  "elements_count": 64,
+  "preview_elements": "[{'type': 'button', 'bbox': {'left': 6, 'top': 517, 'width': 375, 'height': 98}, 'score': 36750.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 425, 'width': 344, 'height': 38}, 'score': 13072.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 218, 'width': 363, 'height': 19}, 'score': 6897.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 342, 'width': 345, 'height': 19}, 'score': 6555.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 199, 'width': 363, 'height': 18}, 'score': 6534.0}]",
+  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766111002537878200.png",
+  "chars": 752,
+  "preview": "Continue\n''l first inspect the workflow test script and its logs to\nunderstand why it exited with code 1, then report what failed\nand next steps.\nI've loaded the workflow script and located the latest"
+}

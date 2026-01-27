@@ -1,0 +1,28 @@
+{
+  "app": {
+    "focused": true,
+    "ok": false,
+    "chars": 0,
+    "preview": "",
+    "image_path": "",
+    "appended_path": "",
+    "skipped": true,
+    "reason": "foreground is VS Code; using chat capture for app text would be misleading"
+  },
+  "chat": {
+    "focused": true,
+    "ok": true,
+    "chars": 170,
+    "preview": "ST ASSESS BOTH THINGS: (1) errors; 2) successes\n requice assessing both, and run the workflow to\ncy\n\nworkflow_test_gather_assess.py”\nEs ecdere\n\n70\n\n40\n\n358-1\n\n326-2\n\nGr ®",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765883391.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": false,
+    "reason": ""
+  },
+  "summary": {
+    "timestamp": "2025-12-16 05:09:51",
+    "ok": true,
+    "total_chars": 170,
+    "appended": true
+  }
+}

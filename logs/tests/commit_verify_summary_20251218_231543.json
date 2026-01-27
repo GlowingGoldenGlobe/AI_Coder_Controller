@@ -1,0 +1,42 @@
+{
+  "generated_at": "2025-12-18 23:15:43",
+  "hours": 12.0,
+  "logs": [
+    {
+      "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\actions\\commit_verify_2plus2.log",
+      "exists": true,
+      "lines": 40,
+      "scanned_lines": 35,
+      "pass": 4,
+      "fail": 12,
+      "total": 16,
+      "success_rate": 0.25
+    },
+    {
+      "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\actions\\commit_verify_stability.log",
+      "exists": true,
+      "lines": 50,
+      "scanned_lines": 50,
+      "pass": 10,
+      "fail": 0,
+      "total": 10,
+      "success_rate": 1.0
+    },
+    {
+      "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\actions\\commit_verify_token.log",
+      "exists": true,
+      "lines": 10,
+      "scanned_lines": 10,
+      "pass": 1,
+      "fail": 1,
+      "total": 2,
+      "success_rate": 0.5
+    }
+  ],
+  "overall": {
+    "pass": 15,
+    "fail": 13,
+    "total": 28,
+    "success_rate": 0.5357142857142857
+  }
+}

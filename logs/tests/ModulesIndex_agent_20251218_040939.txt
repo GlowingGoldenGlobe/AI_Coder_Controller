@@ -1,0 +1,1305 @@
+{
+  "root": "C:\\Users\\yerbr\\AI_Coder_Controller",
+  "generated": "2025-12-18T04:09:39",
+  "include_globs": [
+    "README*",
+    "src/*.py",
+    "config/*",
+    "docs/*.md",
+    "Scripts/*.py",
+    "Scripts/*.ps1"
+  ],
+  "included_files": [
+    {
+      "path": "config/chat_input_template.png",
+      "size_bytes": 5916,
+      "mtime": "2025-12-16T05:09:51"
+    },
+    {
+      "path": "config/instructions.md",
+      "size_bytes": 584,
+      "mtime": "2025-12-14T15:54:24"
+    },
+    {
+      "path": "config/objectives.md",
+      "size_bytes": 279,
+      "mtime": "2025-12-16T02:46:24"
+    },
+    {
+      "path": "config/objectives_test.md",
+      "size_bytes": 194,
+      "mtime": "2025-12-15T03:54:13"
+    },
+    {
+      "path": "config/ocr.json",
+      "size_bytes": 551,
+      "mtime": "2025-12-17T02:13:43"
+    },
+    {
+      "path": "config/policy_rules.json",
+      "size_bytes": 2133,
+      "mtime": "2025-12-17T01:23:54"
+    },
+    {
+      "path": "config/ui_state.json",
+      "size_bytes": 296,
+      "mtime": "2025-12-16T01:37:38"
+    },
+    {
+      "path": "docs/ERROR_COMMANDS.md",
+      "size_bytes": 2542,
+      "mtime": "2025-12-18T01:37:00"
+    },
+    {
+      "path": "docs/PHI4_Commit_Tuning.md",
+      "size_bytes": 3555,
+      "mtime": "2025-12-15T04:14:08"
+    },
+    {
+      "path": "docs/SETUP_OCR.md",
+      "size_bytes": 1490,
+      "mtime": "2025-12-15T02:53:08"
+    },
+    {
+      "path": "docs/VSCode_Agent_Integration.md",
+      "size_bytes": 2998,
+      "mtime": "2025-12-15T04:08:11"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 19825,
+      "mtime": "2025-12-18T02:53:20"
+    },
+    {
+      "path": "Scripts/Activate.ps1",
+      "size_bytes": 9031,
+      "mtime": "2025-06-18T05:47:29"
+    },
+    {
+      "path": "Scripts/agent_run_module_smoke.py",
+      "size_bytes": 1056,
+      "mtime": "2025-12-16T01:29:00"
+    },
+    {
+      "path": "Scripts/agent_terminal_smoke.py",
+      "size_bytes": 1070,
+      "mtime": "2025-12-16T01:23:11"
+    },
+    {
+      "path": "Scripts/assess_windows.py",
+      "size_bytes": 5405,
+      "mtime": "2025-12-16T02:28:51"
+    },
+    {
+      "path": "Scripts/automation.py",
+      "size_bytes": 4941,
+      "mtime": "2025-12-17T05:17:34"
+    },
+    {
+      "path": "Scripts/capture_screen.ps1",
+      "size_bytes": 6721,
+      "mtime": "2025-12-16T02:44:33"
+    },
+    {
+      "path": "Scripts/cleanup_daemon.py",
+      "size_bytes": 4057,
+      "mtime": "2025-12-16T07:33:05"
+    },
+    {
+      "path": "Scripts/cleanup_run.py",
+      "size_bytes": 850,
+      "mtime": "2025-12-16T01:50:37"
+    },
+    {
+      "path": "Scripts/close_idle_powershell.py",
+      "size_bytes": 4948,
+      "mtime": "2025-12-16T02:27:24"
+    },
+    {
+      "path": "Scripts/commit_and_verify_2plus2.ps1",
+      "size_bytes": 2350,
+      "mtime": "2025-12-16T05:41:51"
+    },
+    {
+      "path": "Scripts/commit_loop_smoke.ps1",
+      "size_bytes": 1075,
+      "mtime": "2025-12-16T02:16:53"
+    },
+    {
+      "path": "Scripts/compose_image.py",
+      "size_bytes": 1125,
+      "mtime": "2025-12-15T03:51:31"
+    },
+    {
+      "path": "Scripts/copilot_app_interaction_test.py",
+      "size_bytes": 28723,
+      "mtime": "2025-12-18T04:09:29"
+    },
+    {
+      "path": "Scripts/copilot_commit.ps1",
+      "size_bytes": 15368,
+      "mtime": "2025-12-16T05:50:33"
+    },
+    {
+      "path": "Scripts/copilot_commit_start.ps1",
+      "size_bytes": 4057,
+      "mtime": "2025-12-16T05:31:03"
+    },
+    {
+      "path": "Scripts/copilot_commit_stop.ps1",
+      "size_bytes": 1045,
+      "mtime": "2025-12-16T02:18:54"
+    },
+    {
+      "path": "Scripts/copilot_commit_with_record.ps1",
+      "size_bytes": 4552,
+      "mtime": "2025-12-16T05:31:03"
+    },
+    {
+      "path": "Scripts/copilot_copy_smoke.py",
+      "size_bytes": 6443,
+      "mtime": "2025-12-17T06:26:43"
+    },
+    {
+      "path": "Scripts/create_desktop_shortcut.ps1",
+      "size_bytes": 847,
+      "mtime": "2025-12-15T03:42:23"
+    },
+    {
+      "path": "Scripts/gather_chat_evidence.py",
+      "size_bytes": 2348,
+      "mtime": "2025-12-16T05:50:33"
+    },
+    {
+      "path": "Scripts/generate_ocr_observations_md.py",
+      "size_bytes": 16326,
+      "mtime": "2025-12-18T02:36:39"
+    },
+    {
+      "path": "Scripts/html_to_image.py",
+      "size_bytes": 3755,
+      "mtime": "2025-12-15T03:51:31"
+    },
+    {
+      "path": "Scripts/improve_modules_from_policy.py",
+      "size_bytes": 2926,
+      "mtime": "2025-12-16T06:08:04"
+    },
+    {
+      "path": "Scripts/learn_from_run.py",
+      "size_bytes": 9973,
+      "mtime": "2025-12-17T03:32:09"
+    },
+    {
+      "path": "Scripts/make_chat_template_from_last.py",
+      "size_bytes": 1002,
+      "mtime": "2025-12-16T05:28:37"
+    },
+    {
+      "path": "Scripts/mark_assessed.py",
+      "size_bytes": 1824,
+      "mtime": "2025-12-16T04:53:05"
+    },
+    {
+      "path": "Scripts/messenger_plan_smoke.py",
+      "size_bytes": 1444,
+      "mtime": "2025-12-16T01:24:23"
+    },
+    {
+      "path": "Scripts/messenger_smoke.py",
+      "size_bytes": 1529,
+      "mtime": "2025-12-16T01:23:19"
+    },
+    {
+      "path": "Scripts/monitor_live.py",
+      "size_bytes": 9940,
+      "mtime": "2025-12-16T04:54:59"
+    },
+    {
+      "path": "Scripts/navigation_test.py",
+      "size_bytes": 4611,
+      "mtime": "2025-12-17T01:52:35"
+    },
+    {
+      "path": "Scripts/observe_and_react.py",
+      "size_bytes": 3454,
+      "mtime": "2025-12-16T05:38:39"
+    },
+    {
+      "path": "Scripts/ocr_commit_test.py",
+      "size_bytes": 9806,
+      "mtime": "2025-12-16T05:02:03"
+    },
+    {
+      "path": "Scripts/ocr_gate_chat_ready.py",
+      "size_bytes": 5543,
+      "mtime": "2025-12-16T07:10:26"
+    },
+    {
+      "path": "Scripts/ocr_guard.py",
+      "size_bytes": 2791,
+      "mtime": "2025-12-16T07:04:53"
+    },
+    {
+      "path": "Scripts/ocr_observe_react_nav.py",
+      "size_bytes": 10164,
+      "mtime": "2025-12-16T05:56:50"
+    },
+    {
+      "path": "Scripts/ocr_smoke_test.py",
+      "size_bytes": 1073,
+      "mtime": "2025-12-15T02:52:09"
+    },
+    {
+      "path": "Scripts/record_lesson.py",
+      "size_bytes": 1660,
+      "mtime": "2025-12-16T05:56:20"
+    },
+    {
+      "path": "Scripts/recording_segmented_smoke.py",
+      "size_bytes": 820,
+      "mtime": "2025-12-16T01:50:41"
+    },
+    {
+      "path": "Scripts/tail_actions.py",
+      "size_bytes": 499,
+      "mtime": "2025-12-16T01:26:24"
+    },
+    {
+      "path": "Scripts/test_module.py",
+      "size_bytes": 108,
+      "mtime": "2025-12-16T01:27:03"
+    },
+    {
+      "path": "Scripts/verify_reply_2plus2.py",
+      "size_bytes": 2780,
+      "mtime": "2025-12-16T05:37:29"
+    },
+    {
+      "path": "Scripts/workflow_test_gather_assess.py",
+      "size_bytes": 19543,
+      "mtime": "2025-12-17T04:04:09"
+    },
+    {
+      "path": "src/agent_terminal.py",
+      "size_bytes": 4128,
+      "mtime": "2025-12-16T01:35:18"
+    },
+    {
+      "path": "src/capture.py",
+      "size_bytes": 5433,
+      "mtime": "2025-12-16T01:50:22"
+    },
+    {
+      "path": "src/cleanup.py",
+      "size_bytes": 5518,
+      "mtime": "2025-12-16T07:54:57"
+    },
+    {
+      "path": "src/control.py",
+      "size_bytes": 7429,
+      "mtime": "2025-12-17T02:10:17"
+    },
+    {
+      "path": "src/image_compose.py",
+      "size_bytes": 2834,
+      "mtime": "2025-12-15T03:51:31"
+    },
+    {
+      "path": "src/jsonlog.py",
+      "size_bytes": 987,
+      "mtime": "2025-12-15T04:06:39"
+    },
+    {
+      "path": "src/main.py",
+      "size_bytes": 51763,
+      "mtime": "2025-12-17T01:36:37"
+    },
+    {
+      "path": "src/messaging.py",
+      "size_bytes": 7591,
+      "mtime": "2025-12-17T01:38:21"
+    },
+    {
+      "path": "src/ocr.py",
+      "size_bytes": 9475,
+      "mtime": "2025-12-17T05:15:57"
+    },
+    {
+      "path": "src/ocr_observer.py",
+      "size_bytes": 2066,
+      "mtime": "2025-12-16T01:43:05"
+    },
+    {
+      "path": "src/phi4_client.py",
+      "size_bytes": 5279,
+      "mtime": "2025-12-16T01:17:40"
+    },
+    {
+      "path": "src/phi4_planner.py",
+      "size_bytes": 2296,
+      "mtime": "2025-12-15T03:47:13"
+    },
+    {
+      "path": "src/policy.py",
+      "size_bytes": 7870,
+      "mtime": "2025-12-17T01:20:25"
+    },
+    {
+      "path": "src/self_improve.py",
+      "size_bytes": 2411,
+      "mtime": "2025-12-15T03:30:25"
+    },
+    {
+      "path": "src/ui.py",
+      "size_bytes": 13965,
+      "mtime": "2025-12-16T02:46:22"
+    },
+    {
+      "path": "src/vsbridge.py",
+      "size_bytes": 261739,
+      "mtime": "2025-12-18T04:09:23"
+    },
+    {
+      "path": "src/windows.py",
+      "size_bytes": 18407,
+      "mtime": "2025-12-17T04:34:19"
+    }
+  ],
+  "documents": [
+    {
+      "path": "README.md",
+      "size_bytes": 19825,
+      "summary": "# AI_Coder_Controller",
+      "content": "# AI_Coder_Controller\n\nWindows-first automation controller with a safe, observable workflow loop:\n- Records the screen (segmented rolling capture)\n- Safely automates keyboard/mouse with intermittent control windows and ESC pause\n- Centralizes all terminal actions via an Integrated Terminal Agent\n- Interacts with VS Code Chat and the Windows Copilot app\n- OCRs Copilot responses and commits them to project notes\n- Defers/queues prompts while busy; can auto-run a timed external commit loop after Stop\n\n## Quick Start\n- Activate venv (PowerShell):\n  - Scripts/Activate.ps1\n- Install deps:\n  - pip install -r requirements.txt\n- Run:\n  - python -m src.main\n- Headless Agent Mode (no UI, executes objectives):\n  - python -m src.main --headless --agent --duration 60\n  - python -m src.main --headless --agent --objectives config/objectives.md --duration 60\n- Desktop Shortcut:\n  - scripts/create_desktop_shortcut.ps1\n\nRecommended tools to validate the setup:\n- Navigation test: `python scripts/navigation_test.py`\n- OCR smoke test: `python scripts/ocr_smoke_test.py`\n- OCR commit test (captures and appends to notes): `python scripts/ocr_commit_test.py`\n\n## Structure\n- config/: policy, objectives, instructions, ocr.json\n- projects/Self-Improve/: objectives, instructions, improvements.md\n- src/: capture/control/policy/ui/vsbridge/windows/ocr/main\n- logs/: run.log, self_improve.log, ocr/\n- logs/actions/: actions.jsonl (structured JSONL action log)\n- recordings/: mp4 files (auto)\n- scripts/: create_desktop_shortcut.ps1, html_to_image.py, compose_image.py, copilot_commit.ps1, copilot_commit_start.ps1, copilot_commit_stop.ps1, navigation_test.py, assess_windows.py, close_idle_powershell.py, ocr_commit_test.py\n- docs/: SETUP_OCR.md, VSCode_Agent_Integration.md, ERROR_COMMANDS.md\n  - PHI4_Commit_Tuning.md\n\n## Controls & Features\n- Run/Pause/Resume/Stop: orchestrate execution\n- Focus VS Code / Focus Terminal: reliable window focusing\n- Pause Controls (button) + ESC: pause/resume AI mouse+keyboard immediately\n- Color timer: near Pause Controls shows Active (green), Release (orange), Paused (red)\n- 2-min/5-sec cycle: AI controls for 120s, user-exclusive 5s, repeats\n- OCR Copilot: captures Copilot Chat or Windows Copilot app and appends to projects/Self-Improve/improvements.md (de-duplicated)\n- OCR Observer: optional “movie” stream of OCR frames (configurable interval)\n- Segmented screen recording: rolling segments with cleanup rules (age + max_keep)\n- Cleanup scheduler: deletes old debug frames/segments per rules\n  - Default rules clean `logs/ocr` images and `recordings/segments` videos; now also `logs/screens` PNG/MP4 (requires `.assessed` marker; 5s retention, keep latest 50)\n  - The live recorder and the Commit+Record wrapper auto-create `.assessed` markers for their outputs to enable safe, fast cleanup.\n  - Standalone test scripts may also run a one-shot cleanup pass on exit (set `AI_CONTROLLER_RUN_CLEANUP=0` to disable).\n\n### Agent Mode & Terminal Agent\n- Single gateway for terminal actions; all shell runs go through the VS Code integrated terminal.\n- Post-stop terminal commit: pending typed commands get Enter on Stop.\n- Agent Mode can auto-run on startup; toggleable in the UI.\n\n### Copilot Messaging: Quiet & Deferred\n- Quiet-send: defers Copilot prompts while busy or not idle; flushes when idle or on Stop.\n- “After Stop” queue: prompts can be scheduled to send when Stop is pressed.\n- Prefer the Windows Copilot app or VS Code Chat (configurable).\n\n### External Commit Loop (PowerShell)\n- Standalone loop to focus Copilot, type a message (optional), and commit (Ctrl+Enter then Enter) on a timer.\n- Launched externally so it runs independent of VS Code’s terminal.\n- Dedupe: launcher skips creating a duplicate infinite loop if one is already running.\n- Logging: writes LAUNCH/LAUNCHED/START/COMMIT and FOCUS entries to logs/actions/copilot_commit.log.\n\n## VS Code Agent Workflow Loop\n- Trigger: Enable Agent Mode (UI) or run headless Agent Mode with `--headless --agent` and objectives in `config/objectives.md`.\n- Assess: Inventory windows/foreground, verify VS Code focus, gate inputs to selected window, adjust pacing (active vs release), and dedupe repeated objectives per tick.\n- Act: Route all terminal commands through the integrated Terminal Agent; perform VS Code actions (open/focus/terminal/scroll), and send Copilot queries using quiet/deferred rules.\n- Observe: Record screen (segmented), stream OCR frames (optional), and append Copilot summaries to `projects/Self-Improve/improvements.md` with de-dup by content hash.\n- Clean Up: Periodic cleanup of debug frames/segments per `config/policy_rules.json` rules.\n- Stop Phase: Flush pending Copilot messages, commit pending terminal input (Enter), and optionally launch the external commit loop with configured timing/message.\n- Safety: ESC toggles controls; intermittent control windows (Active/Release); window gating to target only the selected app.\n\n### Foreground App Assessment & Navigation (pseudocode)\n\nMany automation failures are not \"typing failed\" — they are \"wrong UI state\" (no conversation selected, overlay open, focus in the wrong field, etc.). The recommended pattern is:\n\n1) **Assess** what app is foreground and what UI state it is in.\n2) **Recover** into a known-good state for the action you want (e.g., \"chat input is focused\").\n3) **Act** (type/click) only when the assessment says it is safe.\n\nGeneral loop (app-agnostic):\n\n```text\nfunction act_in_foreground_app(goal):\n  fg = get_foreground_window_info()\n  if fg is disallowed (VS Code when targeting app, terminals, etc.):\n    return FAIL_CLOSED\n\n  assessment = assess_ui_state(fg)\n  log(assessment)\n\n  if assessment.needs_recovery:\n    ok = recover_to_ready_state(assessment)\n    if not ok:\n      return FAIL_CLOSED\n\n  gate_inputs_to(fg)\n  return perform_goal_action(goal)\n```\n\nCopilot app example (send message):\n\n```text\nfunction send_copilot_message(text, optional_attachment_path):\n  focus_copilot_app()\n  assert copilot is foreground AND VS Code is NOT foreground\n\n  a = assess_copilot_window():\n      - focused control type/name (UIA)\n      - is chat input focused? (UIA or OCR)\n      - does sidebar have conversation list items?\n      - does it look like \"no conversation selected\"?\n\n  if a.needs_conversation_open:\n      open_most_recent_conversation_from_sidebar()  # UIA click/invoke\n\n  close_overlays_with_esc()\n  click_bottom_center_to_focus_input()\n\n  if optional_attachment_path:\n      open_attach_ui_and_attach_file(optional_attachment_path)\n\n  type_or_paste(text)\n  press_enter_to_send()\n```\n\nBrowser example (navigate / search safely):\n\n```text\nfunction browser_navigate_or_search(url_or_query):\n  focus_browser_window()\n  assert browser is foreground\n\n  a = assess_browser_window():\n      - is an address bar focused? (UIA or OCR hints)\n      - is a modal/permission prompt visible?\n      - is a download dialog stealing focus?\n\n  if a.modal_visible:\n      dismiss_or_fail_closed_based_on_policy()\n\n  focus_address_bar()  # Ctrl+L usually\n  type(url_or_query)\n  press_enter()\n```\n\nKey principle: **don’t “just send keys”**. Always do a quick assessment (UIA/OCR + window identity) so the agent can choose the right navigation recovery step.\n\n#### Observation Rules (learned vs non-learned)\n\nThis controller distinguishes **navigation** actions from **commit** actions:\n\n- Navigation actions: `Tab`, arrow keys, moving the mouse (cursor reposition), scrolling.\n- Commit actions: `Enter`, mouse click, typing/pasting text.\n\nPseudocode rule:\n\n```text\nif sequence is NOT learned:\n  observe OCR/UIA after each navigation step\nelse (sequence is learned AND last run succeeded):\n  do not OCR after every navigation step\n\nalways:\n  OCR/UIA-observe immediately before any commit action (click / Enter / text input)\n```\n\n#### Copilot App: Attach a File (no blind picks)\n\n```text\nfunction attach_file_in_copilot_app(path):\n  focus_copilot_app()\n  assert copilot is foreground\n\n  click '+' / 'More options'\n  observe (OCR) that flyout menu is visible\n\n  options = OCR_read_flyout_labels_and_images()\n  candidates = enumerate_clickable_items_in_flyout()\n\n  # Score candidates by OCR evidence; do not pick by position.\n  pick = argmax(candidates, score_by_ocr(['upload','add files','file','attach','browse','select']))\n  if pick.score < threshold:\n    FAIL_CLOSED  # no guessing\n\n  observe before click(pick)\n  click(pick)\n\n  wait_for_file_dialog()\n  click File name input (UIA bbox center)\n  observe before paste\n  paste full path\n  press Enter\n```\n\nDebugging commands for this workflow are in [docs/ERROR_COMMANDS.md](docs/ERROR_COMMANDS.md).\n\n#### Assessment Description Result Files\n\nWhen a workflow fails (or when you are validating a newly-learned procedure), produce an **assessment description result file** that links the OCR evidence images and records what was observed + what action should come next. These files make it easy to reuse the same “assess and learn” method for other workflows.\n\n- Archive location: [Archive_OCR_Images_Assessments](Archive_OCR_Images_Assessments)\n- Generator: [Scripts/generate_ocr_observations_md.py](Scripts/generate_ocr_observations_md.py)\n- Example output: [Archive_OCR_Images_Assessments/OBSERVED_OCR_IMAGES_20251218.md](Archive_OCR_Images_Assessments/OBSERVED_OCR_IMAGES_20251218.md)\n\nCommand example:\n\n```powershell\nC:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/generate_ocr_observations_md.py --out Archive_OCR_Images_Assessments/OBSERVED_OCR_IMAGES.md --file-substr ModulesList_fs_agent_20251218_013825.txt\n```\n\nReusable pattern:\n\n1) Run the workflow (or a targeted test script)\n2) Generate the OCR assessment report for that run (by file substring or by “latest window”)\n3) Review each linked image section and decide whether the next action is justified by the observed state\n4) Patch the recovery/targeting logic (fail closed if evidence is weak)\n5) Re-run and archive the new report\n\n## AI API Agent Workflow (Phi‑4)\n- Purpose: Optional planner/agent connectivity for experiments and health checks.\n- Enable: Configure `phi4` in `config/policy_rules.json` (endpoint, api_key, model, timeout). Disabled by default.\n- Health Check: Use the UI “Planner connectivity test” (calls `phi_client.ping()`), logs to `logs/actions/actions.jsonl`.\n- Usage: When enabled, the runtime initializes a Phi‑4 client; messages and metadata flows can leverage the planner path. See `src/main.py` and `src/phi4_client.py` for integration points.\n- Notes: Keep timeouts modest; handle failures gracefully—controller continues without planner if unavailable.\n\n## VS Code & Copilot Automation\n- Configure in config/policy_rules.json:\n  - vsbridge: { \"dry_run\": false, \"delay_ms\": 350 }\n  - copilot: prefer_app, defer_when_busy, quiet_idle_ms, auto_commit_after_stop, timing, message, title, log path\n- Objectives examples (config/objectives.md):\n  - Open VSCode\n  - Open folder: C:\\\\Users\\\\...\\\\AI_Coder_Controller\\\\\n  - Open file: src\\\\ui.py\n  - Focus VSCode / Focus Terminal\n  - Scroll chat down x 3 (UI also has a steps control)\n  - Terminal: git status\n  - Ask Copilot to clarify: \"...\"\n  - Insert summary into src\\\\instructions.md\n  - Fallback behavior: When `copilot.prefer_app` is true but the Copilot app cannot be focused, the controller automatically falls back to VS Code Chat for sending the message.\n\n## Commit Tuning (PHI‑4)\n- See docs/PHI4_Commit_Tuning.md for Conventional Commits, safe branching, and a Copilot prompt to prepare messages.\n\n## OCR Setup\n- See docs/SETUP_OCR.md\n- Ensure Tesseract is installed and config/ocr.json points to it (or it’s on PATH)\n- Test: python scripts/ocr_smoke_test.py\n- Commit test: python scripts/ocr_commit_test.py (captures App + Chat and appends to improvements.md; writes a JSON report)\n\n## Logs\n- Text log: logs/run.log (general); logs/self_improve.log (Self‑Improve)\n- JSONL log: logs/actions/actions.jsonl (one JSON object per line)\n- Commit loop: logs/actions/copilot_commit.log (PowerShell loop LAUNCH/START/COMMIT)\n- Test reports: logs/tests/*.json (+ *.md where applicable)\n\n## Utilities & Health\n- Window assessment: `python scripts/assess_windows.py` (inventory, foreground, VS Code/Copilot presence, duplicate loops, OCR idle score for PowerShell)\n- Close idle PowerShell: `python scripts/close_idle_powershell.py` (OCR-based selection; closes exactly one idle window)\n- Start commit loop (external window):\n  - Infinite loop with dedupe:\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\copilot_commit_start.ps1 -Mode app -StartAfterSeconds 5 -RepeatSeconds 10 -RepeatCount 0 -Message \"Auto message — see projects/Self-Improve/next_steps.md\" -Title \"Copilot\" -LogPath \"logs/actions/copilot_commit.log\"\n    ```\n  - Stop loops:\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\copilot_commit_stop.ps1\n    ```\n\n## Screen Recording & Live Preview\n\n- One-off screenshot / time-lapse frames: `scripts/capture_screen.ps1`\n  - Single shot with timestamp:\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\capture_screen.ps1 -Out \"logs\\screens\\screen_$(Get-Date -Format yyyyMMdd_HHmmss).png\" -StampTime\n    ```\n  - Time-lapse frames (10s @ 2 fps):\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\capture_screen.ps1 -OutDir \"logs\\screens\\rec_$(Get-Date -Format yyyyMMdd_HHmmss)\" -Seconds 10 -Fps 2 -StampTime\n    ```\n  - Optional MP4/GIF render (requires ffmpeg on PATH):\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\capture_screen.ps1 -OutDir logs\\screens\\rec -Seconds 5 -Fps 2 -OutVideo logs\\screens\\out.mp4\n    ```\n\n- Live recorder (Python): `scripts/monitor_live.py`\n  - Auto backend (prefers dxcam, falls back to mss):\n    ```powershell\n    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_auto.mp4\n    ```\n  - Force mss (stable on any GPU):\n    ```powershell\n    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_mss.mp4 --backend mss\n    ```\n  - Preview window (ESC to stop):\n    ```powershell\n    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --preview --fps 15 --backend mss\n    ```\n\n- Commit + record wrapper: `scripts/copilot_commit_with_record.ps1`\n  - Short, bounded run with synchronized recording:\n    ```powershell\n    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\copilot_commit_with_record.ps1 -Mode app -StartAfterSeconds 1 -RepeatSeconds 4 -RepeatCount 1 -Message \"Record sync test\" -LogPath \"logs/actions/commit_with_record.log\" -Record -RecordFps 10 -RecordBackend auto -Wait\n    ```\n  - Note: If `-RepeatCount 0` (infinite), provide `-RecordSeconds` to avoid recording indefinitely.\n\n## VS Code Tasks\n\n- Commit + Record (short test): Runs a bounded commit loop with synchronized screen recording.\n- Live Recorder (mss preview): Opens a preview window; press ESC to stop.\n- Single Screenshot: Captures a timestamped full-screen PNG.\n- Start Commit Loop (infinite, no web): Launches the external commit loop without opening Copilot via protocol if not focused.\n- Stop Commit Loops: Stops running external commit loops.\n- Cleanup Old Movies/Images: Runs the cleanup utility to delete old PNG/MP4 according to `config/policy_rules.json`.\n - Mark Navigation Media Assessed: Adds `.assessed` markers to `logs/screens` so the 5s cleanup can safely delete reviewed media.\n - Test/Gather/Assess Workflow: Runs navigation test, OCR commit test, observe/react, short recording (auto-marked), cleanup, and writes a workflow summary under `logs/tests/`.\n\n## Test / Gather / Assess\n\n- Test:\n  - Navigation: verifies focusing and chat interactions\n    - Command:\n      ```powershell\n      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/navigation_test.py\n      ```\n    - Output: JSON report under `logs/tests/`.\n  - OCR Smoke: sanity-check OCR pipeline\n    - Command:\n      ```powershell\n      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/ocr_smoke_test.py\n      ```\n  - OCR Commit: captures Copilot App + VS Code Chat OCR and appends to notes\n    - Command:\n      ```powershell\n      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/ocr_commit_test.py\n      ```\n    - Output: JSON report `logs/tests/ocr_commit_test_*.json` and appended text in `projects/Self-Improve/improvements.md`.\n\n- Gather:\n  - Commit + Record (bounded): synchronized commit loop + recording with auto-marker\n    - VS Code Task: \"Commit + Record (short test)\"\n  - Live Recorder (preview or file):\n    - Example (file, marked):\n      ```powershell\n      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 3 --fps 10 --out logs/screens/live_auto.mp4 --backend mss --mark-assessed\n      ```\n  - Screenshots / Time-lapse:\n    - Single shot:\n      ```powershell\n      powershell -NoProfile -ExecutionPolicy Bypass -File scripts/capture_screen.ps1 -Out \"logs/screens/screen_$(Get-Date -Format yyyyMMdd_HHmmss).png\" -StampTime\n      ```\n\n- Assess:\n  - Foreground hygiene (closes disallowed):\n    - VS Code Task: \"Observe & React (close disallowed)\"\n  - System inventory / duplicates / idle:\n    - Command:\n      ```powershell\n      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/assess_windows.py\n      ```\n  - Review OCR captures and notes:\n    - Check `logs/ocr/` and `projects/Self-Improve/improvements.md`.\n  - REQUIRED: Assess both errors and successes.\n    - Errors: Inspect stderr tails and non-zero return codes in `logs/tests/workflow_summary_*.json` under `errors` with step names and details.\n    - Successes: Confirm positive evidence (e.g., created reports, appended notes, deleted artifacts) under `successes` with paths and flags.\n    - The workflow task exits non-zero on overall failure for visibility; use this to gate follow-up actions.\n\n- Cleanup (automatic every few seconds during UI; on-demand any time):\n  - Policy: `logs/screens` PNG/MP4 are deleted after 5 seconds only if a sidecar `.assessed` exists (created by recorder/wrapper or via the marking tool).\n  - On-demand:\n    ```powershell\n    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/cleanup_run.py\n    ```\n  - Note: Some standalone scripts also run the same cleanup pass on exit; disable with `AI_CONTROLLER_RUN_CLEANUP=0`.\n\n- One-click end-to-end:\n  - VS Code Task: \"Test/Gather/Assess Workflow\"\n  - Produces `logs/tests/workflow_summary_*.json` summarizing step results and artifacts, including PASS/FAIL per step and overall. The task returns non-zero on FAIL for visibility.\n\n## Image Utilities\n- HTML → Image: scripts/html_to_image.py (Playwright preferred, headless Chrome/Edge fallback)\n- Compose Image: scripts/compose_image.py (Pillow social-card)\n\n## Safety & Troubleshooting\n- ESC always pauses/resumes AI controls immediately.\n- If OCR returns little text, tweak `targets.vscode_chat`/`targets.copilot_app` ROI and increase `chat_settle_ms`/`app_settle_ms` in config/ocr.json.\n- If the Copilot window title differs (e.g., “Microsoft Copilot”), set the `-Title` parameter for commit scripts or adjust `config/policy_rules.json` `auto_commit_title`.\n- If multiple PowerShell windows appear, run `scripts/close_idle_powershell.py` to close the idle one.\n"
+    },
+    {
+      "path": "config/instructions.md",
+      "size_bytes": 584,
+      "summary": "# Instructions",
+      "content": "# Instructions\n- Software to use:\n  - VSCode for code editing and terminal\n  - Copilot Chat inside VSCode for clarifications\n- Execution flow:\n  1. Parse objectives from this folder (objectives.md, any txt/md uploaded via UI)\n  2. Deterministic actions: move, click, type, open views\n  3. Ambiguous actions: open Copilot Chat, compose questions, read responses, summarize and log\n  4. Keep logs of run events, pauses, stops, and user messages\n- Safety:\n  - PyAutoGUI fail-safe enabled (top-left abort)\n  - Rate limits on clicks/keys per minute\n  - Emergency stop via ESC\n"
+    },
+    {
+      "path": "config/objectives.md",
+      "size_bytes": 279,
+      "summary": "# Objectives",
+      "content": "# Objectives\n1. Start screen recording\n2. Open VSCode\n3. Open folder: C:\\Users\\yerbr\\AI_Coder_Controller\\\n4. Open file: src\\policy.py\n5. Ask Copilot to clarify: \"How should Policy.decide interpret ambiguous objectives?\"\n6. Insert summary into src\\instructions.md\n7. Stop\n"
+    },
+    {
+      "path": "config/objectives_test.md",
+      "size_bytes": 194,
+      "summary": "# Objectives — VSBridge Live Test",
+      "content": "# Objectives — VSBridge Live Test\n1. Open VSCode\n2. Focus VSCode\n3. Open terminal\n4. Open folder: C:\\Users\\yerbr\\AI_Coder_Controller\\\n5. Open file: src\\ui.py\n6. Focus terminal\n7. Stop\n"
+    },
+    {
+      "path": "config/ocr.json",
+      "size_bytes": 551,
+      "summary": "{",
+      "content": "{\n  \"enabled\": true,\n  \"monitor_index\": 1,\n  \"region_percent\": {\n    \"left\": 65,\n    \"top\": 8,\n    \"width\": 34,\n    \"height\": 88\n  },\n  \"tesseract_cmd\": \"C:/Program Files/Tesseract-OCR/tesseract.exe\",\n  \"tesseract_psm\": 6,\n  \"save_debug_images\": true,\n  \"chat_settle_ms\": 1000,\n  \"app_settle_ms\": 800,\n  \"targets\": {\n    \"vscode_chat\": {\n      \"left\": 65,\n      \"top\": 8,\n      \"width\": 34,\n      \"height\": 88\n    },\n    \"copilot_app\": {\n      \"left\": 65,\n      \"top\": 8,\n      \"width\": 34,\n      \"height\": 88\n    }\n  }\n}\n"
+    },
+    {
+      "path": "config/policy_rules.json",
+      "size_bytes": 2133,
+      "summary": "{",
+      "content": "{\n  \"enabled\": true,\n  \"actions\": [\n    { \"when\": \"always\", \"do\": \"noop\" }\n  ],\n  \"bounds\": {\n    \"mouse_speed\": 0.3,\n    \"max_clicks_per_min\": 60,\n    \"max_keys_per_min\": 120\n  },\n  \"hotkeys\": {\n    \"pause\": \"f9\",\n    \"toggle_record\": \"f8\",\n    \"emergency_stop\": \"esc\"\n  },\n  \"mouse_intervals\": {\n    \"control_seconds\": 120,\n    \"release_seconds\": 5\n  },\n  \"vsbridge\": {\n    \"dry_run\": false,\n    \"delay_ms\": 400,\n    \"delay_ms_active\": 250,\n    \"delay_ms_release\": 500\n  },\n  \"keyboard\": {\n    \"type_interval_ms\": 8\n  },\n  \"copilot\": {\n    \"prefer_app\": true,\n    \"defer_when_busy\": true,\n    \"quiet_idle_ms\": 600,\n    \"auto_commit_after_stop\": true,\n    \"auto_commit_start_after_s\": 7,\n    \"auto_commit_repeat_s\": 10,\n    \"auto_commit_repeat_count\": 0,\n    \"auto_commit_message\": \"Auto message from powershell — see projects/Self-Improve/next_steps.md\",\n    \"auto_commit_title\": \"Copilot\",\n    \"auto_commit_log\": \"logs/actions/copilot_commit.log\",\n    \"send_if\": {\n      \"require_vscode_focus\": true,\n      \"require_controls_active\": true,\n      \"allow_dry_run_send\": true,\n      \"require_ocr_for_read\": false\n    },\n    \"read_wait_ms\": 2000\n  },\n  \"cleanup\": {\n    \"enabled\": true,\n    \"interval_seconds\": 5,\n    \"rules\": [\n      { \"dir\": \"logs/ocr\", \"patterns\": [\"*.png\", \"*.jpg\"], \"retain_seconds\": 30, \"max_keep\": 300 },\n      { \"dir\": \"recordings/segments\", \"patterns\": [\"*.mp4\"], \"retain_seconds\": 1800, \"max_keep\": 20 },\n      { \"dir\": \"logs/screens\", \"patterns\": [\"*.png\", \"*.mp4\"], \"retain_seconds\": 5, \"max_keep\": 50, \"require_marker\": true, \"marker_extension\": \".assessed\" }\n    ]\n  },\n  \"ocr\": {\n    \"observe_stream\": true,\n    \"stream_interval_ms\": 700\n  },\n  \"phi4\": {\n    \"enabled\": false,\n    \"endpoint\": \"\",\n    \"api_key\": \"\",\n    \"model\": \"phi-4-mini\",\n    \"timeout_ms\": 15000,\n    \"health_path\": \"/health\"\n  },\n  \"auto_record_on_run\": true,\n  \"headless_start\": false,\n  \"recording\": {\n    \"segmented\": true,\n    \"segments_dir\": \"recordings/segments\",\n    \"segment_seconds\": 60\n  },\n  \"runtime\": {\n    \"exec_cooldown_s\": 3\n  }\n}\n\n"
+    },
+    {
+      "path": "config/ui_state.json",
+      "size_bytes": 296,
+      "summary": "{",
+      "content": "{\n  \"agent_mode\": true,\n  \"project\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\",\n  \"files\": [\n    \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\objectives.md\",\n    \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\instructions.md\"\n  ]\n}"
+    },
+    {
+      "path": "docs/ERROR_COMMANDS.md",
+      "size_bytes": 2542,
+      "summary": "# Error / Debug Commands",
+      "content": "# Error / Debug Commands\n\nThis project writes detailed structured JSONL events to `logs/errors/events.jsonl` (in addition to `logs/actions/actions.jsonl`).\n\nUse these commands to quickly answer questions like:\n- “Did we actually click ‘More options’ (‘+’)?”\n- “What did the flyout menu show?”\n- “Which candidate menu item was evaluated as Upload?”\n- “Did we click/focus the File name input before pasting?”\n\n## PowerShell: Tail and Filter\n\n### Tail last N lines\n```powershell\nGet-Content -Path logs/errors/events.jsonl -Tail 400\n```\n\n### Filter for the attach workflow (common)\n```powershell\n$lines = Get-Content -Path logs/errors/events.jsonl -Tail 1200\n$lines | Select-String -SimpleMatch \\\n  'copilot_app_more_options_menu_ocr',\n  'copilot_app_more_options_menu_item_eval',\n  'copilot_app_more_options_menu_pick',\n  'copilot_app_attach_click',\n  'copilot_app_attach_nav_reject',\n  'copilot_app_dialog_click',\n  'copilot_app_attach_opened',\n  'copilot_app_attachment_failed' \\\n| Select-Object -Last 120 \\\n| ForEach-Object { $_.Line }\n```\n\n### Show only flyout OCR readout and which option was chosen\n```powershell\n$lines = Get-Content -Path logs/errors/events.jsonl -Tail 2000\n$lines | Select-String -SimpleMatch \\\n  'copilot_app_more_options_menu_ocr',\n  'copilot_app_more_options_menu_item_eval',\n  'copilot_app_more_options_menu_pick' \\\n| ForEach-Object { $_.Line }\n```\n\n### Show only file dialog “File name” focusing/clicking\n```powershell\n$lines = Get-Content -Path logs/errors/events.jsonl -Tail 2000\n$lines | Select-String -SimpleMatch 'copilot_app_dialog_click', 'dialog_focus_filename' \\\n| ForEach-Object { $_.Line }\n```\n\n## What to Look For (Key Events)\n\n- `copilot_app_more_options_menu_ocr`\n  - Contains `labels` (OCR extracted lines) and `image_paths` (screenshots under `logs/ocr/`).\n- `copilot_app_more_options_menu_item_eval`\n  - One per candidate; includes `score`, `ocr_preview`, `image_path`.\n- `copilot_app_more_options_menu_pick`\n  - When a candidate is selected, includes `reason` (e.g., `icon_only_ocr_pick`) and selection metadata.\n- `copilot_app_attach_click`\n  - Every click attempt, with `point_image_path` evidence.\n- `copilot_app_dialog_click`\n  - Explicit click on the file dialog `File name` field, includes `ok` (click blocked vs allowed).\n\n## OCR Evidence\n\nWhen you see an `image_path` (or `point_image_path`) in the JSON line, open that PNG from `logs/ocr/` to verify what the UI looked like at that exact step.\n"
+    },
+    {
+      "path": "docs/PHI4_Commit_Tuning.md",
+      "size_bytes": 3555,
+      "summary": "# PHI‑4 Commit Tuning Guide",
+      "content": "# PHI‑4 Commit Tuning Guide\n\nThis guide instructs the PHI‑4 (via Copilot Chat) how to plan and execute high‑quality commits safely in this project.\n\n## Goals\n- Produce small, atomic commits with clear intent.\n- Use Conventional Commits for messages.\n- Validate changes (lint/tests) before committing when possible.\n- Preserve safety: never commit directly to `main`; prefer a feature branch.\n\n## Principles\n- Atomic changes: one logical change per commit (code + tests + docs for that change).\n- Message clarity: start with type/scope, present‑tense subject, include rationale, list noteworthy impacts.\n- Reproducible: commits should pass basic checks and not leave the repo broken.\n- Traceability: link related docs/notes or objectives where relevant.\n\n## Message Format (Conventional Commits)\n- Template:\n  \n  ```\n  <type>(<scope>): <subject>\n  \n  <body>\n  \n  <footers>\n  ```\n\n- Types: `feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `chore`.\n- Scope: module or area, e.g., `vsbridge`, `policy`, `ui`, `ocr`.\n- Subject: imperative mood, no trailing period. E.g., `feat(ui): add scroll steps control`.\n- Body: what/why details, risks, follow‑ups.\n- Footers: `BREAKING CHANGE:`, references, issue IDs if any.\n\n## Workflow (Copilot‑assisted)\n1. Plan\n   - Summarize intended diff: files, functions, public APIs, tests/docs to update.\n   - Confirm commit scope is atomic; split if not.\n2. Stage\n   - In VS Code terminal, run:\n     ```\n     git status\n     git switch -c feat/<short-scope>  # if not on a feature branch\n     git add -p                        # stage only intended hunks\n     ```\n3. Validate\n   - If available, run:\n     ```\n     python -m pip install -r requirements.txt\n     # run unit tests or smoke scripts\n     python scripts/ocr_smoke_test.py\n     ```\n   - Optional lint/format:\n     ```\n     # placeholder; add tools if adopted\n     ```\n4. Commit\n   - Generate message using the template and staged changes summary.\n   - Example:\n     ```\n     git commit -m \"feat(ui): add scroll steps control\" -m \"Adds Spinbox for steps and wires handlers in main. Logs steps to JSONL.\"\n     ```\n5. Push & PR (optional)\n   - ```\n     git push -u origin HEAD\n     ```\n   - Open a PR; summarize the change and testing steps.\n\n## Safety & Guardrails\n- Never commit to `main` directly; use branches.\n- Show a concise diff summary to user for approval when changes are non‑trivial:\n  - Files changed, additions/deletions, key functions touched.\n- Avoid committing secrets or local paths; scan staged hunks before commit.\n\n## Using the Controller\n- To run terminal commands from objectives:\n  - Add lines like:\n    - `terminal: git status`\n    - `terminal: git add -p`\n    - `terminal: git commit -m \"fix(vsbridge): handle None pyautogui\"`\n- Or click UI → Focus Terminal and type commands manually.\n\n## Commit Examples\n- Feature:\n  - `feat(policy): map 'terminal:' objective to VS Code terminal`\n- Fix:\n  - `fix(ocr): honor chat_settle_ms for capture timing`\n- Docs:\n  - `docs: add VSCode Agent integration guide`\n\n## Copilot Prompt (for PHI‑4)\n- Use this when preparing a commit message:\n  \n  \"\"\"\n  You are assisting with commit preparation. Generate a Conventional Commit message for the staged changes.\n  Include:\n  - type(scope): subject in present tense\n  - A body with what/why, risks, and user‑visible effects\n  - Optional footers for breaking changes or references\n  Keep subject <= 72 chars, wrap body at ~100 chars.\n  \"\"\"\n\n"
+    },
+    {
+      "path": "docs/SETUP_OCR.md",
+      "size_bytes": 1490,
+      "summary": "# Enable OCR for Copilot Chat (Windows)",
+      "content": "# Enable OCR for Copilot Chat (Windows)\n\nThis project can read Copilot Chat text by OCR-ing a portion of your screen. It uses Tesseract via `pytesseract`.\n\n## Install Tesseract (system binary)\n\n- Recommended (Windows): UB Mannheim build\n  - Download: https://github.com/UB-Mannheim/tesseract/wiki\n  - Install to default path: C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe\n\n- Or via Chocolatey (elevated PowerShell):\n```powershell\nchoco install tesseract --yes\n```\n\n## Python packages\n\nFrom your venv:\n```powershell\npip install pytesseract pillow mss\n```\n\n## Configure ROI and path\n\nEdit config/ocr.json:\n```json\n{\n  \"monitor_index\": 1,\n  \"region_percent\": { \"left\": 65, \"top\": 8, \"width\": 34, \"height\": 88 },\n  \"tesseract_cmd\": \"C:/Program Files/Tesseract-OCR/tesseract.exe\",\n  \"tesseract_psm\": 6,\n  \"save_debug_images\": true\n}\n```\n- Adjust region_percent to match where Copilot chat appears on your monitor.\n- If Tesseract is on PATH, you can omit tesseract_cmd.\n\n## Smoke test\n\n- Open VS Code and bring Copilot Chat to the foreground.\n- Run:\n```powershell\npython scripts/ocr_smoke_test.py\n```\n- Expected: it saves a debug image under logs/ocr/ and prints extracted text.\n\n## Integration notes\n\n- The OCR class src/ocr.py::CopilotOCR is designed to be called after focusing the Copilot chat view.\n- Typical flow: VS Code automation focuses chat → OCR captures text → program appends results to projects/Self-Improve/improvements.md.\n"
+    },
+    {
+      "path": "docs/VSCode_Agent_Integration.md",
+      "size_bytes": 2998,
+      "summary": "# VSCode Agent Integration",
+      "content": "# VSCode Agent Integration\n\nThis document summarizes how AI_Coder_Controller integrates with VS Code and GitHub Copilot, adapted from the provided VSCode Agent Integration Instructions and aligned with current implementation.\n\n## Purpose\n- Open and control VS Code windows.\n- Navigate files, terminals, and Copilot Chat.\n- Bridge ambiguous objectives to Copilot (PHI‑4 reasoning via Copilot Chat).\n- Keep structured logs of actions and messages.\n\n## Core Capabilities (Implemented)\n- Open VS Code: `VSBridge.open_vscode()`; focuses an existing window when found.\n- Open folder: `Ctrl+K`, `Ctrl+O` with path — `VSBridge.open_folder(path)`.\n- Open files by name: `Ctrl+P` — `VSBridge.open_file_quick(pathOrName)`.\n- Open/Focus terminal: `Ctrl+\\`` with palette fallbacks — `VSBridge.focus_terminal()`.\n- Open/Focus Copilot Chat: Command Palette → “Open View: GitHub Copilot Chat” — `VSBridge.focus_copilot_chat_view()`.\n- Compose messages to Copilot: `VSBridge.ask_copilot(text)` or `compose_message_vscode_chat(text)`.\n- Scroll and read Copilot responses: `VSBridge.scroll_chat(direction, steps)` plus OCR via `CopilotOCR` and `VSBridge.read_copilot_chat_text()`.\n- Multiple instances: focuses most likely window via `WindowsManager` title match; can open new windows via palette if needed.\n\n## Workflow\n1. Objectives parsed by `Policy` from `config/objectives*.md`.\n2. Clear tasks execute locally; ambiguous tasks route to Copilot.\n3. Copilot flow: focus chat → send message → optional scroll → OCR capture → append to `projects/Self-Improve/improvements.md` (de‑duplicated).\n4. Edits and terminal runs are driven by hotkeys and typed commands.\n\n## Safety & Guardrails\n- ESC emergency pause; UI “Pause Controls”.\n- Intermittent control cycle (default 120s active / 5s release).\n- PyAutoGUI failsafe (top-left corner abort).\n- Input rate limits for clicks/keys.\n\n## Self‑Improve Integration\n- Metadata generation: `src/self_improve.py::write_metadata_file()`.\n- Copilot handoff: sends metadata or summaries to chat.\n- OCR appends Copilot responses to `projects/Self-Improve/improvements.md`.\n\n## Logging\n- Human-readable: `logs/run.log` and `logs/self_improve.log`.\n- Structured JSONL: `logs/actions/actions.jsonl` via `src/jsonlog.py`.\n- OCR debug images: `logs/ocr/`.\n\n## Configuration\n- `config/policy_rules.json`: hotkeys, bounds, `vsbridge.delay_ms`, `vsbridge.dry_run`.\n- `config/ocr.json`: monitor/ROI, `tesseract_cmd`, `tesseract_psm`, `chat_settle_ms`.\n\n## PHI‑4 Notes\n- Current `src/phi4_planner.py` is a local stub (no external runtime).\n- Copilot (cloud) provides reasoning/synthesis in chat; no extra installs required beyond `requirements.txt` and Tesseract for OCR.\n\n## Tips\n- If OCR misses content, raise `chat_settle_ms` and adjust `region_percent` in `config/ocr.json`.\n- Increase `vsbridge.delay_ms` if automation feels racy.\n- Use the UI Automation toggle to switch `dry_run` on/off quickly.\n"
+    },
+    {
+      "path": "Scripts/Activate.ps1",
+      "size_bytes": 9031,
+      "summary": "<#",
+      "content": "<#\n.Synopsis\nActivate a Python virtual environment for the current PowerShell session.\n\n.Description\nPushes the python executable for a virtual environment to the front of the\n$Env:PATH environment variable and sets the prompt to signify that you are\nin a Python virtual environment. Makes use of the command line switches as\nwell as the `pyvenv.cfg` file values present in the virtual environment.\n\n.Parameter VenvDir\nPath to the directory that contains the virtual environment to activate. The\ndefault value for this is the parent of the directory that the Activate.ps1\nscript is located within.\n\n.Parameter Prompt\nThe prompt prefix to display when this virtual environment is activated. By\ndefault, this prompt is the name of the virtual environment folder (VenvDir)\nsurrounded by parentheses and followed by a single space (ie. '(.venv) ').\n\n.Example\nActivate.ps1\nActivates the Python virtual environment that contains the Activate.ps1 script.\n\n.Example\nActivate.ps1 -Verbose\nActivates the Python virtual environment that contains the Activate.ps1 script,\nand shows extra information about the activation as it executes.\n\n.Example\nActivate.ps1 -VenvDir C:\\Users\\MyUser\\Common\\.venv\nActivates the Python virtual environment located in the specified location.\n\n.Example\nActivate.ps1 -Prompt \"MyPython\"\nActivates the Python virtual environment that contains the Activate.ps1 script,\nand prefixes the current prompt with the specified string (surrounded in\nparentheses) while the virtual environment is active.\n\n.Notes\nOn Windows, it may be required to enable this Activate.ps1 script by setting the\nexecution policy for the user. You can do this by issuing the following PowerShell\ncommand:\n\nPS C:\\> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser\n\nFor more information on Execution Policies: \nhttps://go.microsoft.com/fwlink/?LinkID=135170\n\n#>\nParam(\n    [Parameter(Mandatory = $false)]\n    [String]\n    $VenvDir,\n    [Parameter(Mandatory = $false)]\n    [String]\n    $Prompt\n)\n\n<# Function declarations --------------------------------------------------- #>\n\n<#\n.Synopsis\nRemove all shell session elements added by the Activate script, including the\naddition of the virtual environment's Python executable from the beginning of\nthe PATH variable.\n\n.Parameter NonDestructive\nIf present, do not remove this function from the global namespace for the\nsession.\n\n#>\nfunction global:deactivate ([switch]$NonDestructive) {\n    # Revert to original values\n\n    # The prior prompt:\n    if (Test-Path -Path Function:_OLD_VIRTUAL_PROMPT) {\n        Copy-Item -Path Function:_OLD_VIRTUAL_PROMPT -Destination Function:prompt\n        Remove-Item -Path Function:_OLD_VIRTUAL_PROMPT\n    }\n\n    # The prior PYTHONHOME:\n    if (Test-Path -Path Env:_OLD_VIRTUAL_PYTHONHOME) {\n        Copy-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME -Destination Env:PYTHONHOME\n        Remove-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME\n    }\n\n    # The prior PATH:\n    if (Test-Path -Path Env:_OLD_VIRTUAL_PATH) {\n        Copy-Item -Path Env:_OLD_VIRTUAL_PATH -Destination Env:PATH\n        Remove-Item -Path Env:_OLD_VIRTUAL_PATH\n    }\n\n    # Just remove the VIRTUAL_ENV altogether:\n    if (Test-Path -Path Env:VIRTUAL_ENV) {\n        Remove-Item -Path env:VIRTUAL_ENV\n    }\n\n    # Just remove VIRTUAL_ENV_PROMPT altogether.\n    if (Test-Path -Path Env:VIRTUAL_ENV_PROMPT) {\n        Remove-Item -Path env:VIRTUAL_ENV_PROMPT\n    }\n\n    # Just remove the _PYTHON_VENV_PROMPT_PREFIX altogether:\n    if (Get-Variable -Name \"_PYTHON_VENV_PROMPT_PREFIX\" -ErrorAction SilentlyContinue) {\n        Remove-Variable -Name _PYTHON_VENV_PROMPT_PREFIX -Scope Global -Force\n    }\n\n    # Leave deactivate function in the global namespace if requested:\n    if (-not $NonDestructive) {\n        Remove-Item -Path function:deactivate\n    }\n}\n\n<#\n.Description\nGet-PyVenvConfig parses the values from the pyvenv.cfg file located in the\ngiven folder, and returns them in a map.\n\nFor each line in the pyvenv.cfg file, if that line can be parsed into exactly\ntwo strings separated by `=` (with any amount of whitespace surrounding the =)\nthen it is considered a `key = value` line. The left hand string is the key,\nthe right hand is the value.\n\nIf the value starts with a `'` or a `\"` then the first and last character is\nstripped from the value before being captured.\n\n.Parameter ConfigDir\nPath to the directory that contains the `pyvenv.cfg` file.\n#>\nfunction Get-PyVenvConfig(\n    [String]\n    $ConfigDir\n) {\n    Write-Verbose \"Given ConfigDir=$ConfigDir, obtain values in pyvenv.cfg\"\n\n    # Ensure the file exists, and issue a warning if it doesn't (but still allow the function to continue).\n    $pyvenvConfigPath = Join-Path -Resolve -Path $ConfigDir -ChildPath 'pyvenv.cfg' -ErrorAction Continue\n\n    # An empty map will be returned if no config file is found.\n    $pyvenvConfig = @{ }\n\n    if ($pyvenvConfigPath) {\n\n        Write-Verbose \"File exists, parse `key = value` lines\"\n        $pyvenvConfigContent = Get-Content -Path $pyvenvConfigPath\n\n        $pyvenvConfigContent | ForEach-Object {\n            $keyval = $PSItem -split \"\\s*=\\s*\", 2\n            if ($keyval[0] -and $keyval[1]) {\n                $val = $keyval[1]\n\n                # Remove extraneous quotations around a string value.\n                if (\"'\"\"\".Contains($val.Substring(0, 1))) {\n                    $val = $val.Substring(1, $val.Length - 2)\n                }\n\n                $pyvenvConfig[$keyval[0]] = $val\n                Write-Verbose \"Adding Key: '$($keyval[0])'='$val'\"\n            }\n        }\n    }\n    return $pyvenvConfig\n}\n\n\n<# Begin Activate script --------------------------------------------------- #>\n\n# Determine the containing directory of this script\n$VenvExecPath = Split-Path -Parent $MyInvocation.MyCommand.Definition\n$VenvExecDir = Get-Item -Path $VenvExecPath\n\nWrite-Verbose \"Activation script is located in path: '$VenvExecPath'\"\nWrite-Verbose \"VenvExecDir Fullname: '$($VenvExecDir.FullName)\"\nWrite-Verbose \"VenvExecDir Name: '$($VenvExecDir.Name)\"\n\n# Set values required in priority: CmdLine, ConfigFile, Default\n# First, get the location of the virtual environment, it might not be\n# VenvExecDir if specified on the command line.\nif ($VenvDir) {\n    Write-Verbose \"VenvDir given as parameter, using '$VenvDir' to determine values\"\n}\nelse {\n    Write-Verbose \"VenvDir not given as a parameter, using parent directory name as VenvDir.\"\n    $VenvDir = $VenvExecDir.Parent.FullName.TrimEnd(\"\\\\/\")\n    Write-Verbose \"VenvDir=$VenvDir\"\n}\n\n# Next, read the `pyvenv.cfg` file to determine any required value such\n# as `prompt`.\n$pyvenvCfg = Get-PyVenvConfig -ConfigDir $VenvDir\n\n# Next, set the prompt from the command line, or the config file, or\n# just use the name of the virtual environment folder.\nif ($Prompt) {\n    Write-Verbose \"Prompt specified as argument, using '$Prompt'\"\n}\nelse {\n    Write-Verbose \"Prompt not specified as argument to script, checking pyvenv.cfg value\"\n    if ($pyvenvCfg -and $pyvenvCfg['prompt']) {\n        Write-Verbose \"  Setting based on value in pyvenv.cfg='$($pyvenvCfg['prompt'])'\"\n        $Prompt = $pyvenvCfg['prompt'];\n    }\n    else {\n        Write-Verbose \"  Setting prompt based on parent's directory's name. (Is the directory name passed to venv module when creating the virtual environment)\"\n        Write-Verbose \"  Got leaf-name of $VenvDir='$(Split-Path -Path $venvDir -Leaf)'\"\n        $Prompt = Split-Path -Path $venvDir -Leaf\n    }\n}\n\nWrite-Verbose \"Prompt = '$Prompt'\"\nWrite-Verbose \"VenvDir='$VenvDir'\"\n\n# Deactivate any currently active virtual environment, but leave the\n# deactivate function in place.\ndeactivate -nondestructive\n\n# Now set the environment variable VIRTUAL_ENV, used by many tools to determine\n# that there is an activated venv.\n$env:VIRTUAL_ENV = $VenvDir\n\n$env:VIRTUAL_ENV_PROMPT = $Prompt\n\nif (-not $Env:VIRTUAL_ENV_DISABLE_PROMPT) {\n\n    Write-Verbose \"Setting prompt to '$Prompt'\"\n\n    # Set the prompt to include the env name\n    # Make sure _OLD_VIRTUAL_PROMPT is global\n    function global:_OLD_VIRTUAL_PROMPT { \"\" }\n    Copy-Item -Path function:prompt -Destination function:_OLD_VIRTUAL_PROMPT\n    New-Variable -Name _PYTHON_VENV_PROMPT_PREFIX -Description \"Python virtual environment prompt prefix\" -Scope Global -Option ReadOnly -Visibility Public -Value $Prompt\n\n    function global:prompt {\n        Write-Host -NoNewline -ForegroundColor Green \"($_PYTHON_VENV_PROMPT_PREFIX) \"\n        _OLD_VIRTUAL_PROMPT\n    }\n}\n\n# Clear PYTHONHOME\nif (Test-Path -Path Env:PYTHONHOME) {\n    Copy-Item -Path Env:PYTHONHOME -Destination Env:_OLD_VIRTUAL_PYTHONHOME\n    Remove-Item -Path Env:PYTHONHOME\n}\n\n# Add the venv to the PATH\nCopy-Item -Path Env:PATH -Destination Env:_OLD_VIRTUAL_PATH\n$Env:PATH = \"$VenvExecDir$([System.IO.Path]::PathSeparator)$Env:PATH\"\n"
+    },
+    {
+      "path": "Scripts/capture_screen.ps1",
+      "size_bytes": 6721,
+      "summary": "param(",
+      "content": "param(\n    [string]$Out,\n    [string]$OutDir,\n    [int]$Seconds = 0,\n    [int]$Fps = 1,\n    [switch]$StampTime,\n    [string]$OutVideo,\n    [string]$OutGif,\n    [switch]$KeepFrames,\n    [string]$FfmpegExe\n)\n\n# Ensure required .NET assemblies are available (Windows only)\ntry {\n    Add-Type -AssemblyName System.Drawing -ErrorAction Stop\n    Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop\n} catch {\n    Write-Error \"Failed to load required .NET assemblies (System.Drawing, System.Windows.Forms). This script requires Windows PowerShell on Windows. Error: $_\"\n    exit 1\n}\n\nfunction New-TimestampString {\n    Get-Date -Format \"yyyyMMdd_HHmmss_fff\"\n}\n\nfunction Get-VirtualScreenBounds {\n    $vs = [System.Windows.Forms.SystemInformation]::VirtualScreen\n    return [PSCustomObject]@{\n        Left   = $vs.Left\n        Top    = $vs.Top\n        Width  = $vs.Width\n        Height = $vs.Height\n    }\n}\n\nfunction Save-Screenshot {\n    param(\n        [string]$Path,\n        [switch]$StampTime\n    )\n\n    $bounds = Get-VirtualScreenBounds\n\n    $bmp = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height\n    $gfx = [System.Drawing.Graphics]::FromImage($bmp)\n    $gfx.CopyFromScreen($bounds.Left, $bounds.Top, 0, 0, $bmp.Size)\n\n    if ($StampTime) {\n        $stamp = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss.fff')\n        $font = New-Object System.Drawing.Font('Segoe UI', 16, [System.Drawing.FontStyle]::Bold)\n        $brushBg = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(160, 0, 0, 0))\n        $brushFg = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::White)\n        $padding = 8\n        $size = $gfx.MeasureString($stamp, $font)\n\n        $w = [single]($size.Width + ($padding * 2))\n        $h = [single]($size.Height + ($padding * 2))\n        $rect = [System.Drawing.RectangleF]::new([single]$padding, [single]$padding, $w, $h)\n        $gfx.FillRectangle($brushBg, $rect)\n\n        $textX = [single]($padding * 2)\n        $textY = [single]($padding * 2)\n        $gfx.DrawString($stamp, $font, $brushFg, $textX, $textY)\n\n        $brushBg.Dispose(); $brushFg.Dispose(); $font.Dispose()\n    }\n\n    $dir = Split-Path -Parent $Path\n    if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }\n\n    $bmp.Save($Path, [System.Drawing.Imaging.ImageFormat]::Png)\n\n    $gfx.Dispose(); $bmp.Dispose()\n}\n\n# Resolve defaults\nif (-not $Out -and $Seconds -le 0) {\n    $Out = Join-Path -Path (Join-Path -Path (Get-Location) -ChildPath 'logs/screens') -ChildPath (\"screen_\" + (New-TimestampString) + \".png\")\n}\n\nif ($Seconds -gt 0 -and -not $OutDir) {\n    $OutDir = Join-Path -Path (Join-Path -Path (Get-Location) -ChildPath 'logs/screens') -ChildPath (\"rec_\" + (New-TimestampString))\n}\n\nif ($Out) {\n    $outParent = Split-Path -Parent $Out\n    if ($outParent -and -not (Test-Path $outParent)) { New-Item -ItemType Directory -Force -Path $outParent | Out-Null }\n}\n\nif ($OutDir) {\n    if (-not (Test-Path $OutDir)) { New-Item -ItemType Directory -Force -Path $OutDir | Out-Null }\n}\n\nif ($Seconds -le 0) {\n    # Single screenshot mode\n    Write-Host \"Capturing full virtual screen to: $Out\"\n    Save-Screenshot -Path $Out -StampTime:$StampTime\n    Write-Host \"Saved: $Out\"\n    exit 0\n}\n\n# Recording mode (time-lapse frames)\nif ($Fps -lt 1) { $Fps = 1 }\n$intervalMs = [int](1000 / $Fps)\n$totalFrames = [int]($Seconds * $Fps)\n\nWrite-Host \"Recording $totalFrames frame(s) at $Fps fps for $Seconds second(s) into: $OutDir\"\n\n$sw = [System.Diagnostics.Stopwatch]::StartNew()\nfor ($i = 0; $i -lt $totalFrames; $i++) {\n    $path = Join-Path $OutDir (\"frame_\" + $i.ToString('D5') + \".png\")\n\n    Save-Screenshot -Path $path -StampTime:$StampTime\n\n    # Maintain cadence\n    $elapsedThis = $sw.ElapsedMilliseconds\n    $targetNext = ($i + 1) * $intervalMs\n    $sleepMs = [int]($targetNext - $elapsedThis)\n    if ($sleepMs -gt 0) { Start-Sleep -Milliseconds $sleepMs }\n}\n$sw.Stop()\n\nWrite-Host \"Recording complete. Frames saved to: $OutDir\"\n\n# Optional rendering via ffmpeg\n$wantsVideo = [string]::IsNullOrWhiteSpace($OutVideo) -eq $false\n$wantsGif = [string]::IsNullOrWhiteSpace($OutGif) -eq $false\n\nif ($wantsVideo -or $wantsGif) {\n    $ffmpeg = $null\n    if ($FfmpegExe) {\n        if (Test-Path $FfmpegExe) { $ffmpeg = $FfmpegExe } else { Write-Warning \"Provided -FfmpegExe not found: $FfmpegExe\" }\n    }\n    if (-not $ffmpeg) {\n        $cmd = Get-Command ffmpeg -ErrorAction SilentlyContinue\n        if ($cmd) { $ffmpeg = $cmd.Source }\n    }\n\n    if (-not $ffmpeg) {\n        Write-Warning \"ffmpeg not found in PATH and -FfmpegExe not provided. Skipping render. Frames remain in $OutDir\"\n        exit 0\n    }\n\n    Push-Location $OutDir\n    try {\n        if ($wantsVideo) {\n            $absVideo = Resolve-Path -LiteralPath $OutVideo -ErrorAction SilentlyContinue\n            if (-not $absVideo) {\n                $videoParent = Split-Path -Parent $OutVideo\n                if ($videoParent -and -not (Test-Path $videoParent)) { New-Item -ItemType Directory -Force -Path $videoParent | Out-Null }\n            }\n            Write-Host \"Rendering MP4 via ffmpeg -> $OutVideo\"\n            & $ffmpeg -y -loglevel error -framerate $Fps -i \"frame_%05d.png\" -pix_fmt yuv420p -vf \"pad=ceil(iw/2)*2:ceil(ih/2)*2\" \"$OutVideo\"\n            if ($LASTEXITCODE -ne 0) { Write-Warning \"ffmpeg MP4 render failed with exit code $LASTEXITCODE\" } else { Write-Host \"MP4 written: $OutVideo\" }\n        }\n\n        if ($wantsGif) {\n            $palette = \"palette.png\"\n            Write-Host \"Generating GIF palette\"\n            & $ffmpeg -y -loglevel error -i \"frame_%05d.png\" -vf \"palettegen=stats_mode=diff\" $palette\n            if ($LASTEXITCODE -eq 0) {\n                Write-Host \"Rendering GIF via palette -> $OutGif\"\n                & $ffmpeg -y -loglevel error -framerate $Fps -i \"frame_%05d.png\" -i $palette -lavfi \"paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle\" \"$OutGif\"\n                if ($LASTEXITCODE -ne 0) { Write-Warning \"ffmpeg GIF render failed with exit code $LASTEXITCODE\" } else { Write-Host \"GIF written: $OutGif\" }\n            } else {\n                Write-Warning \"Palette generation failed; skipping GIF render\"\n            }\n            if (Test-Path $palette) { Remove-Item $palette -Force -ErrorAction SilentlyContinue }\n        }\n    }\n    finally {\n        Pop-Location\n    }\n\n    if (-not $KeepFrames) {\n        Write-Host \"Cleaning up frames in $OutDir\"\n        Remove-Item (Join-Path $OutDir \"frame_*.png\") -Force -ErrorAction SilentlyContinue\n    }\n}"
+    },
+    {
+      "path": "Scripts/commit_and_verify_2plus2.ps1",
+      "size_bytes": 2350,
+      "summary": "param(",
+      "content": "param(\n    [ValidateSet('app','vscode')]\n    [string]$Mode = 'vscode',\n    [int]$StartAfterSeconds = 1,\n    [int]$WaitAfterCommitSeconds = 6,\n    [string]$LogPath = 'logs/actions/commit_verify_2plus2.log'\n)\n\n$ErrorActionPreference = 'Stop'\n\nfunction Log-Line([string]$line) {\n    if ([string]::IsNullOrWhiteSpace($LogPath)) { return }\n    try {\n        $dir = Split-Path $LogPath -Parent\n        if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }\n        Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] \" + $line) -Encoding UTF8\n    } catch {}\n}\n\n$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n$commitPs1 = Join-Path $root 'scripts/copilot_commit.ps1'\n$py = Join-Path $root 'Scripts/python.exe'\n$verifyPy = Join-Path $root 'Scripts/verify_reply_2plus2.py'\nif (-not (Test-Path $commitPs1)) { throw \"Missing: $commitPs1\" }\nif (-not (Test-Path $py)) { throw \"Missing python: $py\" }\nif (-not (Test-Path $verifyPy)) { throw \"Missing verifier: $verifyPy\" }\n\nLog-Line \"START commit+verify 2+2 Mode=$Mode\"\n\n# Preflight: close any disallowed foreground windows\ntry {\n    $pyObs = Start-Process -FilePath $py -ArgumentList @('Scripts/observe_and_react.py','--ticks','6','--interval-ms','350','--log','logs/tests/observe_react_precommit.jsonl') -PassThru -NoNewWindow -Wait\n} catch {}\n\n# Run a single commit with '2+2' safely\n$p = Start-Process -FilePath \"powershell\" -ArgumentList @(\n    '-NoProfile','-ExecutionPolicy','Bypass','-File',$commitPs1,\n    '-Mode',$Mode,\n    '-StartAfterSeconds',$StartAfterSeconds,\n    '-RepeatSeconds',0,\n    '-RepeatCount',1,\n    '-IdleMinMs',0,\n    '-OcrGateSeconds',5,\n    '-Message','2+2',\n    '-LogPath','logs/actions/copilot_commit_safe.log'\n) -PassThru\n$p.WaitForExit() | Out-Null\n\n# Wait for response to render\nStart-Sleep -Seconds ([int][Math]::Max(1,$WaitAfterCommitSeconds))\n\n# Verify OCR contains '4'\n$verify = Start-Process -FilePath $py -ArgumentList @($verifyPy) -PassThru -NoNewWindow -Wait\n$code = $verify.ExitCode\nif ($code -eq 0) {\n    Log-Line 'VERIFY PASS (found 4)'\n    Write-Host 'PASS: found 4' -ForegroundColor Green\n    exit 0\n} else {\n    Log-Line 'VERIFY FAIL (no 4)'\n    Write-Host 'FAIL: no 4 found' -ForegroundColor Red\n    exit 1\n}\n"
+    },
+    {
+      "path": "Scripts/commit_loop_smoke.ps1",
+      "size_bytes": 1075,
+      "summary": "param(",
+      "content": "param(\n    [ValidateSet(\"app\",\"vscode\")] [string]$Mode = 'app',\n    [string]$Title = 'Copilot'\n)\n\n$root = Split-Path $PSScriptRoot -Parent\n$logDir = Join-Path $root 'logs\\actions'\nif (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }\n$logPath = Join-Path $logDir 'copilot_commit_smoke.log'\ntry { Remove-Item -Path $logPath -Force -ErrorAction SilentlyContinue } catch {}\n\n$scriptPath = Join-Path $PSScriptRoot 'copilot_commit.ps1'\n\nWrite-Host \"Starting loop smoke...\" -ForegroundColor Cyan\n$argsList = @(\n  '-NoProfile','-ExecutionPolicy','Bypass','-File', $scriptPath,\n  '-Mode', $Mode,\n  '-Title', $Title,\n  '-StartAfterSeconds', '1',\n  '-RepeatSeconds', '2',\n  '-RepeatCount', '2',\n  '-Message', 'Auto message from powershell — see projects/Self-Improve/next_steps.md',\n  '-LogPath', $logPath\n)\n& powershell @argsList\n\nWrite-Host \"Loop completed. Log:\" -ForegroundColor Green\ntry {\n  Get-Content -Path $logPath -ErrorAction Stop\n} catch {\n  Write-Host '(no log entries)' -ForegroundColor Yellow\n}\n"
+    },
+    {
+      "path": "Scripts/copilot_commit.ps1",
+      "size_bytes": 15368,
+      "summary": "param(",
+      "content": "param(\n    [ValidateSet(\"app\",\"vscode\")]\n    [string]$Mode = \"app\",\n    [int]$DelayMs = 250,\n    [int]$StartAfterSeconds = 0,\n    [int]$RepeatSeconds = 0,\n    [int]$RepeatCount = 1,\n    [int]$IdleMinMs = 1000,\n    [int]$MaxWaitSeconds = 30,\n    [string]$Message = \"\",\n    [string]$Title = \"\",\n    [string]$LogPath = \"\",\n    [switch]$AllowProtocolFallback = $false,\n    [int]$OcrGateSeconds = 0\n)\n\n# Initialize logging early so failures are visible\nif (-not [string]::IsNullOrWhiteSpace($LogPath)) {\n    try {\n        $dir = Split-Path $LogPath -Parent\n        if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }\n        if (-not (Test-Path $LogPath)) { New-Item -ItemType File -Path $LogPath -Force | Out-Null }\n        Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] START Mode=$Mode StartAfter=$StartAfterSeconds RepeatSeconds=$RepeatSeconds RepeatCount=$RepeatCount Title='$Title'\") -Encoding UTF8\n    } catch { }\n}\n\ntry {\n    Add-Type -AssemblyName System.Windows.Forms | Out-Null\n    $wshell = New-Object -ComObject WScript.Shell\n} catch {\n    if (-not [string]::IsNullOrWhiteSpace($LogPath)) {\n        Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] ERROR init COM: \" + $_.Exception.Message) -Encoding UTF8\n    }\n    exit 1\n}\n\n# Idle detection via GetLastInputInfo\ntry {\n$src = @'\nusing System;\nusing System.Runtime.InteropServices;\npublic static class IdleUtil {\n    [StructLayout(LayoutKind.Sequential)]\n    struct LASTINPUTINFO {\n        public uint cbSize;\n        public uint dwTime;\n    }\n    [DllImport(\"user32.dll\")]\n    static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);\n    public static uint GetIdleMs(){\n        LASTINPUTINFO lii = new LASTINPUTINFO();\n        lii.cbSize = (uint)System.Runtime.InteropServices.Marshal.SizeOf(lii);\n        if(!GetLastInputInfo(ref lii)) return 0u;\n        return (uint)Environment.TickCount - lii.dwTime;\n    }\n}\n'@\nAdd-Type -TypeDefinition $src -ErrorAction SilentlyContinue\n} catch { }\nfunction Get-IdleMs { try { return [IdleUtil]::GetIdleMs() } catch { return 0 } }\n\n# Foreground window helpers (title/class) for focus gating diagnostics\ntry {\n$fgSrc = @'\nusing System;\nusing System.Text;\nusing System.Runtime.InteropServices;\npublic static class FgWin {\n    [DllImport(\"user32.dll\")] static extern IntPtr GetForegroundWindow();\n    [DllImport(\"user32.dll\", SetLastError=true, CharSet=CharSet.Auto)] static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);\n    [DllImport(\"user32.dll\", SetLastError=true, CharSet=CharSet.Auto)] static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);\n    public static string[] Info(){\n        var h = GetForegroundWindow();\n        var sb = new StringBuilder(512);\n        var sc = new StringBuilder(256);\n        GetWindowText(h, sb, sb.Capacity);\n        GetClassName(h, sc, sc.Capacity);\n        return new string[]{ sb.ToString() ?? string.Empty, sc.ToString() ?? string.Empty };\n    }\n}\n'@\nAdd-Type -TypeDefinition $fgSrc -ErrorAction SilentlyContinue\n} catch { }\nfunction Get-FgInfo {\n    try { $arr = [FgWin]::Info(); return @{ title = ($arr[0] -as [string]); class = ($arr[1] -as [string]) } } catch { return @{ title = ''; class = '' } }\n}\n\n# Foreground process name helper to positively identify VS Code vs browsers\ntry {\n$fgProcSrc = @'\nusing System;\nusing System.Text;\nusing System.Runtime.InteropServices;\nusing System.Diagnostics;\npublic static class FgProc {\n    [DllImport(\"user32.dll\")] static extern IntPtr GetForegroundWindow();\n    [DllImport(\"user32.dll\")] static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);\n    public static string Name(){\n        var h = GetForegroundWindow();\n        if (h == IntPtr.Zero) return string.Empty;\n        uint pid; GetWindowThreadProcessId(h, out pid);\n        try { var p = Process.GetProcessById((int)pid); return (p?.ProcessName) ?? string.Empty; } catch { return string.Empty; }\n    }\n}\n'@\nAdd-Type -TypeDefinition $fgProcSrc -ErrorAction SilentlyContinue\n} catch { }\nfunction Get-FgProcName { try { return ([FgProc]::Name() + '') } catch { return '' } }\n\nfunction Wait-Sleep([int]$ms) {\n    Start-Sleep -Milliseconds $ms\n}\n\nfunction Log-Line([string]$line) {\n    if (-not [string]::IsNullOrWhiteSpace($LogPath)) {\n        try { Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] \" + $line) -Encoding UTF8 } catch {}\n    }\n}\n\nfunction Write-ErrorEvent([string]$type, [string]$message, [hashtable]$data) {\n    try {\n        $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n        $errDir = Join-Path $root 'logs/errors'\n        if (-not (Test-Path $errDir)) { New-Item -ItemType Directory -Path $errDir -Force | Out-Null }\n        $path = Join-Path $errDir 'events.jsonl'\n        $obj = [ordered]@{\n            ts = (Get-Date).ToString('s')\n            source = 'copilot_commit.ps1'\n            type = $type\n            message = $message\n            data = $data\n        }\n        $json = $obj | ConvertTo-Json -Depth 6 -Compress\n        Add-Content -Path $path -Value $json -Encoding UTF8\n    } catch { }\n}\n\nfunction Send-Keys([string]$keys) {\n    $wshell.SendKeys($keys)\n    Wait-Sleep -ms $DelayMs\n}\n\nfunction Send-Text([string]$text) {\n    if ([string]::IsNullOrWhiteSpace($text)) { return }\n    # Minimal escaping for braces used by SendKeys\n    $escaped = $text.Replace(\"{\", \"{{}\").Replace(\"}\", \"{}}\")\n    $wshell.SendKeys($escaped)\n    Wait-Sleep -ms $DelayMs\n}\n\nfunction Focus-Target() {\n    $t = $Title\n    if ([string]::IsNullOrWhiteSpace($t)) {\n        $t = if ($Mode -eq 'app') { 'Copilot' } else { 'Visual Studio Code' }\n    }\n    if ($Mode -eq 'app') {\n        $candidates = @()\n        if (-not [string]::IsNullOrWhiteSpace($Title)) { $candidates += $Title }\n        $candidates += @('Copilot','Microsoft Copilot','Copilot (Preview)')\n        $activated = $false\n        foreach ($cand in $candidates) {\n            try { $activated = [bool]($wshell.AppActivate($cand)) } catch { $activated = $false }\n            if ($activated) { Log-Line \"FOCUS ok title='$cand'\"; break } else { Log-Line \"FOCUS miss title='$cand'\" }\n        }\n        if (-not $activated) {\n            if ($AllowProtocolFallback) {\n                # Fallback: try to open Copilot via protocol handler\n                try {\n                    Start-Process \"ms-copilot:\" | Out-Null\n                    Wait-Sleep 800\n                    foreach ($cand in $candidates) {\n                        try { $activated = [bool]($wshell.AppActivate($cand)) } catch { $activated = $false }\n                        if ($activated) { Log-Line \"FOCUS ok after ms-copilot title='$cand'\"; break } else { Log-Line \"FOCUS miss after ms-copilot title='$cand'\" }\n                    }\n                } catch { Log-Line (\"FOCUS fallback error: \" + $_.Exception.Message) }\n            } else {\n                Log-Line \"FOCUS fallback disabled (no ms-copilot launch). Will skip sending keys this iteration.\"\n            }\n        }\n        Wait-Sleep 300\n        return $activated\n    }\n    # VS Code focus\n    $cvc = @()\n    if (-not [string]::IsNullOrWhiteSpace($Title)) { $cvc += $Title }\n    $cvc += @('Visual Studio Code','Code')\n    $vok = $false\n    foreach ($cand in $cvc) {\n        try { $vok = [bool]($wshell.AppActivate($cand)) } catch { $vok = $false }\n        if ($vok) { Log-Line \"FOCUS ok title='$cand'\"; break } else { Log-Line \"FOCUS miss title='$cand'\" }\n    }\n    if (-not $vok) {\n        Log-Line \"FOCUS vscode failed; will skip sending keys this iteration.\"\n        Write-ErrorEvent -type 'focus_failed' -message 'Could not focus VS Code' -data @{ mode = $Mode; title = $Title }\n        return $false\n    }\n    Wait-Sleep 300\n    # Log current foreground info for diagnostics\n    $fg = Get-FgInfo\n    if ($fg.title) { Log-Line (\"FOREGROUND title='\" + $fg.title + \"' class='\" + $fg.class + \"'\") }\n    $pname = (Get-FgProcName).ToLower()\n    if ($pname -notmatch 'code') {\n        Log-Line (\"FOREGROUND process is not Code.exe (got '\" + $pname + \"'); skipping palette focus\")\n        Write-ErrorEvent -type 'foreground_process_not_vscode' -message 'Process guarding blocked palette focus' -data @{ proc = $pname; title = $fg.title; class = $fg.class }\n        return $false\n    }\n    # Ctrl+Shift+P to open palette and try to focus chat\n    Send-Keys('^+p')\n    Wait-Sleep 350\n    $cmds = @(\n        'GitHub Copilot Chat: Focus on Chat View',\n        'Open View: GitHub Copilot Chat',\n        'View: Focus on Chat'\n    )\n    foreach ($c in $cmds) {\n        $wshell.SendKeys($c)\n        Wait-Sleep 250\n        Send-Keys('{ENTER}')\n        Wait-Sleep 500\n        Log-Line \"FOCUS vscode chat via palette command='$c'\"\n    }\n    return $true\n}\n\nfunction Run-GatherEvidence() {\n    try {\n        $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n        $pythonExe = Join-Path $root 'Scripts/python.exe'\n        $gatherPy = Join-Path $root 'Scripts/gather_chat_evidence.py'\n        if ((Test-Path $pythonExe) -and (Test-Path $gatherPy)) {\n            $proc = Start-Process -FilePath $pythonExe -ArgumentList @($gatherPy) -PassThru -NoNewWindow -Wait\n            Log-Line (\"EVIDENCE exit=\" + $proc.ExitCode)\n        }\n    } catch { Log-Line (\"EVIDENCE error: \" + $_.Exception.Message) }\n}\n\ntry {\n    if ($StartAfterSeconds -gt 0) { Start-Sleep -Seconds $StartAfterSeconds }\n    # Resolve project root and Python for optional OCR gate\n    $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n    $pythonExe = Join-Path $root 'Scripts/python.exe'\n    $ocrGatePy = Join-Path $root 'Scripts/ocr_gate_chat_ready.py'\n    $count = [int]$RepeatCount\n    $i = 0\n    do {\n        $focusOk = Focus-Target\n        # Guard: if the foreground looks like a browser, do not proceed\n        $fg = Get-FgInfo\n        $titleLc = ($fg.title + '').ToLower()\n        if (($titleLc -match 'edge' -or $titleLc -match 'chrome') -and ($titleLc -notmatch 'copilot')) {\n            Log-Line (\"SKIP iteration: foreground appears to be browser title='\" + $fg.title + \"'\")\n            Write-ErrorEvent -type 'browser_foreground_detected' -message 'Foreground appears to be browser; skipping' -data @{ title = $fg.title; class = $fg.class }\n            # Attempt proactive remediation by invoking the observer to close disallowed foreground\n            try {\n                $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n                $pythonExe = Join-Path $root 'Scripts/python.exe'\n                $observerPy = Join-Path $root 'Scripts/observe_and_react.py'\n                if (Test-Path $pythonExe -and (Test-Path $observerPy)) {\n                    Start-Process -FilePath $pythonExe -ArgumentList @($observerPy,'--ticks','4','--interval-ms','350','--log','logs/tests/observe_react_autoclose.jsonl') -PassThru -NoNewWindow -Wait | Out-Null\n                }\n            } catch { }\n            $i++\n            if (($RepeatSeconds -gt 0) -and (($RepeatCount -le 0) -or ($i -lt $RepeatCount))) { Start-Sleep -Seconds $RepeatSeconds }\n            Run-GatherEvidence\n            continue\n        }\n        # Nudge focus to input (best-effort)\n        if (-not $focusOk) {\n            Log-Line \"SKIP iteration: focus not confirmed\"\n            $i++\n            if (($RepeatSeconds -gt 0) -and (($RepeatCount -le 0) -or ($i -lt $RepeatCount))) { Start-Sleep -Seconds $RepeatSeconds }\n            continue\n        }\n        # Optional OCR gate: ensure chat region is ready (VS Code mode only)\n        if (($Mode -eq 'vscode') -and ($OcrGateSeconds -gt 0) -and (Test-Path $pythonExe) -and (Test-Path $ocrGatePy)) {\n            $deadline = (Get-Date).AddSeconds([double]$OcrGateSeconds)\n            $ready = $false\n            while (-not $ready -and (Get-Date) -lt $deadline) {\n                try {\n                    $proc = Start-Process -FilePath $pythonExe -ArgumentList @($ocrGatePy) -PassThru -NoNewWindow -Wait\n                    $ready = ($proc.ExitCode -eq 0)\n                } catch { $ready = $false }\n                if (-not $ready) { Start-Sleep -Milliseconds 700 }\n            }\n            if (-not $ready) {\n                Log-Line \"SKIP iteration: OCR gate not ready within ${OcrGateSeconds}s\"\n                $i++\n                if (($RepeatSeconds -gt 0) -and (($RepeatCount -le 0) -or ($i -lt $RepeatCount))) { Start-Sleep -Seconds $RepeatSeconds }\n                continue\n            } else {\n                Log-Line \"OCR gate passed\"\n            }\n        }\n        Send-Keys('{TAB}')\n        Send-Keys('{TAB}')\n        # Wait for user idle if requested\n        if ($IdleMinMs -gt 0) {\n            $deadline = (Get-Date).AddSeconds([double]([Math]::Max(0, $MaxWaitSeconds)))\n            while ((Get-IdleMs) -lt [Math]::Max(0, $IdleMinMs)) {\n                if ((Get-Date) -ge $deadline) { Log-Line \"IDLE wait timeout; skipping send this iteration\"; break }\n                Wait-Sleep 250\n            }\n        }\n        $isIdle = (Get-IdleMs) -ge [Math]::Max(0, $IdleMinMs)\n        # Optional message input\n        if ($isIdle) {\n            # Final guard: verify VS Code still in foreground\n            $fg2 = Get-FgInfo\n            $t2 = ($fg2.title + '').ToLower()\n            if ($t2 -notmatch 'visual studio code') {\n                Log-Line (\"SKIP send: foreground not VS Code title='\" + $fg2.title + \"'\")\n                Write-ErrorEvent -type 'foreground_not_vscode_before_send' -message 'Blocked send: foreground is not VS Code' -data @{ title = $fg2.title; class = $fg2.class }\n                $i++\n                if (($RepeatSeconds -gt 0) -and (($RepeatCount -le 0) -or ($i -lt $RepeatCount))) { Start-Sleep -Seconds $RepeatSeconds }\n                Run-GatherEvidence\n                continue\n            }\n            if (-not [string]::IsNullOrWhiteSpace($Message)) {\n                Send-Text($Message)\n            }\n            # Commit current input: Ctrl+Enter then Enter\n            Send-Keys('^({ENTER})')\n            Send-Keys('{ENTER}')\n            if (-not [string]::IsNullOrWhiteSpace($LogPath)) {\n                Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] COMMIT iteration=\" + ($i+1)) -Encoding UTF8\n            }\n            # Gather evidence after commit\n            Run-GatherEvidence\n        } else {\n            Log-Line \"SKIP send due to active user\"\n            Run-GatherEvidence\n        }\n        $i++\n        if (($RepeatSeconds -gt 0) -and (($RepeatCount -le 0) -or ($i -lt $RepeatCount))) {\n            Start-Sleep -Seconds $RepeatSeconds\n        }\n    } while (($RepeatCount -le 0) -or ($i -lt $RepeatCount))\n} catch {\n    if (-not [string]::IsNullOrWhiteSpace($LogPath)) {\n        Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] ERROR runtime: \" + $_.Exception.Message) -Encoding UTF8\n    }\n    Write-Host \"Error: $($_.Exception.Message)\" -ForegroundColor Red\n    exit 1\n}\nexit 0\n"
+    },
+    {
+      "path": "Scripts/copilot_commit_start.ps1",
+      "size_bytes": 4057,
+      "summary": "param(",
+      "content": "param(\n    [ValidateSet(\"app\",\"vscode\")]\n    [string]$Mode = \"app\",\n    [int]$StartAfterSeconds = 0,\n    [int]$RepeatSeconds = 10,\n    [int]$RepeatCount = 0,\n    [int]$IdleMinMs = 0,\n    [int]$MaxWaitSeconds = 0,\n    [string]$Message = \"\",\n    [string]$Title = \"\",\n    [string]$LogPath = \"\",\n    [switch]$AllowProtocolFallback = $false,\n    [int]$OcrGateSeconds = 0\n)\n\n# Launch an external PowerShell that runs copilot_commit.ps1 with the given args\ntry {\n    $scriptPath = Join-Path $PSScriptRoot 'copilot_commit.ps1'\n    $argsList = @(\n        '-NoProfile',\n        '-ExecutionPolicy','Bypass',\n        '-File', $scriptPath,\n        '-Mode', $Mode,\n        '-StartAfterSeconds', $StartAfterSeconds,\n        '-RepeatSeconds', $RepeatSeconds,\n        '-RepeatCount', $RepeatCount\n    )\n        # Prevent duplicate loops: if a powershell already runs copilot_commit.ps1, skip\n        try {\n            $existing = Get-CimInstance Win32_Process -Filter \"Name = 'powershell.exe'\" | Where-Object { $_.CommandLine -match 'copilot_commit\\.ps1' }\n            if ($existing) {\n                # Still launch only if caller explicitly set RepeatCount (non-zero) to create a bounded run\n                if ($RepeatCount -le 0) {\n                    if ($LogPath) { Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] SKIP duplicate loop detected\") -Encoding UTF8 }\n                    exit 0\n                }\n            }\n        } catch {}\n\n        $quotedScript = '\"' + $scriptPath + '\"'\n        $argStr = \"-NoProfile -ExecutionPolicy Bypass -File $quotedScript -Mode $Mode -StartAfterSeconds $StartAfterSeconds -RepeatSeconds $RepeatSeconds -RepeatCount $RepeatCount\"\n    if (-not [string]::IsNullOrWhiteSpace($Message)) {\n        $argsList += @('-Message', $Message)\n    }\n    if (-not [string]::IsNullOrWhiteSpace($Title)) {\n        $argsList += @('-Title', $Title)\n    }\n    if ([string]::IsNullOrWhiteSpace($LogPath)) {\n        $logs = Resolve-Path (Join-Path (Split-Path $PSScriptRoot -Parent) 'logs\\actions') -ErrorAction SilentlyContinue\n        if (-not $logs) { $logs = Join-Path (Split-Path $PSScriptRoot -Parent) 'logs\\actions' }\n        try { New-Item -ItemType Directory -Path $logs -Force | Out-Null } catch {}\n        $LogPath = Join-Path $logs 'copilot_commit.log'\n    } else {\n        if (-not [System.IO.Path]::IsPathRooted($LogPath)) {\n            $LogPath = Join-Path (Split-Path $PSScriptRoot -Parent) $LogPath\n        }\n        $lpDir = Split-Path $LogPath -Parent\n        try { if (-not (Test-Path $lpDir)) { New-Item -ItemType Directory -Path $lpDir -Force | Out-Null } } catch {}\n    }\n    $argsList += @('-LogPath', $LogPath)\n        $qLog = '\"' + $LogPath + '\"'\n        $argStr = $argStr + \" -LogPath $qLog\"\n        if ($OcrGateSeconds -gt 0) { $argStr = $argStr + \" -OcrGateSeconds $OcrGateSeconds\" }\n        if ($IdleMinMs -gt 0) { $argStr = $argStr + \" -IdleMinMs $IdleMinMs\" }\n        if ($MaxWaitSeconds -gt 0) { $argStr = $argStr + \" -MaxWaitSeconds $MaxWaitSeconds\" }\n        if ($AllowProtocolFallback) { $argStr = $argStr + \" -AllowProtocolFallback\" }\n    # Write a LAUNCH line so we know the starter ran\n    try { Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] LAUNCH Mode=$Mode StartAfter=$StartAfterSeconds RepeatSeconds=$RepeatSeconds RepeatCount=$RepeatCount Title='$Title'\") -Encoding UTF8 } catch {}\n        try { Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] LAUNCH Mode=$Mode StartAfter=$StartAfterSeconds RepeatSeconds=$RepeatSeconds RepeatCount=$RepeatCount Title='$Title'\") -Encoding UTF8 } catch {}\n        $p = Start-Process -FilePath 'powershell.exe' -ArgumentList $argStr -WindowStyle Normal -PassThru\n    try { Add-Content -Path $LogPath -Value (\"[\" + (Get-Date).ToString('s') + \"] LAUNCHED pid=\" + $p.Id) -Encoding UTF8 } catch {}\n    exit 0\n} catch {\n    Write-Host \"Error launching external PowerShell: $($_.Exception.Message)\" -ForegroundColor Red\n    exit 1\n}\n"
+    },
+    {
+      "path": "Scripts/copilot_commit_stop.ps1",
+      "size_bytes": 1045,
+      "summary": "param(",
+      "content": "param(\n    [switch]$All,\n    [switch]$Quiet\n)\n\n# Stop any PowerShell process running copilot_commit.ps1\ntry {\n    $procs = Get-CimInstance Win32_Process -Filter \"Name = 'powershell.exe'\"\n    $targets = @()\n    foreach ($p in $procs) {\n        $cmd = ($p.CommandLine) -as [string]\n        if ($cmd -and ($cmd -match 'copilot_commit\\.ps1')) {\n            $targets += $p\n        }\n    }\n    if (-not $targets -or $targets.Count -eq 0) {\n        if (-not $Quiet) { Write-Host 'No commit loop processes found.' -ForegroundColor Yellow }\n        exit 0\n    }\n    foreach ($t in $targets) {\n        try { Stop-Process -Id $t.ProcessId -Force -ErrorAction Stop; if (-not $Quiet) { Write-Host \"Stopped PID $($t.ProcessId)\" -ForegroundColor Green } } catch { if (-not $Quiet) { Write-Host \"Failed to stop PID $($t.ProcessId): $($_.Exception.Message)\" -ForegroundColor Red } }\n    }\n    exit 0\n} catch {\n    if (-not $Quiet) { Write-Host \"Error enumerating processes: $($_.Exception.Message)\" -ForegroundColor Red }\n    exit 1\n}\n"
+    },
+    {
+      "path": "Scripts/copilot_commit_with_record.ps1",
+      "size_bytes": 4552,
+      "summary": "param(",
+      "content": "param(\n    # Commit loop params (forwarded to copilot_commit_start.ps1)\n    [ValidateSet('app','vscode')]\n    [string]$Mode = 'app',\n    [int]$StartAfterSeconds = 1,\n    [int]$RepeatSeconds = 10,\n    [int]$RepeatCount = 1,\n    [int]$IdleMinMs = 0,\n    [int]$MaxWaitSeconds = 0,\n    [string]$Message = 'Monitoring commit loop…',\n    [string]$Title = 'Copilot',\n    [string]$LogPath = 'logs/actions/copilot_commit.log',\n    [int]$OcrGateSeconds = 0,\n\n    # Recording options\n    [switch]$Record = $true,\n    [int]$RecordSeconds = 0,\n    [int]$RecordFps = 12,\n    [ValidateSet('auto','dxcam','mss')]\n    [string]$RecordBackend = 'mss',\n    [double]$RecordScale = 1.0,\n    [string]$RecordRegion = '', # format: x,y,w,h\n    [string]$RecordOut = '',\n\n    # Control\n    [switch]$Wait,\n    [switch]$AllowProtocolFallback = $false\n)\n\n$ErrorActionPreference = 'Stop'\n\nfunction New-TimestampString {\n    Get-Date -Format \"yyyyMMdd_HHmmss\"\n}\n\n# Resolve paths\n$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)\n$scriptsDir = Join-Path $root 'scripts'\n$commitStart = Join-Path $scriptsDir 'copilot_commit_start.ps1'\n$monitorPy = Join-Path $scriptsDir 'monitor_live.py'\n$pythonExe = Join-Path $root 'Scripts/python.exe'\n\nif (-not (Test-Path $commitStart)) { throw \"Missing commit starter: $commitStart\" }\nif ($Record -and -not (Test-Path $monitorPy)) { throw \"Missing monitor script: $monitorPy\" }\nif ($Record -and -not (Test-Path $pythonExe)) { throw \"Python interpreter not found: $pythonExe\" }\n\n# Compute default RecordOut and RecordSeconds when needed\nif ($Record) {\n    if (-not $RecordOut) {\n        $RecordOut = Join-Path $root (Join-Path 'logs/screens' (\"commit_rec_\" + (New-TimestampString) + \".mp4\"))\n    }\n    if ($RecordSeconds -le 0) {\n        if ($RepeatCount -gt 0) {\n            $RecordSeconds = [int]($StartAfterSeconds + ($RepeatSeconds * $RepeatCount) + 3)\n        } else {\n            Write-Warning \"RepeatCount is 0 (infinite). Provide -RecordSeconds to enable recording; skipping recording for now.\"\n            $Record = $false\n        }\n    }\n}\n\n# Ensure log and output dirs exist\n$logFull = Join-Path $root $LogPath\n$logDir = Split-Path -Parent $logFull\nif ($logDir -and -not (Test-Path $logDir)) { New-Item -ItemType Directory -Force -Path $logDir | Out-Null }\nif ($Record) {\n    $recDir = Split-Path -Parent $RecordOut\n    if ($recDir -and -not (Test-Path $recDir)) { New-Item -ItemType Directory -Force -Path $recDir | Out-Null }\n}\n\n# Build commit args\n$commitArgs = @(\n    \"-Mode\", $Mode,\n    \"-StartAfterSeconds\", $StartAfterSeconds,\n    \"-RepeatSeconds\", $RepeatSeconds,\n    \"-RepeatCount\", $RepeatCount,\n    \"-Message\", $Message,\n    \"-Title\", $Title,\n    \"-LogPath\", $LogPath\n)\nif ($OcrGateSeconds -gt 0) { $commitArgs += @('-OcrGateSeconds', $OcrGateSeconds) }\nif ($IdleMinMs -gt 0) { $commitArgs += @('-IdleMinMs', $IdleMinMs) }\nif ($MaxWaitSeconds -gt 0) { $commitArgs += @('-MaxWaitSeconds', $MaxWaitSeconds) }\nif ($AllowProtocolFallback) { $commitArgs += @('-AllowProtocolFallback') }\n\n# Start commit loop (new PowerShell)\nWrite-Host \"Launching commit loop via $commitStart\"\n$commitAllArgs = @('-NoProfile','-ExecutionPolicy','Bypass','-File', $commitStart) + $commitArgs\n$commitProc = Start-Process -FilePath \"powershell\" -ArgumentList $commitAllArgs -PassThru\n\n# Start recording (if enabled)\n$recProc = $null\nif ($Record) {\n    $recArgs = @('--seconds', $RecordSeconds, '--fps', $RecordFps, '--out', $RecordOut, '--backend', $RecordBackend, '--mark-assessed')\n    if ($RecordScale -ne 1.0) { $recArgs += @('--scale', $RecordScale) }\n    if ($RecordRegion) { $recArgs += @('--region', $RecordRegion) }\n    Write-Host \"Launching recorder: $RecordOut ($RecordSeconds s @ $RecordFps fps, backend=$RecordBackend)\"\n    $recAllArgs = @($monitorPy) + $recArgs\n    $recProc = Start-Process -FilePath $pythonExe -ArgumentList $recAllArgs -PassThru\n}\n\nif ($Wait) {\n    if ($recProc) { $recProc.WaitForExit() | Out-Null }\n    # Create sidecar marker if output exists (redundant safety if recorder didn't mark)\n    if ($Record -and $RecordOut -and (Test-Path $RecordOut)) {\n        $marker = \"$RecordOut.assessed\"\n        try { Set-Content -Path $marker -Value \"assessed\" -Encoding UTF8 -Force } catch {}\n    }\n    if ($commitProc) { $commitProc.WaitForExit() | Out-Null }\n}\n\nWrite-Host \"Started. Commit PID=$($commitProc.Id)\"; if ($recProc) { Write-Host \" Recorder PID=$($recProc.Id) -> $RecordOut\" }"
+    },
+    {
+      "path": "Scripts/create_desktop_shortcut.ps1",
+      "size_bytes": 847,
+      "summary": "param(",
+      "content": "param(\n    [string]$ShortcutName = \"AI_Coder_Controller.lnk\"\n)\n\n$desktop = [Environment]::GetFolderPath('Desktop')\n$shortcutPath = Join-Path $desktop $ShortcutName\n$root = Split-Path $PSScriptRoot -Parent\n$python = Join-Path $root \"Scripts\\python.exe\"\n\nif (-not (Test-Path $python)) {\n    Write-Error \"Python executable not found at: $python\"\n    exit 1\n}\n\ntry {\n    if (Test-Path $shortcutPath) { Remove-Item $shortcutPath -Force }\n    $wsh = New-Object -ComObject WScript.Shell\n    $sc = $wsh.CreateShortcut($shortcutPath)\n    $sc.TargetPath = $python\n    $sc.Arguments = \"-m src.main\"\n    $sc.WorkingDirectory = $root\n    $sc.IconLocation = \"$python,0\"\n    $sc.Description = \"Launch AI_Coder_Controller\"\n    $sc.Save()\n    Write-Output \"Shortcut created at: $shortcutPath\"\n} catch {\n    Write-Error $_\n    exit 1\n}\n"
+    }
+  ],
+  "modules": [
+    {
+      "name": "agent_run_module_smoke",
+      "path": "Scripts/agent_run_module_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "agent_terminal_smoke",
+      "path": "Scripts/agent_terminal_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "assess_windows",
+      "path": "Scripts/assess_windows.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_preprocess",
+          "purpose": ""
+        },
+        {
+          "name": "ocr_idle_score",
+          "purpose": ""
+        },
+        {
+          "name": "get_commit_loop_processes",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "automation",
+      "path": "Scripts/automation.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "usage",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "cleanup_daemon",
+      "path": "Scripts/cleanup_daemon.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "load_manifest",
+          "purpose": ""
+        },
+        {
+          "name": "is_deletable_image",
+          "purpose": ""
+        },
+        {
+          "name": "is_deletable_video",
+          "purpose": ""
+        },
+        {
+          "name": "loop_cleanup",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "cleanup_run",
+      "path": "Scripts/cleanup_run.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "close_idle_powershell",
+      "path": "Scripts/close_idle_powershell.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_preprocess",
+          "purpose": ""
+        },
+        {
+          "name": "ocr_window_region",
+          "purpose": ""
+        },
+        {
+          "name": "score_idle_text",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "compose_image",
+      "path": "Scripts/compose_image.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "copilot_app_interaction_test",
+      "path": "Scripts/copilot_app_interaction_test.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_logger",
+          "purpose": ""
+        },
+        {
+          "name": "_load_cfg",
+          "purpose": ""
+        },
+        {
+          "name": "_make_ocr",
+          "purpose": ""
+        },
+        {
+          "name": "_maybe_run_cleanup",
+          "purpose": "Run a single cleanup pass based on config/policy_rules.json."
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "copilot_copy_smoke",
+      "path": "Scripts/copilot_copy_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_make_ocr",
+          "purpose": ""
+        },
+        {
+          "name": "_maybe_run_cleanup",
+          "purpose": "Run a single cleanup pass based on config/policy_rules.json."
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "path": "Scripts/gather_chat_evidence.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "write_report",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "generate_ocr_observations_md",
+      "path": "Scripts/generate_ocr_observations_md.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_load_jsonl",
+          "purpose": ""
+        },
+        {
+          "name": "_relpath",
+          "purpose": ""
+        },
+        {
+          "name": "_pick_target_run",
+          "purpose": ""
+        },
+        {
+          "name": "_extract_images",
+          "purpose": ""
+        },
+        {
+          "name": "_guess_needed_objects",
+          "purpose": ""
+        },
+        {
+          "name": "_cursor_correctness",
+          "purpose": ""
+        },
+        {
+          "name": "_intended_next_action",
+          "purpose": ""
+        },
+        {
+          "name": "_previous_action",
+          "purpose": ""
+        },
+        {
+          "name": "_location_expected",
+          "purpose": ""
+        },
+        {
+          "name": "_present_check",
+          "purpose": ""
+        },
+        {
+          "name": "generate_md",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "html_to_image",
+      "path": "Scripts/html_to_image.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_html_uri",
+          "purpose": ""
+        },
+        {
+          "name": "render_with_playwright",
+          "purpose": ""
+        },
+        {
+          "name": "_find_browser_candidates",
+          "purpose": ""
+        },
+        {
+          "name": "render_with_headless",
+          "purpose": ""
+        },
+        {
+          "name": "html_to_image",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "improve_modules_from_policy",
+      "path": "Scripts/improve_modules_from_policy.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "update_vsbridge_focus_list",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "learn_from_run",
+      "path": "Scripts/learn_from_run.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "tail_lines",
+          "purpose": ""
+        },
+        {
+          "name": "write_jsonl",
+          "purpose": ""
+        },
+        {
+          "name": "write_json",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "make_chat_template_from_last",
+      "path": "Scripts/make_chat_template_from_last.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "find_latest_png",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "mark_assessed",
+      "path": "Scripts/mark_assessed.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "mark_path",
+          "purpose": ""
+        },
+        {
+          "name": "iter_media",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "messenger_plan_smoke",
+      "path": "Scripts/messenger_plan_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "messenger_smoke",
+      "path": "Scripts/messenger_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "monitor_live",
+      "path": "Scripts/monitor_live.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "parse_region",
+          "purpose": ""
+        },
+        {
+          "name": "open_writer",
+          "purpose": ""
+        },
+        {
+          "name": "ensure_dirs",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "navigation_test",
+      "path": "Scripts/navigation_test.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "write_report",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "observe_and_react",
+      "path": "Scripts/observe_and_react.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "write_jsonl",
+          "purpose": ""
+        },
+        {
+          "name": "write_error_event",
+          "purpose": ""
+        },
+        {
+          "name": "should_close",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ocr_commit_test",
+      "path": "Scripts/ocr_commit_test.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "append_improvements",
+          "purpose": ""
+        },
+        {
+          "name": "write_report",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ocr_gate_chat_ready",
+      "path": "Scripts/ocr_gate_chat_ready.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "looks_like_palette",
+          "purpose": ""
+        },
+        {
+          "name": "looks_chat_ready",
+          "purpose": ""
+        },
+        {
+          "name": "template_ready",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ocr_guard",
+      "path": "Scripts/ocr_guard.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "demo_run",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ocr_observe_react_nav",
+      "path": "Scripts/ocr_observe_react_nav.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "looks_like_palette",
+          "purpose": ""
+        },
+        {
+          "name": "looks_like_browser_window",
+          "purpose": ""
+        },
+        {
+          "name": "looks_chat_ready",
+          "purpose": ""
+        },
+        {
+          "name": "template_ready",
+          "purpose": ""
+        },
+        {
+          "name": "evaluate_navigation_rules",
+          "purpose": "Evaluate general navigation rules against current observation."
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ocr_smoke_test",
+      "path": "Scripts/ocr_smoke_test.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "record_lesson",
+      "path": "Scripts/record_lesson.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "write_jsonl",
+          "purpose": ""
+        },
+        {
+          "name": "append_markdown",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "recording_segmented_smoke",
+      "path": "Scripts/recording_segmented_smoke.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "tail_actions",
+      "path": "Scripts/tail_actions.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "tail",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "test_module",
+      "path": "Scripts/test_module.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "verify_reply_2plus2",
+      "path": "Scripts/verify_reply_2plus2.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "write_report",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "workflow_test_gather_assess",
+      "path": "Scripts/workflow_test_gather_assess.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "run_cmd",
+          "purpose": ""
+        },
+        {
+          "name": "main",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "agent_terminal",
+      "path": "src/agent_terminal.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "capture",
+      "path": "src/capture.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "cleanup",
+      "path": "src/cleanup.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "control",
+      "path": "src/control.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "image_compose",
+      "path": "src/image_compose.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_load_font",
+          "purpose": ""
+        },
+        {
+          "name": "_wrap_text",
+          "purpose": ""
+        },
+        {
+          "name": "compose_card",
+          "purpose": "Compose a simple social-card style PNG with title, subtitle, bullets, and optional overlay image."
+        }
+      ]
+    },
+    {
+      "name": "jsonlog",
+      "path": "src/jsonlog.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_now_iso",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "main",
+      "path": "src/main.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "ensure_dirs",
+          "purpose": ""
+        },
+        {
+          "name": "timestamp",
+          "purpose": ""
+        },
+        {
+          "name": "run",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "messaging",
+      "path": "src/messaging.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "ocr",
+      "path": "src/ocr.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "ocr_observer",
+      "path": "src/ocr_observer.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "phi4_client",
+      "path": "src/phi4_client.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "phi4_planner",
+      "path": "src/phi4_planner.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "compose_prompt_and_contingencies",
+          "purpose": "PHI-4 SLM stub: returns a proposed Copilot prompt and a contingency plan."
+        }
+      ]
+    },
+    {
+      "name": "policy",
+      "path": "src/policy.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "self_improve",
+      "path": "src/self_improve.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "list_python_modules",
+          "purpose": ""
+        },
+        {
+          "name": "extract_functions",
+          "purpose": ""
+        },
+        {
+          "name": "build_metadata_text",
+          "purpose": ""
+        },
+        {
+          "name": "write_metadata_file",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "ui",
+      "path": "src/ui.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "interactive_banner",
+          "purpose": ""
+        }
+      ]
+    },
+    {
+      "name": "vsbridge",
+      "path": "src/vsbridge.py",
+      "summary": "",
+      "functions": []
+    },
+    {
+      "name": "windows",
+      "path": "src/windows.py",
+      "summary": "",
+      "functions": [
+        {
+          "name": "_get_window_text",
+          "purpose": ""
+        },
+        {
+          "name": "_get_class_name",
+          "purpose": ""
+        },
+        {
+          "name": "_is_window_visible",
+          "purpose": ""
+        },
+        {
+          "name": "_get_window_pid",
+          "purpose": ""
+        },
+        {
+          "name": "_get_process_path",
+          "purpose": "Best-effort process image path; returns '' on failure."
+        },
+        {
+          "name": "_enum_windows",
+          "purpose": ""
+        },
+        {
+          "name": "_clipboard_get_unicode_text",
+          "purpose": ""
+        },
+        {
+          "name": "_clipboard_get_text",
+          "purpose": "Read text from clipboard."
+        },
+        {
+          "name": "_clipboard_set_unicode_text",
+          "purpose": ""
+        },
+        {
+          "name": "_send_input_hotkey",
+          "purpose": "Send a hotkey chord via Win32 SendInput."
+        }
+      ]
+    }
+  ]
+}

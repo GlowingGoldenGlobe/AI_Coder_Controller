@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 1.124
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.955
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.609
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.967,
+      "detail": {
+        "chars": 866,
+        "preview": "‘Test/Gather/Assess workflow returns PASS instead of FAIL.\nYour tests have not yet included using the mouse and\nkeys. Actions have not yet been occurring to com"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 20:27:04"
+  }
+}

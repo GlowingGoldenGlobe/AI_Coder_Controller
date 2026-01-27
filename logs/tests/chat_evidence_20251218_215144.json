@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-12-18 21:51:44",
+  "elements_count": 36,
+  "preview_elements": "[{'type': 'button', 'bbox': {'left': 0, 'top': 0, 'width': 652, 'height': 942}, 'score': 614184.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 235, 'width': 380, 'height': 19}, 'score': 7220.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 255, 'width': 377, 'height': 19}, 'score': 7163.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 442, 'width': 372, 'height': 19}, 'score': 7068.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 422, 'width': 363, 'height': 19}, 'score': 6897.0}]",
+  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766116304265355000.png",
+  "chars": 686,
+  "preview": "s are running and completing their activities as designed, with\nt you must navigate, commit actions on the Copilot window,\nwindow, navigate the window to copy the Copilot window\now interaction (upload"
+}

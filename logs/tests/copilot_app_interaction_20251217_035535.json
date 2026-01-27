@@ -1,0 +1,16 @@
+{
+  "ts": "2025-12-17 03:55:35",
+  "ok": true,
+  "token": "PROMPT_TOKEN_1765965307",
+  "token_found": true,
+  "expected_hash": "04f0624290a0",
+  "expected_found": true,
+  "expected_found_fuzzy": false,
+  "expected_best_candidate": "04f0624290a0",
+  "expected_best_distance": 0,
+  "baseline_chars": 1499,
+  "token_in_app_after_send": true,
+  "token_in_vscode_after_send": false,
+  "chars": 1464,
+  "preview": "Labs\nExperimental Al intatives TOKEN: PROMPT_TOKEN_1765965307Then provide 3 concrete\nsuggestions to improve the Al_Coder_Coniroller self-improve workflow.\nrrsations\n\u2014__________. | See mythinking > |\n36 Hash Request | \u2014\u2014\u2014\u2014\u2014_\ndel Benchmark Com... A Ai_Coder_Controller_Self_Improve_Sug\ngestions L\nPlain Text _\nay\nving Al Coder Contr... 04f0624290a0\nsing GitHub Copilot... Here are three concrete sugges"
+}

@@ -1,0 +1,59 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.002
+    },
+    {
+      "name": "focus_terminal",
+      "ok": false,
+      "duration_s": 2.005
+    },
+    {
+      "name": "terminal_echo",
+      "ok": false,
+      "duration_s": 2.81
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": false,
+      "duration_s": 3.712
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 4.869,
+      "detail": {
+        "chars": 135,
+        "preview": "° 3 concrete\n\nf-improve workflow.\n\nsstions, Here's a quick\n\nller'’s learning rate\n\nvoids stagnation.\n\nest potential changes\n\npting |\na)"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "focus_terminal",
+        "ok": false,
+        "duration_s": 2.005
+      },
+      {
+        "name": "terminal_echo",
+        "ok": false,
+        "duration_s": 2.81
+      },
+      {
+        "name": "focus_chat_only",
+        "ok": false,
+        "duration_s": 3.712
+      }
+    ],
+    "timestamp": "2025-12-17 03:49:40"
+  }
+}

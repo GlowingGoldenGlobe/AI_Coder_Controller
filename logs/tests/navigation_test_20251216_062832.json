@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.616
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.161
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.717,
+      "detail": {
+        "chars": 410,
+        "preview": "e in the other window, you didn't have\nmessages fram Copilot.\nformation inquiries. During a simple\nesponse, or you might request some — 7\nt, or the Al_Coder_Con"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 06:28:32"
+  }
+}

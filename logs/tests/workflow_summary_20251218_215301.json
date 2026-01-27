@@ -1,0 +1,377 @@
+{
+  "started": "2025-12-18 21:51:19",
+  "steps": [
+    {
+      "name": "navigation_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Step: focus_vscode -> True (0.95s)\nVSBridge: Focus terminal\nStep: focus_terminal -> True (0.50s)\nVSBridge: Run terminal command: echo NAV TEST\nVSBridge: Focus terminal\nStep: terminal_echo -> True (4.49s)\nVSBridge: Focus Copilot chat view\nStep: focus_chat_only -> True (2.51s)\nVSBridge: Focus Copilot chat view\nOCR captured 541 chars from Copilot chat\nStep: ocr_vscode_chat -> True (2.93s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> True (0.60s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251218_215131.json\n",
+        "stderr": "",
+        "seconds": 12.21,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "ocr_commit_test",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "VSBridge: Focus Windows Copilot app\nVSBridge: Focus Copilot chat view\nFocused VS Code window\nFocused VS Code window\nOCR commit test report: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\ocr_commit_test_20251218_215138.json\n{\n  \"app\": {\n    \"focused\": true,\n    \"ok\": true,\n    \"chars\": 0,\n    \"preview\": \"\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\capture_copilot_chat_1766116293129727100.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\"\n  },\n  \"chat\": {\n    \"focused\": false,\n    \"ok\": true,\n    \"chars\": 0,\n    \"preview\": \"\",\n    \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\capture_copilot_chat_1766116298551949700.png\",\n    \"appended_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\projects\\\\Self-Improve\\\\improvements.md\",\n    \"skipped\": true,\n    \"reason\": \"foreground is not VS Code (title='Conversation Starter Options', class='WinUIDesktopWin32WindowClass')\"\n  },\n  \"summary\": {\n    \"timestamp\": \"2025-12-18 21:51:38\",\n    \"ok\": true,\n    \"total_chars\": 0,\n    \"appended\": true\n  }\n}\n",
+        "stderr": "",
+        "seconds": 7.45,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/ocr_commit_test.py"
+        ]
+      },
+      "pass": true,
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251218_202713.json",
+        "logs\\tests\\ocr_commit_test_20251218_203609.json",
+        "logs\\tests\\ocr_commit_test_20251218_215138.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Chat evidence: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\chat_evidence_20251218_215144.json\n{\n  \"chars\": 686,\n  \"preview\": \"s are running and completing their activities as designed, with\\nt you must navigate, commit actions on the Copilot window,\\nwindow, navigate the window to copy the Copilot window\\now interaction (upload\",\n  \"image_path\": \"C:\\\\Users\\\\yerbr\\\\AI_Coder_Controller\\\\logs\\\\ocr\\\\capture_copilot_chat_1766116304265355000.png\"\n}\n",
+        "stderr": "",
+        "seconds": 5.83,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/gather_chat_evidence.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "vscode_multi_keepalive",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "[keepalive] Starting multi-window VS Code chat keepalive; interval=4.0s, max_cycles=1\n[keepalive] cycle=1 windows=1 actions=1\n",
+        "stderr": "",
+        "seconds": 2.16,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/vscode_multi_keepalive_daemon.py",
+          "--interval-s",
+          "4",
+          "--max-cycles",
+          "1"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "copilot_app_interaction",
+      "result": {
+        "ok": false,
+        "returncode": 1,
+        "stdout": "Starting Copilot app interaction test...\nBuilding ModulesList attachment...\nAttachment ready: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\ModulesIndex_agent_20251218_215147.txt\nSTEP: open_most_recent_conversation\nVSBridge: Focus Windows Copilot app\nSTEP: upload_txt_attachment\nVSBridge: Focus Windows Copilot app\nVSBridge: Focus Windows Copilot app\nCaptured 257 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 105 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 254 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 105 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 249 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 249 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 249 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 249 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 250 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 253 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 267 elements from Copilot app (bbox)\nVSBridge: Focus Windows Copilot app\nCaptured 105 elements from Copilot app (bbox)\n",
+        "stderr": "",
+        "seconds": 41.49,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/copilot_app_interaction_test.py"
+        ]
+      },
+      "pass": false
+    },
+    {
+      "name": "observe_and_react",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 4.89,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "12",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_before",
+      "count": 131,
+      "samples": [
+        {
+          "ts": "2025-12-18T21:52:28.346Z",
+          "event": "workflow_step_end",
+          "step": "upload_txt_attachment",
+          "ok": false
+        },
+        {
+          "ts": "2025-12-18T21:52:28.354Z",
+          "event": "post_run_cleanup",
+          "scanned": 98,
+          "deleted": 5
+        },
+        {
+          "ts": "2025-12-18T21:52:28.356Z",
+          "event": "cleanup_daemon_stopped",
+          "ok": true,
+          "pid": 60788,
+          "returncode": 1
+        }
+      ]
+    },
+    {
+      "name": "remediate_errors",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_workflow.jsonl\n",
+        "stderr": "",
+        "seconds": 2.48,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "400",
+          "--log",
+          "logs\\tests\\observe_react_workflow.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "scan_error_events_after",
+      "count": 131,
+      "samples": [
+        {
+          "ts": "2025-12-18T21:52:28.346Z",
+          "event": "workflow_step_end",
+          "step": "upload_txt_attachment",
+          "ok": false
+        },
+        {
+          "ts": "2025-12-18T21:52:28.354Z",
+          "event": "post_run_cleanup",
+          "scanned": 98,
+          "deleted": 5
+        },
+        {
+          "ts": "2025-12-18T21:52:28.356Z",
+          "event": "cleanup_daemon_stopped",
+          "ok": true,
+          "pid": 60788,
+          "returncode": 1
+        }
+      ]
+    },
+    {
+      "name": "scan_error_events_errorlike",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "scan_error_events_warnlike",
+      "count": 0,
+      "samples": []
+    },
+    {
+      "name": "assert_palette_events_clean",
+      "count": 0,
+      "pass": true
+    },
+    {
+      "name": "monitor_live",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Saved video: logs\\screens\\workflow_out.mp4\nMarked assessed: logs\\screens\\workflow_out.mp4.assessed\n",
+        "stderr": "",
+        "seconds": 3.46,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/monitor_live.py",
+          "--seconds",
+          "3",
+          "--fps",
+          "10",
+          "--out",
+          "logs\\screens\\workflow_out.mp4",
+          "--backend",
+          "mss",
+          "--mark-assessed"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "cleanup",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Scanned: 98, Deleted: 6\n",
+        "stderr": "",
+        "seconds": 0.07,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/cleanup_run.py"
+        ]
+      },
+      "pass": true,
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "final_foreground_check",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Observer finished. Log: logs\\tests\\observe_react_final.jsonl\n",
+        "stderr": "",
+        "seconds": 2.17,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/observe_and_react.py",
+          "--ticks",
+          "6",
+          "--interval-ms",
+          "350",
+          "--log",
+          "logs\\tests\\observe_react_final.jsonl"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "final_close_summary",
+      "closes": 0,
+      "close_failed": 0,
+      "pass": true
+    },
+    {
+      "name": "learn_from_run",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Learned from 0 error events; lessons appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\lessons.jsonl\nSolutions appended: C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\solutions.jsonl\n",
+        "stderr": "",
+        "seconds": 0.14,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/learn_from_run.py",
+          "--since-ts",
+          "2025-12-18 21:51:19"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "improve_modules",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "No banned palette commands; nothing to improve.\n",
+        "stderr": "",
+        "seconds": 0.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "Scripts/improve_modules_from_policy.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "navigation_test_verify",
+      "result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "Step: focus_vscode -> True (1.17s)\nVSBridge: Focus terminal\nStep: focus_terminal -> True (0.50s)\nVSBridge: Run terminal command: echo NAV TEST\nVSBridge: Focus terminal\nStep: terminal_echo -> True (4.86s)\nVSBridge: Focus Copilot chat view\nStep: focus_chat_only -> True (2.83s)\nVSBridge: Focus Copilot chat view\nOCR captured 348 chars from Copilot chat\nStep: ocr_vscode_chat -> True (2.89s)\nVSBridge: Scroll down x2\nStep: scroll_chat_down -> True (0.60s)\nReport written: C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\navigation_test_20251218_215300.json\n",
+        "stderr": "",
+        "seconds": 13.06,
+        "cmd": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+          "scripts/navigation_test.py"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "assert_palette_events_clean_verify",
+      "count": 0,
+      "pass": true
+    }
+  ],
+  "artifacts": [
+    "logs\\tests\\navigation_test_20251218_215131.json",
+    "projects/Self-Improve/improvements.md",
+    "logs\\tests\\chat_evidence_20251218_215144.json",
+    "logs\\tests\\observe_react_workflow.jsonl",
+    "logs\\screens\\workflow_out.mp4",
+    "logs\\screens\\workflow_out.mp4.assessed",
+    "logs\\tests\\observe_react_final.jsonl",
+    "projects/Self-Improve/lessons.jsonl",
+    "projects/Self-Improve/solutions.jsonl",
+    "projects/Self-Improve/error_commands.json"
+  ],
+  "pass": false,
+  "successes": [
+    {
+      "name": "navigation_test",
+      "seconds": 12.21
+    },
+    {
+      "name": "ocr_commit_test",
+      "reports": [
+        "logs\\tests\\ocr_commit_test_20251218_215138.json"
+      ]
+    },
+    {
+      "name": "gather_chat_evidence",
+      "file": "logs\\tests\\chat_evidence_20251218_215144.json"
+    },
+    {
+      "name": "vscode_multi_keepalive"
+    },
+    {
+      "name": "observe_and_react",
+      "log": "logs\\tests\\observe_react_workflow.jsonl"
+    },
+    {
+      "name": "monitor_live",
+      "out": "logs\\screens\\workflow_out.mp4",
+      "marker": "logs\\screens\\workflow_out.mp4.assessed"
+    },
+    {
+      "name": "cleanup",
+      "deleted_video": true,
+      "deleted_marker": true
+    },
+    {
+      "name": "learn_from_run"
+    },
+    {
+      "name": "improve_modules"
+    }
+  ],
+  "errors": [
+    {
+      "name": "copilot_app_interaction",
+      "returncode": 1,
+      "stderr_tail": ""
+    }
+  ],
+  "warnings": [],
+  "finished": "2025-12-18 21:53:01"
+}

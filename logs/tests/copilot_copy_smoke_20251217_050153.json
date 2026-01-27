@@ -1,0 +1,16 @@
+{
+  "ts": "2025-12-17 05:01:53",
+  "ok": false,
+  "reason": "no_token_visible",
+  "use_sendkeys": "1",
+  "tab": 0,
+  "shift_tab": 2,
+  "tab_cycle": 12,
+  "target": null,
+  "baseline": {
+    "chars": 146,
+    "preview": "| context and task\n\nging prior outcomes\n\norkflow change.\n\novemenis don\u2019t\n\nw when confidence is\n\nsparent, aligning\n\nIn edit it now, or come\n+ & O |",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765969313.png",
+    "method": "region"
+  }
+}

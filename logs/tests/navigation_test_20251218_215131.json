@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.951
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.502
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.491
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 2.507
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 2.926,
+      "detail": {
+        "chars": 541,
+        "preview": "s are running and completing their activities as designed, with\nt you must navigate, commit actions on the Copilot window,\nwindow, navigate the window to copy t"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-18 21:51:31"
+  }
+}

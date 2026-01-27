@@ -1,0 +1,127 @@
+{
+  "ts": "2025-12-17 05:53:07",
+  "ok": true,
+  "reason": "generic_copy_no_target",
+  "token": "",
+  "hex12": "",
+  "target": "",
+  "use_sendkeys": "0",
+  "tab": 6,
+  "shift_tab": 0,
+  "tab_cycle": 12,
+  "max_walk": 40,
+  "baseline": {
+    "chars": 1346,
+    "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-improve\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow 1. Dynamic Error nomy\n+ Build a structured taxonomy of error types that evolves ",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972377081602500.png",
+    "method": "bbox"
+  },
+  "copy": {
+    "ok": true,
+    "expected": "",
+    "steps": 0,
+    "copied": false,
+    "sentinel": "COPILOT_SENTINEL_1765972378",
+    "sentinel_set": true,
+    "enter_copy_attempted": true,
+    "enter_copy_enabled": true,
+    "clipboard_chars": 986,
+    "clipboard_preview": "**e3d1c7b7a2a4**\n\nHere are three concrete suggestions to improve the **AI_Coder_Controller self-improve workflow**:\n\n1. **Dynamic Error Taxonomy**  \n   - Build a structured taxonomy of error types that evolves as new issues are encountered.  \n   - This ensures the controller can classify and respond",
+    "clipboard_contains_expected": false,
+    "focus_moves": [
+      {
+        "move": "start",
+        "i": 0,
+        "expected_visible": true,
+        "chars": 1346,
+        "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-improve\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972378573819800.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "pagedown_seed:after",
+        "i": 2000,
+        "expected_visible": true,
+        "chars": 1346,
+        "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-improve\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972380072458700.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "seed_observe",
+        "i": 2001,
+        "expected_visible": true,
+        "chars": 1354,
+        "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-improve\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972381284289400.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:walk:after",
+        "i": 5500,
+        "expected_visible": true,
+        "chars": 1354,
+        "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-imprave\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972382785517900.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "shift_tab:confirm",
+        "i": 5500,
+        "expected_visible": true,
+        "chars": 1366,
+        "preview": "Labs\nExperimental Al initiatives 3\ne8dic7b7a2a4\ncing Al Coder Workflow a a\nHere are three concrete suggestions to improve the Al_Coder_Controller self-improve\ncing Al Coder Controller... workflow:\ncing Al Coder Workflow ",
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972384034968900.png",
+        "method": "bbox",
+        "sig_same_as_prev": false,
+        "no_change_streak": 0
+      },
+      {
+        "move": "copy_probe",
+        "attempt": 1,
+        "ctx": "shift_tab:0",
+        "full_has_copy": true,
+        "combined_has_copy": true,
+        "input_hints_in_full": true,
+        "input_hints_in_combined": true,
+        "found_copy_in_probe": true,
+        "uia_enabled": true,
+        "uia_focus_name": "",
+        "uia_focus_class": "",
+        "uia_focus_ctrl": "",
+        "probe_chars": 1591,
+        "probe_preview": "_Coder_Controller self-improve\nevolves as new issues are\n\npond to novel problems without\nmes based on importance (e.g,\nnents that deliver the greatest\n\ns before live deployment.\n\ns",
+        "probe_images": [
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_copy_probe_0_1765972385850921500.png",
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_copy_probe_1_1765972386016253400.png",
+          "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_copy_probe_2_1765972386180506900.png"
+        ]
+      },
+      {
+        "move": "enter_copy_button",
+        "attempt": 1,
+        "ctx": "shift_tab:0",
+        "ok": true,
+        "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_copilot_app_1765972385248770100.png",
+        "method": "bbox",
+        "probe_chars": 1591,
+        "probe_preview": "_Coder_Controller self-improve\nevolves as new issues are\n\npond to novel problems without\nmes based on importance (e.g,\nnents that deliver th"
+      }
+    ],
+    "generic_copy": true
+  },
+  "clipboard_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\tests\\copilot_clipboard_20251217_055307.txt",
+  "clipboard": {
+    "chars": 986,
+    "preview": "**e3d1c7b7a2a4**\n\nHere are three concrete suggestions to improve the **AI_Coder_Controller self-improve workflow**:\n\n1. **Dynamic Error Taxonomy**  \n   - Build a structured taxonomy of error types that evolves as new issues are encountered.  \n   - This ensures the controller can classify and respond to novel problems without manual intervention.\n\n2. **Weighted Success Metrics**  \n   - Introduce a scoring system that weights outcomes based on importance (e.g., speed vs. accuracy).  \n   - This all",
+    "contains_target": false
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.002
+    },
+    {
+      "name": "focus_terminal",
+      "ok": false,
+      "duration_s": 2.007
+    },
+    {
+      "name": "terminal_echo",
+      "ok": false,
+      "duration_s": 2.812
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": false,
+      "duration_s": 3.711
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 5.047,
+      "detail": {
+        "chars": 1208,
+        "preview": "+y @- | ox\n\n“PROVING Al_CODER, CONTROLLER PROJECT FUNCTIONALITY\nipts/python.exe\nScripts/copilot_app_interaction_test.p\n\ni\n\nad log fle and executed workflow test"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "focus_terminal",
+        "ok": false,
+        "duration_s": 2.007
+      },
+      {
+        "name": "terminal_echo",
+        "ok": false,
+        "duration_s": 2.812
+      },
+      {
+        "name": "focus_chat_only",
+        "ok": false,
+        "duration_s": 3.711
+      }
+    ],
+    "timestamp": "2025-12-17 03:55:57"
+  }
+}

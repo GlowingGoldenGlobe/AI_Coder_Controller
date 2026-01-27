@@ -1,0 +1,13 @@
+{
+  "ts": "2025-12-17 02:10:50",
+  "ok": false,
+  "token": "PROMPT_TOKEN_1765959017",
+  "token_found": false,
+  "expected_hash": "3544df8ad1da",
+  "expected_found": false,
+  "baseline_chars": 0,
+  "token_in_app_after_send": false,
+  "token_in_vscode_after_send": false,
+  "chars": 0,
+  "preview": ""
+}

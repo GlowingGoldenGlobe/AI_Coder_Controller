@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-12-18 23:17:15",
+  "chars": 441,
+  "preview": "cent range to match the OCR code’s 0-100% semantics, update\nthe validator to ensure it passes.\ne latest round of work.\n‘ocr.py treats [i region_percent.left/top/width/height as 0-\nby 100 internally.\ns",
+  "phrase": "",
+  "token": "BF8",
+  "contains_phrase": false,
+  "contains_token": true,
+  "contains_4": false,
+  "source": "chat"
+}

@@ -34,8 +34,6 @@ Scripts/*.pyd
 Thumbs.db
 
 # Generated outputs
-logs/
-recordings/
 Archive_OCR_Images_Assessments/
 Archive_old_files/
 Copilot_Attachments/

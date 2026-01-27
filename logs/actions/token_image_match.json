@@ -1,0 +1,11 @@
+{
+  "capture": "c:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766116015565192900.png",
+  "template": "c:\\Users\\yerbr\\AI_Coder_Controller\\logs\\actions\\token_template.png",
+  "max_score": 0.22857560217380524,
+  "match_bbox": {
+    "left": 176,
+    "top": 159,
+    "width": 253,
+    "height": 34
+  }
+}

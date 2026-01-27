@@ -1,0 +1,26 @@
+{
+  "app": {
+    "focused": true,
+    "ok": true,
+    "chars": 459,
+    "preview": "ide BarView: Show Primary Side BOpen\nou'll see in Visual Studio Code when\nPrimary Side Bar (the vertical bar on\nsible alongside your file explorer, source\nIf you've hidden it, this command\n\nws) can ap",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765882914.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md"
+  },
+  "chat": {
+    "focused": true,
+    "ok": true,
+    "chars": 263,
+    "preview": "est report structure, or check OCR content length\nnie powershell. You made command in the\n\nnot what you ought to do. Solve.\nyuards, fix OCR capture context, and add stronger\n\n&\nocr_commit_test.py”\nGr®",
+    "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\copilot_chat_1765882925.png",
+    "appended_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\projects\\Self-Improve\\improvements.md",
+    "skipped": false,
+    "reason": ""
+  },
+  "summary": {
+    "timestamp": "2025-12-16 05:02:05",
+    "ok": true,
+    "total_chars": 722,
+    "appended": true
+  }
+}

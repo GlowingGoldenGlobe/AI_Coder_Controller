@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.001
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.619
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 9.967
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.516,
+      "detail": {
+        "chars": 91,
+        "preview": "Yes,\n; cy\nworkFlow_test_gather_assess.py”\n36-0\nte suggestions to improve the\nge |\nIr\nsales,"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 06:53:20"
+  }
+}

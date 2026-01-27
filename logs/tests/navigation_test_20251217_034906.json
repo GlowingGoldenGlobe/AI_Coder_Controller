@@ -1,0 +1,54 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.002
+    },
+    {
+      "name": "focus_terminal",
+      "ok": false,
+      "duration_s": 2.006
+    },
+    {
+      "name": "terminal_echo",
+      "ok": false,
+      "duration_s": 2.812
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 0.503
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 1.799,
+      "detail": {
+        "chars": 869,
+        "preview": "+. @- | ox\n\"PROVING Al CODER CONTROLLER PROJECT FUNCTIONALTY\nipts/python.exe\nScripts/copilot_app_interaction_test.p\n¥\nad file ines and applied patches\nited\necke"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": false,
+    "failed": [
+      {
+        "name": "focus_terminal",
+        "ok": false,
+        "duration_s": 2.006
+      },
+      {
+        "name": "terminal_echo",
+        "ok": false,
+        "duration_s": 2.812
+      }
+    ],
+    "timestamp": "2025-12-17 03:49:06"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.617
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 1.86
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 3.042,
+      "detail": {
+        "chars": 320,
+        "preview": "ons” (e.g., one liner with event type, evidence, and jf\niled, then description under each command\nin the solution json fle, include the commands\nInclude: Improv"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.601
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 05:57:16"
+  }
+}

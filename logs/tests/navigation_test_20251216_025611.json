@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.0
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.501
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 1.618
+    },
+    {
+      "name": "copilot_app_ask",
+      "ok": true,
+      "duration_s": 1.887
+    },
+    {
+      "name": "ocr_copilot_app",
+      "ok": true,
+      "duration_s": 1.575,
+      "detail": {
+        "chars": 155,
+        "preview": "the task, # not, then move on to solve the run\nnet.\nummarize findings to decide next fixes.\nassess windows. py R> |\nnavigation _test.py BR |\nEs ecdere\nGr ®"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2025-12-16 02:56:11"
+  }
+}
