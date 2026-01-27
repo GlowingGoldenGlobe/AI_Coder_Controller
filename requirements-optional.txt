@@ -1,0 +1,8 @@
+# Optional extras (advanced/experimental)
+#
+# Keep these separate from requirements.txt to avoid:
+# - installing heavy packages unnecessarily
+# - OpenCV flavor conflicts (opencv-contrib-python vs opencv-python)
+
+scipy
+opencv-contrib-python

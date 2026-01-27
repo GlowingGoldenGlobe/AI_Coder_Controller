@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-01-27 10:39:24",
+  "elements_count": 55,
+  "preview_elements": "[{'type': 'button', 'bbox': {'left': 0, 'top': 0, 'width': 634, 'height': 943}, 'score': 597862.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 42, 'top': 153, 'width': 257, 'height': 20}, 'score': 5140.0}, {'type': 'button', 'bbox': {'left': 42, 'top': 258, 'width': 260, 'height': 19}, 'score': 4940.0}, {'type': 'button', 'bbox': {'left': 42, 'top': 206, 'width': 256, 'height': 19}, 'score': 4864.0}, {'type': 'button', 'bbox': {'left': 38, 'top': 580, 'width': 248, 'height': 19}, 'score': 4712.0}]",
+  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769531964116390500.png",
+  "chars": 329,
+  "preview": "BOO - a x\nCHAT +. 8 EP OR\nRECENT SESSIONS o\nProject upgrade and troubleshooting o... &\nImproving WIP Automation Project for Wo.\nRunning the Al_Coder_Controller application\nGC\nBuild with Agent\nAl respo"
+}

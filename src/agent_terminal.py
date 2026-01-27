@@ -38,14 +38,22 @@ class TerminalAgent:
         """Focus terminal and type command WITHOUT pressing Enter."""
         self._log(op="type_no_enter", cmd_preview=command[:160])
         try:
-            focused = self.vs.focus_terminal()
+            focused = bool(self.vs.focus_terminal())
             if not focused:
-                # try anyway
-                pass
+                self._log(op="type_no_enter", ok=False, reason="focus_terminal_failed")
+                return False
             if getattr(self.vs, "dry_run", False):
                 # Log in dry-run, do not actually type
                 self._log(op="type_no_enter", dry_run=True)
                 return True
+            # Best-effort foreground re-check before typing.
+            try:
+                verify = getattr(self.vs, "_verify_vscode_foreground", None)
+                if callable(verify) and not bool(verify()):
+                    self._log(op="type_no_enter", ok=False, reason="foreground_not_vscode")
+                    return False
+            except Exception:
+                pass
             # Type characters without sending
             self.vs.ctrl.type_text(command)
             self._log(op="type_no_enter", ok=True)
@@ -58,12 +66,21 @@ class TerminalAgent:
         """Press Enter in the terminal (sending any typed command)."""
         self._log(op="commit_enter")
         try:
-            focused = self.vs.focus_terminal()
+            focused = bool(self.vs.focus_terminal())
             if not focused:
-                pass
+                self._log(op="commit_enter", ok=False, reason="focus_terminal_failed")
+                return False
             if getattr(self.vs, "dry_run", False):
                 self._log(op="commit_enter", dry_run=True)
                 return True
+            # Safety: ensure VS Code still foreground before sending Enter.
+            try:
+                verify = getattr(self.vs, "_verify_vscode_foreground", None)
+                if callable(verify) and not bool(verify()):
+                    self._log(op="commit_enter", ok=False, reason="foreground_not_vscode")
+                    return False
+            except Exception:
+                pass
             self.vs.ctrl.press_keys(["enter"])
             self._log(op="commit_enter", ok=True)
             return True

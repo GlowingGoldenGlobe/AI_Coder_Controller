@@ -5,10 +5,9 @@ pynput
 numpy
 rich
 pillow
-tk
 pytesseract
 uiautomation
 
-# Optional helpers used by image-based detection
-scipy
-opencv-contrib-python
+# Notes:
+# - tkinter ships with CPython; you do not need a separate 'tk' pip dependency.
+# - Optional extras (advanced/experimental): see requirements-optional.txt

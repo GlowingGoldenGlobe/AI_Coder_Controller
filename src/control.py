@@ -211,8 +211,9 @@ class Controller:
                     return True
                 return False
             except Exception:
-                # Fail-open if gate raises unexpectedly
-                pass
+                # Fail-closed on gate errors, but honor grace period from last-known-good.
+                now = time.time()
+                return (now - self._window_gate_last_ok_ts) <= self._window_gate_grace_s
         return True
 
     def is_keyboard_allowed(self) -> bool:
@@ -233,8 +234,9 @@ class Controller:
                     return True
                 return False
             except Exception:
-                # Fail-open if gate raises unexpectedly
-                pass
+                # Fail-closed on gate errors, but honor grace period from last-known-good.
+                now = time.time()
+                return (now - self._window_gate_last_ok_ts) <= self._window_gate_grace_s
         return True
 
     def mouse_window_state(self) -> Tuple[bool, float, float]:
@@ -252,19 +254,30 @@ class Controller:
         try:
             if self._state_file.exists():
                 data = json.loads(self._state_file.read_text(encoding="utf-8"))
-                # Only restore pause if it was set within the last 24 hours
-                ts_str = data.get("ts", "")
-                if ts_str and data.get("paused"):
-                    # Check if state is recent (within 24 hours)
+                if not bool(data.get("paused", False)):
+                    return
+
+                # Only restore pause if it was set within the last 24 hours.
+                ts_val = data.get("ts", None)
+                age_s: float | None = None
+                try:
+                    if isinstance(ts_val, (int, float)):
+                        age_s = time.time() - float(ts_val)
+                except Exception:
+                    age_s = None
+
+                # Back-compat: older versions stored ISO timestamps.
+                if age_s is None and isinstance(ts_val, str) and ts_val:
                     try:
                         import datetime
-                        saved_time = datetime.datetime.fromisoformat(ts_str)
-                        now = datetime.datetime.now()
-                        age_hours = (now - saved_time).total_seconds() / 3600
-                        if age_hours < 24:
-                            self._controls_paused = True
+
+                        saved_time = datetime.datetime.fromisoformat(ts_val)
+                        age_s = (datetime.datetime.now() - saved_time).total_seconds()
                     except Exception:
-                        pass
+                        age_s = None
+
+                if age_s is not None and age_s < 24 * 3600:
+                    self._controls_paused = True
         except Exception:
             pass
     
@@ -274,11 +287,16 @@ class Controller:
             return
         try:
             self._state_file.parent.mkdir(parents=True, exist_ok=True)
-            data = {
-                "paused": self._controls_paused,
-                "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
-            }
-            self._state_file.write_text(json.dumps(data), encoding="utf-8")
+            # Preserve shared controls state fields (owner, in_control_window, etc.).
+            data = {}
+            try:
+                if self._state_file.exists():
+                    data = json.loads(self._state_file.read_text(encoding="utf-8")) or {}
+            except Exception:
+                data = {}
+            data["paused"] = bool(self._controls_paused)
+            data["ts"] = time.time()
+            self._state_file.write_text(json.dumps(data, indent=2), encoding="utf-8")
         except Exception:
             pass
 

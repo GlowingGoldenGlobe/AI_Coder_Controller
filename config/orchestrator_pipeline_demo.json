@@ -1,0 +1,7 @@
+{
+  "pipeline": ["capture_counter", "analyze_double", "act_print"],
+  "start": 0,
+  "root": ".",
+  "fps": 10,
+  "monitor_index": 1
+}

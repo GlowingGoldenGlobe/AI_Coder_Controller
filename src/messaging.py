@@ -25,18 +25,31 @@ class CopilotMessenger:
         # Default routing target
         self.prefer_app = bool(self.cfg.get("prefer_app", False))
 
-    def _preconditions(self, target: str = "vscode") -> Dict[str, Any]:
+    def _preconditions(self, target: str = "vscode", *, attempt_focus: bool = True) -> Dict[str, Any]:
         # controls must be allowed
         controls_active = self.ctrl.is_controls_allowed()
         # focus (best effort)
+        # NOTE: avoid stealing focus when we are about to plan instead of send.
         focused = False
-        try:
-            if target == "app":
-                focused = bool(self.vs.focus_copilot_app())
-            else:
-                focused = bool(self.vs.focus_vscode_window())
-        except Exception:
-            focused = False
+        if attempt_focus:
+            try:
+                if target == "app":
+                    focused = bool(self.vs.focus_copilot_app())
+                else:
+                    focused = bool(self.vs.focus_vscode_window())
+            except Exception:
+                focused = False
+        else:
+            # Non-disruptive check: consult VSBridge foreground verifiers if available.
+            try:
+                if target == "app":
+                    verify = getattr(self.vs, "_verify_copilot_foreground", None)
+                else:
+                    verify = getattr(self.vs, "_verify_vscode_foreground", None)
+                if callable(verify):
+                    focused = bool(verify())
+            except Exception:
+                focused = False
         # dry-run flag
         dry_run = bool(getattr(self.vs, "dry_run", True))
         # ocr available
@@ -56,7 +69,15 @@ class CopilotMessenger:
         if target not in {"app", "vscode"}:
             target = "vscode"
 
-        pre = self._preconditions(target=target)
+        # Only attempt to focus a window if focus is actually required to send.
+        # This avoids cross-agent focus thrash when we will end up planning anyway.
+        attempt_focus = True
+        try:
+            attempt_focus = bool(self.send_if.get("require_vscode_focus", True)) and (target == "vscode")
+        except Exception:
+            attempt_focus = True
+
+        pre = self._preconditions(target=target, attempt_focus=attempt_focus)
         # Historically this setting was VS Code-specific; keep it but only apply to VS Code target.
         require_focus = bool(self.send_if.get("require_vscode_focus", True)) and (target == "vscode")
         require_controls = bool(self.send_if.get("require_controls_active", True))

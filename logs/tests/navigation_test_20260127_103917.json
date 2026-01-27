@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "focus_vscode",
+      "ok": true,
+      "duration_s": 0.665
+    },
+    {
+      "name": "focus_terminal",
+      "ok": true,
+      "duration_s": 0.509
+    },
+    {
+      "name": "terminal_echo",
+      "ok": true,
+      "duration_s": 4.737
+    },
+    {
+      "name": "focus_chat_only",
+      "ok": true,
+      "duration_s": 3.022
+    },
+    {
+      "name": "ocr_vscode_chat",
+      "ok": true,
+      "duration_s": 3.331,
+      "detail": {
+        "chars": 508,
+        "preview": "ities that will schedule and assess when\n9e documented and scheduler events\nshouit temn versiss when ta delete therm\nBOO - a x\nCHAT +. 8 a x\nRECENT SESSIONS o\nP"
+      }
+    },
+    {
+      "name": "scroll_chat_down",
+      "ok": true,
+      "duration_s": 0.602
+    }
+  ],
+  "summary": {
+    "ok": true,
+    "failed": [],
+    "timestamp": "2026-01-27 10:39:17"
+  }
+}

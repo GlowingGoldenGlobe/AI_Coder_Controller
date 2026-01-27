@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 
+def _is_str_list(x: Any) -> bool:
+    return isinstance(x, list) and all(isinstance(it, str) for it in x)
+
+
 def _load_json(path: Path, issues: List[str]) -> Dict[str, Any] | None:
     if not path.exists():
         issues.append(f"MISSING: {path}")
@@ -83,6 +87,90 @@ def _check_ocr(ocr_cfg: Dict[str, Any], issues: List[str]) -> None:
                 issues.append(f"ocr.region_percent.{key} is not numeric: {val!r}")
 
 
+def _check_vscode_orchestrator(cfg: Dict[str, Any], issues: List[str]) -> None:
+    if not isinstance(cfg, dict):
+        issues.append("vscode_orchestrator.json root is not an object (dict)")
+        return
+
+    action_hints = cfg.get("action_hints")
+    if action_hints is not None and not _is_str_list(action_hints):
+        issues.append("vscode_orchestrator.action_hints should be a list[str]")
+
+    msg = cfg.get("message")
+    if msg is not None and not isinstance(msg, dict):
+        issues.append("vscode_orchestrator.message should be an object (dict)")
+        return
+
+    if isinstance(msg, dict):
+        templates = msg.get("default_templates")
+        if templates is not None:
+            if not isinstance(templates, list):
+                issues.append("vscode_orchestrator.message.default_templates should be a list")
+            else:
+                for i, t in enumerate(templates):
+                    if not isinstance(t, dict):
+                        issues.append(f"vscode_orchestrator.message.default_templates[{i}] is not an object")
+                        continue
+                    tid = t.get("id")
+                    text = t.get("text")
+                    if not isinstance(tid, str) or not tid.strip():
+                        issues.append(f"vscode_orchestrator.message.default_templates[{i}].id is missing/empty")
+                    if not isinstance(text, str) or not text.strip():
+                        issues.append(f"vscode_orchestrator.message.default_templates[{i}].text is missing/empty")
+
+        send_keys = msg.get("send_keys")
+        if send_keys is not None and not _is_str_list(send_keys):
+            issues.append("vscode_orchestrator.message.send_keys should be a list[str]")
+
+
+def _check_orchestrator_pipelines(root: Path, issues: List[str]) -> None:
+    """Validate config/orchestrator_pipeline*.json against the default registry."""
+    try:
+        from src.orchestrator.default_registry import build_default_registry
+    except Exception as e:
+        issues.append(f"Cannot import orchestrator default registry: {e}")
+        return
+
+    reg = build_default_registry()
+    cfg_dir = root / "config"
+    for path in sorted(cfg_dir.glob("orchestrator_pipeline*.json")):
+        cfg = _load_json(path, issues)
+        if cfg is None:
+            continue
+        if not isinstance(cfg, dict):
+            issues.append(f"Pipeline config is not an object (dict): {path}")
+            continue
+
+        pipeline = cfg.get("pipeline")
+        if not _is_str_list(pipeline):
+            issues.append(f"Pipeline config missing/invalid 'pipeline' list[str]: {path}")
+            continue
+
+        # Ensure registry knows all modules.
+        for name in pipeline:
+            try:
+                reg.create(str(name))
+            except Exception as e:
+                issues.append(f"Unknown pipeline module {name!r} in {path.name}: {e}")
+
+        # Best-effort file checks for known module configs.
+        mt = cfg.get("match_template")
+        if isinstance(mt, dict):
+            tpath = mt.get("template_path")
+            if isinstance(tpath, str) and tpath.strip():
+                p = root / tpath
+                if not p.exists():
+                    issues.append(f"match_template.template_path missing on disk: {p} (from {path.name})")
+
+        mb = cfg.get("match_best_template")
+        if isinstance(mb, dict):
+            tdir = mb.get("templates_dir")
+            if isinstance(tdir, str) and tdir.strip():
+                pdir = root / tdir
+                if not pdir.exists():
+                    issues.append(f"match_best_template.templates_dir missing on disk: {pdir} (from {path.name})")
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     issues: List[str] = []
@@ -104,7 +192,11 @@ def main() -> int:
     if tmpl_cfg is not None:
         _check_templates(root, tmpl_cfg, issues)
 
-    _ = _load_json(orchestrator_path, issues)  # basic JSON validity only
+    orchestrator_cfg = _load_json(orchestrator_path, issues)
+    if orchestrator_cfg is not None:
+        _check_vscode_orchestrator(orchestrator_cfg, issues)
+
+    _check_orchestrator_pipelines(root, issues)
 
     if not issues:
         print("CONFIG OK: core JSON files parsed and basic checks passed.")

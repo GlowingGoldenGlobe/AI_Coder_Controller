@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
+from pathlib import Path
+from typing import Any, Optional
 import json
-import os
 import time
 
-CONTROLS_STATE_PATH = os.path.join("config", "controls_state.json")
-EMERGENCY_STOP_PATH = os.path.join("config", "emergency_stop.json")
+from src.control_state import get_controls_state, is_state_stale
 
 
 @dataclass
@@ -25,17 +24,23 @@ class ActionSafety:
     error-rate tracking and lease freshness checks.
     """
 
-    def __init__(self) -> None:
-        self._last_state_load_s = 0.0
-        self._controls_state = None
+    def __init__(self, root: Path | str | None = None) -> None:
+        # Root is used to resolve config paths (so callers don't depend on CWD).
+        self._root = Path(root).resolve() if root is not None else Path(".").resolve()
+
+    def _controls_state_path(self) -> Path:
+        return self._root / "config" / "controls_state.json"
+
+    def _emergency_stop_path(self) -> Path:
+        return self._root / "config" / "emergency_stop.json"
 
     # --- Emergency Stop -------------------------------------------------
     def is_emergency_stop(self) -> bool:
         try:
-            if not os.path.exists(EMERGENCY_STOP_PATH):
+            p = self._emergency_stop_path()
+            if not p.exists():
                 return False
-            with open(EMERGENCY_STOP_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
+            data = json.loads(p.read_text(encoding="utf-8"))
             return bool(data.get("stopped", False))
         except Exception:
             return False
@@ -46,34 +51,45 @@ class ActionSafety:
             "reason": reason,
             "timestamp": time.time(),
         }
-        os.makedirs(os.path.dirname(EMERGENCY_STOP_PATH), exist_ok=True)
-        with open(EMERGENCY_STOP_PATH, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
+        p = self._emergency_stop_path()
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
     # --- Controls State -------------------------------------------------
-    def _load_controls_state(self) -> None:
-        now = time.time()
-        if self._controls_state is not None and (now - self._last_state_load_s) < 1.0:
-            return
-        try:
-            with open(CONTROLS_STATE_PATH, "r", encoding="utf-8") as f:
-                self._controls_state = json.load(f)
-            self._last_state_load_s = now
-        except Exception:
-            self._controls_state = None
-            self._last_state_load_s = now
+    def composite_gate(self, *, owner: str | None = None, stale_after_s: float = 10.0) -> SafetyDecision:
+        """Composite safety gate.
 
-    def composite_gate(self) -> SafetyDecision:
+        - Blocks when emergency stop is set.
+        - Blocks when controls are paused.
+        - Blocks when another owner holds controls, unless that state is stale.
+        """
+
         if self.is_emergency_stop():
             return SafetyDecision(False, "emergency_stop")
-        self._load_controls_state()
-        cs = self._controls_state or {}
-        if str(cs.get("paused", "")).lower() == "true":
+
+        cs = get_controls_state(self._root) or {}
+
+        # paused is stored as a real bool in this repo; tolerate strings too.
+        paused_val: Any = cs.get("paused", False)
+        paused = bool(paused_val) if not isinstance(paused_val, str) else (paused_val.strip().lower() == "true")
+        if paused:
             return SafetyDecision(False, "controls_paused")
-        owner = cs.get("owner")
-        if owner and owner not in ("agent", "workflow_test", "orchestrator"):
-            return SafetyDecision(False, f"controls_owned_by:{owner}")
-        return SafetyDecision(True, "ok")
+
+        current_owner = str(cs.get("owner", "") or "")
+        if not current_owner:
+            return SafetyDecision(True, "ok")
+
+        if owner and current_owner == owner:
+            return SafetyDecision(True, "ok")
+
+        # If the ownership snapshot looks stale, fail-open to avoid deadlocks.
+        try:
+            if is_state_stale(cs, float(stale_after_s)):
+                return SafetyDecision(True, f"controls_owner_stale:{current_owner}")
+        except Exception:
+            pass
+
+        return SafetyDecision(False, f"controls_owned_by:{current_owner}")
 
     # --- Public API -----------------------------------------------------
     def check_allowed(self) -> SafetyDecision:
@@ -86,15 +102,15 @@ class ActionSafety:
         self._mutate_controls_state(paused=False)
 
     def _mutate_controls_state(self, *, paused: Optional[bool] = None) -> None:
-        cs = {}
         try:
-            if os.path.exists(CONTROLS_STATE_PATH):
-                with open(CONTROLS_STATE_PATH, "r", encoding="utf-8") as f:
-                    cs = json.load(f)
+            cs = get_controls_state(self._root) or {}
         except Exception:
             cs = {}
+
         if paused is not None:
             cs["paused"] = bool(paused)
-        os.makedirs(os.path.dirname(CONTROLS_STATE_PATH), exist_ok=True)
-        with open(CONTROLS_STATE_PATH, "w", encoding="utf-8") as f:
-            json.dump(cs, f, indent=2)
+            cs["ts"] = time.time()
+
+        p = self._controls_state_path()
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps(cs, indent=2), encoding="utf-8")

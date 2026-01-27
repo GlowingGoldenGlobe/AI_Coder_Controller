@@ -11,22 +11,107 @@ Windows-first automation controller with a safe, observable workflow loop:
 - Defers/queues prompts while busy; can auto-run a timed external commit loop after Stop
 
 ## Quick Start
-- Activate venv (PowerShell):
-  - Scripts/Activate.ps1
-- Install deps:
-  - pip install -r requirements.txt
-- Run:
-  - python -m src.main
+This repo is Windows-first and ships with a venv-style layout (note the checked-in `Scripts/python.exe`, `Lib/`, `Include/`, `pyvenv.cfg`).
+
+- Option A (fastest): use the bundled interpreter
+  - Install deps:
+    - `./Scripts/python.exe -m pip install -r requirements.txt`
+    - `./Scripts/python.exe -m pip install -r requirements-dev.txt`
+    - Optional extras:
+      - `./Scripts/python.exe -m pip install -r requirements-optional.txt`
+      - `./Scripts/python.exe -m pip install -r requirements.monitor.txt`
+  - Run:
+    - `./Scripts/python.exe -m src.main`
+
+- Option B (recommended for clean setups): create your own venv
+  - Create/activate a venv (PowerShell):
+    - `python -m venv .venv`
+    - `./.venv/Scripts/Activate.ps1`
+  - Install deps:
+    - `python -m pip install -r requirements.txt`
+    - `python -m pip install -r requirements-dev.txt`
+    - Optional extras:
+      - `python -m pip install -r requirements-optional.txt`
+      - `python -m pip install -r requirements.monitor.txt`
+  - Run:
+    - `python -m src.main`
+
+### Minimal Orchestrator Demo (safe, cross-platform)
+
+This repo contains a small, pure-Python orchestrator contract + runner under `src/orchestrator/`.
+It is designed to be runnable in CI and on non-Windows machines without requiring OCR/UI automation.
+
+- Run the demo (1 tick):
+  - `python examples/run_demo.py --max-iterations 1`
+- Run tests:
+  - `python -m pytest -q`
+
+### Orchestrator CLI (config-driven)
+
+Run a configurable pipeline from JSON (dry-run by default):
+
+- Pipeline docs (module names + config schema): `docs/ORCHESTRATOR_PIPELINES.md`
+
+- Demo pipeline config: `config/orchestrator_pipeline_demo.json`
+- Run 1 iteration:
+  - `python -m src.orchestrator.cli --config config/orchestrator_pipeline_demo.json --max-iterations 1`
+
+The default registry includes demo modules (`capture_counter`, `analyze_double`, `act_print`) and a real wrapper (`capture_record`).
+
+### Vision → Action Example (template match → click)
+
+There is a safe-by-default pipeline that captures a screenshot, template-matches an image, and (optionally) clicks the match:
+
+- Config: `config/orchestrator_pipeline_click_template.json`
+- Dry-run (recommended first):
+  - `python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_template.json --max-iterations 1`
+- Live (will actually click if controls are free and not paused):
+  - `python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_template.json --max-iterations 1 --live`
+
+Safety notes:
+- Clicking is gated by `config/controls_state.json` (pause + shared owner).
+- If another workflow owns controls, the click step will skip.
+- Before using `--live`, make sure controls are not paused and you're in an active control window (the default `config/controls_state.json` ships with `"paused": true`).
+
+If you don't know which template to use, try the directory-scanning variant:
+
+- Config: `config/orchestrator_pipeline_click_best_template.json`
+- Dry-run:
+  - `python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_best_template.json --max-iterations 1`
+
+If matching is flaky, calibrate a smaller capture region (ROI) and write it into your pipeline config:
+
+- `./Scripts/python.exe Scripts/calibrate_bbox.py --monitor-index 1 --config config/orchestrator_pipeline_click_best_template.json --write`
+
+Notes:
+- This opens an interactive OpenCV window (desktop session required). Drag a box, press ENTER to confirm, ESC to cancel.
+- It writes `capture_screenshot.bbox` in the config by default.
+
+To make live clicking safer, you can add a post-click verification step (re-capture + re-match). This fails closed if the evidence is weak:
+
+- Config: `config/orchestrator_pipeline_click_best_template_verify.json`
+- Live (will click, then verify change):
+  - `python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_best_template_verify.json --max-iterations 1 --live`
+
+CI note: the GitHub Actions workflow installs full runtime dependencies only on Windows; on Linux it runs the mock orchestrator tests without installing Windows-only packages.
+
+### Real Module Example: Screen Recording (Windows)
+
+There is now a real `Module` wrapper around the existing screen recorder (`src/capture.py`) that implements the orchestrator contract:
+
+- Module: `src.orchestrator.modules.ScreenRecordModule` (name: `capture_record`)
+- Dry-run: never writes files (safe by default)
+- Live: records to an MP4 under `recordings/segments/`
 - Headless Agent Mode (no UI, executes objectives):
   - python -m src.main --headless --agent --duration 60
   - python -m src.main --headless --agent --objectives config/objectives.md --duration 60
 - Desktop Shortcut:
-  - scripts/create_desktop_shortcut.ps1
+  - Scripts/create_desktop_shortcut.ps1
 
 Recommended tools to validate the setup:
-- Navigation test: `python scripts/navigation_test.py`
-- OCR smoke test: `python scripts/ocr_smoke_test.py`
-- OCR commit test (captures and appends to notes): `python scripts/ocr_commit_test.py`
+- Navigation test: `python Scripts/navigation_test.py`
+- OCR smoke test: `python Scripts/ocr_smoke_test.py`
+- OCR commit test (captures and appends to notes): `python Scripts/ocr_commit_test.py`
 
 ## Structure
 - config/: policy, objectives, instructions, ocr.json
@@ -36,7 +121,7 @@ Recommended tools to validate the setup:
 - logs/: run.log, self_improve.log, ocr/
 - logs/actions/: actions.jsonl (structured JSONL action log)
 - recordings/: mp4 files (auto)
-- scripts/: create_desktop_shortcut.ps1, html_to_image.py, compose_image.py, copilot_commit.ps1, copilot_commit_start.ps1, copilot_commit_stop.ps1, navigation_test.py, assess_windows.py, close_idle_powershell.py, ocr_commit_test.py
+- Scripts/: create_desktop_shortcut.ps1, html_to_image.py, compose_image.py, copilot_commit.ps1, copilot_commit_start.ps1, copilot_commit_stop.ps1, navigation_test.py, assess_windows.py, close_idle_powershell.py, ocr_commit_test.py
   - Scripts/vscode_multi_keepalive_smoke.py: multi-window chat keepalive smoke test
   - Scripts/vscode_multi_keepalive_daemon.py: long-running multi-window chat keepalive
   - Scripts/orchestrator_agent.py: headless Orchestrator Agent Mode entrypoint
@@ -44,6 +129,16 @@ Recommended tools to validate the setup:
   - PHI4_Commit_Tuning.md
   - COPILOT_CONTEXT_PACK.md
   - AGENT_HEALTH_CHECKLIST.md (quick, non-disruptive checks for controls/OCR/commit-verify health)
+
+## Logs Are Versioned (Intentional)
+
+This repo intentionally commits `logs/` (including JSONL under `logs/actions/`, `logs/tests/`, and selected OCR/agent streams).
+These artifacts are part of the controller’s workflow: they provide an audit trail, support self-improvement, and are used by Agent Mode/orchestrator tooling to reason about what happened across runs.
+
+Guidelines:
+- Do not add `logs/` to `.gitignore` unless you also change the design to store agent memory elsewhere.
+- Treat logs as potentially sensitive: avoid capturing secrets/PII in prompts, screenshots, or clipboard; scrub before sharing publicly.
+- Use the built-in cleanup scripts/policies for large media (PNG/MP4) retention rather than relying on git ignores.
 
 ## VS Code Multi-Window Orchestrator
 
@@ -88,14 +183,23 @@ The orchestrator itself stays task-agnostic: it does not inspect objectives or R
   - Agent Mode (see "VS Code Agent Workflow Loop" below) runs objectives, assesses UI state, and decides what actions to take.
   - The orchestrator focuses only on **chat keepalive via image-based UI detection + mouse/keyboard actions** across all VS Code windows and is invoked from inside Agent Mode's loop when enabled.
 - The main runner (`src/main.py`) treats the orchestrator as an optional, continuous background loop:
-  - If `vscode_automation` imports and initializes successfully, the tick functions periodically call `MultiWindowChatKeepalive.cycle_once()`.
+  - If `src.vscode_automation` imports and initializes successfully, the tick functions periodically call `MultiWindowChatKeepalive.cycle_once()`.
   - If initialization or a cycle raises, the error is logged to `logs/actions/actions.jsonl` under an `orchestrator` event and the controller keeps running.
 - Standalone orchestrator cycles (smoke/daemon) are primarily for diagnostics and must respect `config/controls_state.json`; they yield whenever Agent Mode or another workflow currently owns controls.
+
+### Import Path (Drift Prevention)
+
+There are two packages:
+
+- `vscode_automation/`: authoritative implementation
+- `src/vscode_automation/`: compatibility shims (re-export the top-level package)
+
+Workability rule: non-shim code should import through `src.vscode_automation` to avoid drift from mixed import paths. A small test guard enforces this (`tests/test_import_hygiene.py`).
 
 Helpers & daemon:
 
 - One-shot helper (for other modules/agents):
-  - `from vscode_automation import run_multi_window_keepalive_cycle`
+  - `from src.vscode_automation import run_multi_window_keepalive_cycle`
   - `summary = run_multi_window_keepalive_cycle()`  # single orchestrator tick
 - Standalone daemon process (separate workflow, can be launched by another agent):
   - `Scripts/python.exe Scripts/vscode_multi_keepalive_daemon.py --interval-s 6`
@@ -212,7 +316,7 @@ loop tick:
   - Documented observability outputs and example config knobs you can tune.
 
 If you'd like, I can also:
-- Add a short `scripts/assess_and_archive.py` helper that writes the assessment markdown automatically on failure.
+- Add a short `Scripts/assess_and_archive.py` helper that writes the assessment markdown automatically on failure.
 - Insert a small `agent` section in `config/policy_rules.json` with the example knobs above.
 
 ### Foreground App Assessment & Navigation (pseudocode)
@@ -390,8 +494,8 @@ Reusable pattern:
 ## OCR Setup
 - See docs/SETUP_OCR.md
 - Ensure Tesseract is installed and config/ocr.json points to it (or it’s on PATH)
-- Test: python scripts/ocr_smoke_test.py
-- Commit test: python scripts/ocr_commit_test.py (captures App + Chat and appends to improvements.md; writes a JSON report)
+- Test: python Scripts/ocr_smoke_test.py
+- Commit test: python Scripts/ocr_commit_test.py (captures App + Chat and appends to improvements.md; writes a JSON report)
 
 ## Logs
 - Text log: logs/run.log (general); logs/self_improve.log (Self‑Improve)
@@ -400,52 +504,52 @@ Reusable pattern:
 - Test reports: logs/tests/*.json (+ *.md where applicable)
 
 ## Utilities & Health
-- Window assessment: `python scripts/assess_windows.py` (inventory, foreground, VS Code/Copilot presence, duplicate loops, OCR idle score for PowerShell)
-- Close idle PowerShell: `python scripts/close_idle_powershell.py` (OCR-based selection; closes exactly one idle window)
+- Window assessment: `python Scripts/assess_windows.py` (inventory, foreground, VS Code/Copilot presence, duplicate loops, OCR idle score for PowerShell)
+- Close idle PowerShell: `python Scripts/close_idle_powershell.py` (OCR-based selection; closes exactly one idle window)
 - Start commit loop (external window):
   - Infinite loop with dedupe:
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\copilot_commit_start.ps1 -Mode app -StartAfterSeconds 5 -RepeatSeconds 10 -RepeatCount 0 -Message "Auto message — see projects/Self-Improve/next_steps.md" -Title "Copilot" -LogPath "logs/actions/copilot_commit.log"
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\copilot_commit_start.ps1 -Mode app -StartAfterSeconds 5 -RepeatSeconds 10 -RepeatCount 0 -Message "Auto message — see projects/Self-Improve/next_steps.md" -Title "Copilot" -LogPath "logs/actions/copilot_commit.log"
     ```
   - Stop loops:
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\copilot_commit_stop.ps1
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\copilot_commit_stop.ps1
     ```
 
 ## Screen Recording & Live Preview
 
-- One-off screenshot / time-lapse frames: `scripts/capture_screen.ps1`
+- One-off screenshot / time-lapse frames: `Scripts/capture_screen.ps1`
   - Single shot with timestamp:
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\capture_screen.ps1 -Out "logs\screens\screen_$(Get-Date -Format yyyyMMdd_HHmmss).png" -StampTime
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\capture_screen.ps1 -Out "logs\screens\screen_$(Get-Date -Format yyyyMMdd_HHmmss).png" -StampTime
     ```
   - Time-lapse frames (10s @ 2 fps):
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\capture_screen.ps1 -OutDir "logs\screens\rec_$(Get-Date -Format yyyyMMdd_HHmmss)" -Seconds 10 -Fps 2 -StampTime
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\capture_screen.ps1 -OutDir "logs\screens\rec_$(Get-Date -Format yyyyMMdd_HHmmss)" -Seconds 10 -Fps 2 -StampTime
     ```
   - Optional MP4/GIF render (requires ffmpeg on PATH):
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\capture_screen.ps1 -OutDir logs\screens\rec -Seconds 5 -Fps 2 -OutVideo logs\screens\out.mp4
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\capture_screen.ps1 -OutDir logs\screens\rec -Seconds 5 -Fps 2 -OutVideo logs\screens\out.mp4
     ```
 
-- Live recorder (Python): `scripts/monitor_live.py`
+- Live recorder (Python): `Scripts/monitor_live.py`
   - Auto backend (prefers dxcam, falls back to mss):
     ```powershell
-    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_auto.mp4
+    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_auto.mp4
     ```
   - Force mss (stable on any GPU):
     ```powershell
-    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_mss.mp4 --backend mss
+    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/monitor_live.py --seconds 5 --fps 12 --out logs/screens/live_mss.mp4 --backend mss
     ```
   - Preview window (ESC to stop):
     ```powershell
-    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --preview --fps 15 --backend mss
+    C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/monitor_live.py --preview --fps 15 --backend mss
     ```
 
-- Commit + record wrapper: `scripts/copilot_commit_with_record.ps1`
+- Commit + record wrapper: `Scripts/copilot_commit_with_record.ps1`
   - Short, bounded run with synchronized recording:
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File scripts\copilot_commit_with_record.ps1 -Mode app -StartAfterSeconds 1 -RepeatSeconds 4 -RepeatCount 1 -Message "Record sync test" -LogPath "logs/actions/commit_with_record.log" -Record -RecordFps 10 -RecordBackend auto -Wait
+    powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\copilot_commit_with_record.ps1 -Mode app -StartAfterSeconds 1 -RepeatSeconds 4 -RepeatCount 1 -Message "Record sync test" -LogPath "logs/actions/commit_with_record.log" -Record -RecordFps 10 -RecordBackend auto -Wait
     ```
   - Note: If `-RepeatCount 0` (infinite), provide `-RecordSeconds` to avoid recording indefinitely.
 
@@ -466,7 +570,7 @@ Reusable pattern:
   - Navigation: verifies focusing and chat interactions
     - Command:
       ```powershell
-      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/navigation_test.py
+      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/navigation_test.py
       ```
     - Output: JSON report under `logs/tests/`.
   - OCR Smoke: sanity-check OCR pipeline
@@ -487,12 +591,12 @@ Reusable pattern:
   - Live Recorder (preview or file):
     - Example (file, marked):
       ```powershell
-      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/monitor_live.py --seconds 3 --fps 10 --out logs/screens/live_auto.mp4 --backend mss --mark-assessed
+      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/monitor_live.py --seconds 3 --fps 10 --out logs/screens/live_auto.mp4 --backend mss --mark-assessed
       ```
   - Screenshots / Time-lapse:
     - Single shot:
       ```powershell
-      powershell -NoProfile -ExecutionPolicy Bypass -File scripts/capture_screen.ps1 -Out "logs/screens/screen_$(Get-Date -Format yyyyMMdd_HHmmss).png" -StampTime
+      powershell -NoProfile -ExecutionPolicy Bypass -File Scripts/capture_screen.ps1 -Out "logs/screens/screen_$(Get-Date -Format yyyyMMdd_HHmmss).png" -StampTime
       ```
 
 - Assess:
@@ -501,7 +605,7 @@ Reusable pattern:
   - System inventory / duplicates / idle:
     - Command:
       ```powershell
-      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe scripts/assess_windows.py
+      C:/Users/yerbr/AI_Coder_Controller/Scripts/python.exe Scripts/assess_windows.py
       ```
   - Review OCR captures and notes:
     - Check `logs/ocr/` and `projects/Self-Improve/improvements.md`.
@@ -530,11 +634,11 @@ Reusable pattern:
     - In your prompt, say: "Please read ContextPack_Current.md for project context before answering." and then describe your goal.
 
 ## Image Utilities
-- HTML → Image: scripts/html_to_image.py (Playwright preferred, headless Chrome/Edge fallback)
-- Compose Image: scripts/compose_image.py (Pillow social-card)
+- HTML → Image: Scripts/html_to_image.py (Playwright preferred, headless Chrome/Edge fallback)
+- Compose Image: Scripts/compose_image.py (Pillow social-card)
 
 ## Safety & Troubleshooting
 - ESC always pauses/resumes AI controls immediately.
 - If OCR returns little text, tweak `targets.vscode_chat`/`targets.copilot_app` ROI and increase `chat_settle_ms`/`app_settle_ms` in config/ocr.json.
 - If the Copilot window title differs (e.g., “Microsoft Copilot”), set the `-Title` parameter for commit scripts or adjust `config/policy_rules.json` `auto_commit_title`.
-- If multiple PowerShell windows appear, run `scripts/close_idle_powershell.py` to close the idle one.
+- If multiple PowerShell windows appear, run `Scripts/close_idle_powershell.py` to close the idle one.

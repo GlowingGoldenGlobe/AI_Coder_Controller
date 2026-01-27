@@ -23,7 +23,7 @@ from src.control import Controller, SafetyLimits
 from src.ocr import CopilotOCR
 from src.windows import WindowsManager
 from src.control_state import get_controls_state
-from vscode_automation import MultiWindowChatKeepalive
+from src.vscode_automation import MultiWindowChatKeepalive
 
 
 def build_keepalive(root: Path) -> MultiWindowChatKeepalive:

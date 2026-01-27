@@ -1,0 +1,22 @@
+{
+  "root": ".",
+  "pipeline": ["capture_screenshot", "match_template", "act_click"],
+  "capture_screenshot": {
+    "enabled": true,
+    "monitor_index": 1,
+    "out_dir": "logs/screens",
+    "allow_in_dry_run": true
+  },
+  "match_template": {
+    "enabled": true,
+    "template_path": "assets/ui_templates/auto_template_1.png",
+    "threshold": 0.85
+  },
+  "act_click": {
+    "enabled": true,
+    "owner": "orchestrator_cli",
+    "stale_after_s": 10.0,
+    "state_file": "config/controls_state.json",
+    "button": "left"
+  }
+}

@@ -8213,3 +8213,12 @@
 {"ts":"2025-12-25T20:59:48.806Z","event":"ocr_stream","ok":true,"image":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766717988418624300.png","text_chars":782}
 {"ts":"2025-12-25T20:59:50.189Z","event":"orchestrator","op":"multi_window_keepalive","mode":"ui","windows":1,"actions":0}
 {"ts":"2025-12-25T20:59:50.193Z","event":"cleanup","message":"clean_once","scanned":90,"deleted":7}
+{"ts":"2026-01-27T09:37:10.546Z","event":"config","level":"info","kind":"copilot_prefer_app","note":"Will attempt Win+C and OCR copilot_app ROI"}
+{"ts":"2026-01-27T09:37:10.667Z","event":"recording","action":"start","ok":true}
+{"ts":"2026-01-27T09:37:11.597Z","event":"ocr_stream","ok":true,"image":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769528230799050000.png","text_chars":1065}
+{"ts":"2026-01-27T09:37:18.712Z","event":"orchestrator","op":"multi_window_keepalive","mode":"headless","windows":2,"actions":2}
+{"ts":"2026-01-27T09:37:18.733Z","event":"cleanup","message":"clean_once","scanned":88,"deleted":49}
+{"ts":"2026-01-27T09:37:18.745Z","event":"copilot","op":"auto_commit_after_stop","start_after_s":7,"repeat_s":10,"repeat_count":0}
+{"ts":"2026-01-27T09:37:18.745Z","event":"run","status":"stopped"}
+{"ts":"2026-01-27T09:37:18.752Z","event":"recording","action":"stop","ok":true}
+{"ts":"2026-01-27T09:37:18.752Z","event":"shutdown","reason":"signal_or_exit","graceful":true}

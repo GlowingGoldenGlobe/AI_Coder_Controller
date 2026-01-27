@@ -79,7 +79,7 @@ class ChatButtonAnalyzer:
 				left = int(sw * lp)
 				top = int(sh * tp)
 				width = max(1, int(sw * wp))
-				height = max(1, int(sw * hp))
+				height = max(1, int(sh * hp))
 				return {
 					"left": int(mon["left"]) + left,
 					"top": int(mon["top"]) + top,
@@ -128,6 +128,14 @@ class ChatButtonAnalyzer:
 			focused = bool(self.winman.focus_hwnd(int(hwnd)))
 		except Exception:
 			focused = False
+		# Confirm the target window is actually foreground; focus_hwnd can fail silently
+		# or another window can steal focus between cycles.
+		if focused:
+			try:
+				fg = self.winman.get_foreground()
+				focused = bool(fg) and int(fg) == int(hwnd)
+			except Exception:
+				focused = False
 		time.sleep(self.delay_s)
 
 		swap = self._set_alt_region(target_key)
@@ -232,7 +240,8 @@ class ChatButtonAnalyzer:
 		typed = False
 		sent = False
 
-		if needs and primary is not None:
+		# Safety: only act when we are confident the intended VS Code window is foreground.
+		if bool(obs.get("focused")) and needs and primary is not None:
 			bbox = primary.get("bbox") or {}
 			try:
 				ex = int(bbox.get("left", 0)) + int(bbox.get("width", 0)) // 2
@@ -249,7 +258,7 @@ class ChatButtonAnalyzer:
 
 		# Optional: focus input, auto-compose, and send a message when chat is asking for input.
 		opts = self.options.message
-		if needs_message and message_suggestion and opts.enabled and opts.allow_auto_send:
+		if bool(obs.get("focused")) and needs_message and message_suggestion and opts.enabled and opts.allow_auto_send:
 			try:
 				# Best-effort: click near the bottom-center of the ROI to focus the input field.
 				if opts.focus_input:

@@ -1,0 +1,24 @@
+{
+  "root": ".",
+  "pipeline": ["capture_screenshot", "match_best_template", "act_click"],
+  "capture_screenshot": {
+    "enabled": true,
+    "monitor_index": 1,
+    "out_dir": "logs/screens",
+    "allow_in_dry_run": true
+  },
+  "match_best_template": {
+    "enabled": true,
+    "templates_dir": "assets/ui_templates",
+    "patterns": ["*.png", "curated/*.png"],
+    "threshold": 0.85,
+    "max_templates": 200
+  },
+  "act_click": {
+    "enabled": true,
+    "owner": "orchestrator_cli",
+    "stale_after_s": 10.0,
+    "state_file": "config/controls_state.json",
+    "button": "left"
+  }
+}

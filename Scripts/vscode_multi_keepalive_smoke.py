@@ -22,7 +22,7 @@ from pathlib import Path
 from src.control import Controller, SafetyLimits
 from src.ocr import CopilotOCR
 from src.windows import WindowsManager
-from vscode_automation import MultiWindowChatKeepalive
+from src.vscode_automation import MultiWindowChatKeepalive
 
 
 def main() -> int:

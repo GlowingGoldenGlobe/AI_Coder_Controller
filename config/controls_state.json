@@ -1,6 +1,8 @@
 {
   "paused": true,
-  "ts": 1766717990.4730077,
-  "in_control_window": false,
-  "control_remaining_s": 83.0
+  "ts": 1769531977.7234335,
+  "in_control_window": true,
+  "control_remaining_s": 119.80638146400452,
+  "owner": "",
+  "in_use": false
 }

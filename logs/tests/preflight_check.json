@@ -1,0 +1,160 @@
+{
+  "python": {
+    "executable": "C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\python.exe",
+    "version": "3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "platform": {
+    "system": "Windows",
+    "release": "11",
+    "version": "10.0.26200"
+  },
+  "checks": [
+    {
+      "kind": "file_exists",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\policy_rules.json"
+      }
+    },
+    {
+      "kind": "file_exists",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\ocr.json"
+      }
+    },
+    {
+      "kind": "file_exists",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\templates.json"
+      }
+    },
+    {
+      "kind": "file_exists",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\vscode_orchestrator.json"
+      }
+    },
+    {
+      "kind": "file_exists",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\controls_state.json"
+      }
+    },
+    {
+      "kind": "json_parse",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\policy_rules.json",
+        "error": null
+      }
+    },
+    {
+      "kind": "json_parse",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\ocr.json",
+        "error": null
+      }
+    },
+    {
+      "kind": "json_parse",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\templates.json",
+        "error": null
+      }
+    },
+    {
+      "kind": "json_parse",
+      "ok": true,
+      "detail": {
+        "path": "C:\\Users\\yerbr\\AI_Coder_Controller\\config\\vscode_orchestrator.json",
+        "error": null
+      }
+    },
+    {
+      "kind": "tesseract_cmd_exists",
+      "ok": true,
+      "detail": {
+        "tesseract_cmd": "C:/Program Files/Tesseract-OCR/tesseract.exe"
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "mss",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "numpy",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "PIL",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "cv2",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "pyautogui",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "pytesseract",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "rich",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "uiautomation",
+        "error": null
+      }
+    },
+    {
+      "kind": "import",
+      "ok": true,
+      "detail": {
+        "module": "pynput",
+        "error": null
+      }
+    }
+  ],
+  "ok": true
+}

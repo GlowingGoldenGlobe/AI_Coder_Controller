@@ -24,7 +24,8 @@ from src.agent_terminal import TerminalAgent
 from src.phi4_client import Phi4Client
 from src.ocr_observer import OcrObserver
 from src.cleanup import FileCleaner
-from src.control_state import get_controls_state, set_controls_owner, update_control_window
+from src.control_state import get_controls_state, is_state_stale, set_controls_owner, update_control_window
+from src.safety.action_safety import ActionSafety
 
 console = Console()
 
@@ -128,6 +129,8 @@ def run(
     action_log = JsonActionLogger(root / "logs/actions/actions.jsonl")
     log_improve = Logger(root / "logs/self_improve.log")
 
+    safety = ActionSafety(root)
+
     # Graceful shutdown state
     _shutdown_state = {"requested": False, "cap": None, "ctrl": None}
     
@@ -140,17 +143,6 @@ def run(
             if _shutdown_state.get("cap"):
                 try:
                     _shutdown_state["cap"].stop()
-                except Exception:
-                    pass
-            # Save pause state for next startup
-            if _shutdown_state.get("ctrl"):
-                try:
-                    ctrl_state = {
-                        "paused": bool(_shutdown_state["ctrl"]._controls_paused),
-                        "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
-                    }
-                    state_file = root / "config" / "controls_state.json"
-                    state_file.write_text(json.dumps(ctrl_state), encoding="utf-8")
                 except Exception:
                     pass
             log_run("Graceful shutdown complete")
@@ -276,7 +268,7 @@ def run(
     keepalive = None
     last_keepalive_t = {"t": 0.0}
     try:
-        from vscode_automation import MultiWindowChatKeepalive  # type: ignore
+        from src.vscode_automation import MultiWindowChatKeepalive  # type: ignore
 
         keepalive = MultiWindowChatKeepalive(ctrl=ctrl, ocr=ocr, winman=winman)
         log_run("VS Code multi-window orchestrator initialized")
@@ -513,14 +505,28 @@ def run(
             pass
     ui_state = load_ui_state()
 
+    # Controls ownership tracking (avoid clobbering when other workflows run)
+    controls_owner = {"acquired": False, "prev": ""}
+
     def on_run():
         state["running"] = True
         state["paused"] = False
         log_run("Run requested")
         action_log.log("run", status="requested")
-        # Mark controller/agent as current owner of automation controls.
+        # Mark controller/agent as current owner of automation controls (best-effort).
+        # Do not clobber another active workflow's ownership.
         try:
-            set_controls_owner(root, "agent")
+            st = get_controls_state(root) or {}
+            existing_owner = str(st.get("owner", "") or "")
+            stale_after_s = float((rules.get("controls") or {}).get("stale_after_s", 10.0))
+            if existing_owner and existing_owner != "agent" and not is_state_stale(st, stale_after_s):
+                action_log.log("controls", action="acquire_skipped", owner=existing_owner, reason="owned")
+                log_run(f"Controls owned by another workflow ({existing_owner}); will not acquire")
+            else:
+                controls_owner["prev"] = existing_owner
+                set_controls_owner(root, "agent")
+                controls_owner["acquired"] = True
+                action_log.log("controls", action="acquired", owner="agent", prev_owner=existing_owner)
         except Exception:
             pass
         if rules.get("auto_record_on_run", False):
@@ -602,9 +608,14 @@ def run(
             action_log.log("copilot", op="auto_commit_after_stop", error=str(e))
         action_log.log("run", status="stopped")
 
-        # Release ownership of automation controls.
+        # Release ownership of automation controls if we acquired it and still own it.
         try:
-            set_controls_owner(root, None)
+            if controls_owner.get("acquired"):
+                st = get_controls_state(root) or {}
+                current_owner = str(st.get("owner", "") or "")
+                if current_owner == "agent":
+                    set_controls_owner(root, None)
+                    action_log.log("controls", action="released", owner="agent")
         except Exception:
             pass
 
@@ -1000,6 +1011,24 @@ def run(
         try:
             start = time.time()
             while True:
+                # Emergency stop / shutdown should exit promptly.
+                try:
+                    if _shutdown_state.get("requested"):
+                        break
+                    if safety.is_emergency_stop():
+                        action_log.log("emergency_stop", detected=True, mode="headless")
+                        state["stop"] = True
+                        state["running"] = False
+                        try:
+                            ctrl.set_controls_paused(True)
+                        except Exception:
+                            pass
+                        break
+                    if state.get("stop"):
+                        break
+                except Exception:
+                    pass
+
                 cap.grab_frame()
                 executed_this_tick = 0
                 performed_non_copilot = False
@@ -1253,6 +1282,9 @@ def run(
         """
         try:
             st = get_controls_state(root) or {}
+            # Global pause: if any workflow has paused controls, yield.
+            if bool(st.get("paused", False)):
+                return False
             owner = str(st.get("owner", "") or "")
             # When owner is empty or "agent", allow; otherwise yield.
             if not owner or owner == "agent":
@@ -1263,7 +1295,18 @@ def run(
             return True
 
     def composite_gate() -> bool:
-        return window_gate() and controls_owner_gate()
+        # Single choke point for external-effect actions.
+        if not window_gate():
+            return False
+        try:
+            stale_after_s = float((rules.get("controls") or {}).get("stale_after_s", 10.0))
+        except Exception:
+            stale_after_s = 10.0
+        try:
+            decision = safety.composite_gate(owner="agent", stale_after_s=stale_after_s)
+            return bool(decision.allowed)
+        except Exception:
+            return controls_owner_gate()
 
     ctrl.set_window_gate(composite_gate)
 
@@ -1322,6 +1365,20 @@ def run(
         log_run("ESC listener not available; pynput missing or failed to start")
 
     def tick():
+        # Emergency stop is absolute and persistent.
+        try:
+            if safety.is_emergency_stop():
+                if not state.get("stop"):
+                    log_run("Emergency stop detected; stopping run loop")
+                    action_log.log("emergency_stop", detected=True)
+                state["stop"] = True
+                state["running"] = False
+                try:
+                    ctrl.set_controls_paused(True)
+                except Exception:
+                    pass
+        except Exception:
+            pass
         if not state["stop"]:
             # Auto-run when Agent Mode is enabled (unless paused or already running)
             try:

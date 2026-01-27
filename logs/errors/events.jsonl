@@ -18195,3 +18195,37 @@
 {"ts":"2025-12-25T20:57:19.157Z","event":"focus_attempt","target":"copilot_app","ok":true,"method":"already_foreground","image_path":""}
 {"ts":"2025-12-25T20:57:20.964Z","event":"copilot_app_paste_attempt","attempt":2,"select_all_ok":false,"paste_ok":false}
 {"ts":"2025-12-25T20:57:20.964Z","event":"copilot_app_type_failed","reason":"controller_rejected_or_failed"}
+{"ts":"2026-01-27T10:28:17.373Z","event":"focus_attempt","target":"copilot_app","ok":true,"method":"existing_window","image_path":""}
+{"ts":"2026-01-27T10:28:17.374Z","event":"copilot_app_focus_selected","ok":true,"hwnd":329176,"title":"Untitled conversation","cls":"WinUIDesktopWin32WindowClass","process":"Copilot.exe"}
+{"ts":"2026-01-27T10:28:18.596Z","event":"focus_attempt","target":"vscode","ok":true,"method":"title_match","image_path":""}
+{"ts":"2026-01-27T10:28:19.466Z","event":"focus_attempt","target":"vscode_chat_input_guess","ok":true,"method":"bbox_guess","image_path":""}
+{"ts":"2026-01-27T10:39:05.140Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531944513003200.png"}
+{"ts":"2026-01-27T10:39:06.281Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531945680320900.png"}
+{"ts":"2026-01-27T10:39:08.024Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531947433454100.png"}
+{"ts":"2026-01-27T10:39:08.608Z","event":"image_observation","stage":"before_terminal_type","ok":true,"image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769531948267374300.png","elements_count":67}
+{"ts":"2026-01-27T10:39:09.985Z","event":"image_observation","stage":"after_terminal_enter","ok":true,"image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769531949642643300.png","elements_count":62}
+{"ts":"2026-01-27T10:39:11.021Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531950434824100.png"}
+{"ts":"2026-01-27T10:39:11.667Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531951059797900.png"}
+{"ts":"2026-01-27T10:39:13.407Z","event":"focus_attempt","target":"vscode_chat_input","ok":true,"method":"cursor_select","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_chat_input_ok_1769531952811675000.png"}
+{"ts":"2026-01-27T10:39:14.032Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531953437460200.png"}
+{"ts":"2026-01-27T10:39:15.365Z","event":"focus_attempt","target":"vscode_chat_input","ok":true,"method":"cursor_select","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_chat_input_ok_1769531954772357200.png"}
+{"ts":"2026-01-27T10:39:18.207Z","event":"focus_attempt","target":"copilot_app","ok":true,"method":"existing_window","image_path":""}
+{"ts":"2026-01-27T10:39:18.207Z","event":"copilot_app_focus_selected","ok":true,"hwnd":329176,"title":"Untitled conversation","cls":"WinUIDesktopWin32WindowClass","process":"Copilot.exe"}
+{"ts":"2026-01-27T10:39:19.353Z","event":"focus_attempt","target":"vscode","ok":true,"method":"title_match","image_path":""}
+{"ts":"2026-01-27T10:39:20.230Z","event":"focus_attempt","target":"vscode_chat_input_guess","ok":true,"method":"bbox_guess","image_path":""}
+{"ts":"2026-01-27T10:39:21.844Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":""}
+{"ts":"2026-01-27T10:39:22.196Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":""}
+{"ts":"2026-01-27T10:39:23.066Z","event":"focus_attempt","target":"vscode_chat_input_guess","ok":true,"method":"bbox_guess","image_path":""}
+{"ts":"2026-01-27T10:39:49.580Z","event":"focus_attempt","target":"vscode","ok":true,"method":"title_match","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531988486940900.png"}
+{"ts":"2026-01-27T10:39:50.089Z","event":"foreground_not_vscode_before_send","command":"Terminal: Focus Terminal"}
+{"ts":"2026-01-27T10:39:50.591Z","event":"foreground_not_vscode_before_send","command":"Terminal: Toggle Terminal"}
+{"ts":"2026-01-27T10:39:51.092Z","event":"foreground_not_vscode_before_send","command":"View: Toggle Terminal"}
+{"ts":"2026-01-27T10:39:52.278Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531991643058700.png"}
+{"ts":"2026-01-27T10:39:54.081Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531993434602000.png"}
+{"ts":"2026-01-27T10:39:54.636Z","event":"image_observation","stage":"before_terminal_type","ok":true,"image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769531994309220700.png","elements_count":67}
+{"ts":"2026-01-27T10:39:56.028Z","event":"image_observation","stage":"after_terminal_enter","ok":true,"image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1769531995688316400.png","elements_count":67}
+{"ts":"2026-01-27T10:39:57.087Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531996480422500.png"}
+{"ts":"2026-01-27T10:39:57.732Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531997145897100.png"}
+{"ts":"2026-01-27T10:39:59.075Z","event":"focus_attempt","target":"vscode_chat_input","ok":true,"method":"cursor_select","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_chat_input_ok_1769531998482469700.png"}
+{"ts":"2026-01-27T10:39:59.691Z","event":"focus_attempt","target":"vscode","ok":true,"method":"already_foreground","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_ok_1769531999106130100.png"}
+{"ts":"2026-01-27T10:40:01.031Z","event":"focus_attempt","target":"vscode_chat_input","ok":true,"method":"cursor_select","image_path":"C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_focus_vscode_chat_input_ok_1769532000440942300.png"}
