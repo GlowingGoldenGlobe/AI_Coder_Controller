@@ -18,6 +18,8 @@ Include/
 pyvenv.cfg
 
 # Keep Scripts/*.py, ignore venv executables/binaries
+Scripts/*.exe
+Scripts/*.bat
 Scripts/python*.exe
 Scripts/pip*.exe
 Scripts/pip*.py
