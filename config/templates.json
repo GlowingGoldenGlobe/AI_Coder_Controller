@@ -1,0 +1,9 @@
+{
+  "chat_input": {
+    "templates": [
+      "assets/ui_templates/curated/curated_1.png",
+      "assets/ui_templates/curated/curated_2.png",
+      "assets/ui_templates/curated/curated_3.png"
+    ]
+  }
+}

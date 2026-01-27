@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "monitor_index": 1,
+  "region_percent": {
+    "left": 65,
+    "top": 8,
+    "width": 34,
+    "height": 88
+  },
+  "tesseract_cmd": "C:/Program Files/Tesseract-OCR/tesseract.exe",
+  "tesseract_psm": 6,
+  "save_debug_images": true,
+  "chat_settle_ms": 1000,
+  "app_settle_ms": 800,
+  "targets": {
+    "vscode_chat": {
+      "left": 65,
+      "top": 8,
+      "width": 34,
+      "height": 88
+    },
+    "copilot_app": {
+      "left": 65,
+      "top": 8,
+      "width": 34,
+      "height": 88
+    }
+  }
+}

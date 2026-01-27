@@ -1,0 +1,75 @@
+{
+  "enabled": true,
+  "interval_s": 6.0,
+  "max_windows_per_cycle": 8,
+  "message_strategy": "cycle",
+  "action_hints": [
+    "continue generating",
+    "continue",
+    "keep",
+    "allow",
+    "send",
+    "submit",
+    "apply",
+    "accept",
+    "ok"
+  ],
+  "message": {
+    "enabled": true,
+    "max_length": 400,
+    "compose_when_prompts_match": [
+      "describe your task",
+      "what can i help you with",
+      "how can i help",
+      "provide instructions",
+      "enter your request",
+      "what would you like to do",
+      "what would you like to work on",
+      "what's next",
+      "what is next",
+      "next"
+    ],
+    "allow_auto_send": true,
+    "press_enter": true,
+    "focus_input": true,
+    "send_keys": [],
+    "default_templates": [
+      {
+        "id": "request_objective_state",
+        "text": "Please summarize the current objectives and task state. If a project context pack such as 'ContextPack_Current.md' or similar has been shared in this conversation, base your answer on it; otherwise, read the workflow README. Indicate whether any tasks remain, and if none are left, propose the next safe actions."
+      },
+      {
+        "id": "continue_orchestration",
+        "text": "Continue workflow orchestration performance to keep the AI_Coder_Controller VS Code Agent Mode editor tabs active."
+      },
+      {
+        "id": "whats_next",
+        "text": "What's next?"
+      },
+      {
+        "id": "continue_task",
+        "text": "Continue."
+      },
+      {
+        "id": "continue_perform_tasks",
+        "text": "Continue to perform tasks."
+      },
+      {
+        "id": "perform_tasks",
+        "text": "Perform tasks."
+      },
+      {
+        "id": "yes_affirm",
+        "text": "Yes."
+      },
+      {
+        "id": "clarify_objective",
+        "text": "Please restate the current objective and any constraints, then continue."
+      },
+      {
+        "id": "next_todo_continue",
+        "text": "Ok. What's the next to do task. Continue."
+      }
+    ]
+  }
+}

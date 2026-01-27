@@ -1,0 +1,110 @@
+from __future__ import annotations
+
+import time
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Sequence
+
+from src.control import Controller
+from src.ocr import CopilotOCR
+from src.windows import WindowsManager
+from src.jsonlog import JsonActionLogger
+
+from .window_set import VSCodeWindowSet
+from .chat_buttons import ChatButtonAnalyzer
+
+
+class MultiWindowChatKeepalive:
+    """Scan all VS Code windows and nudge stalled chats via button clicks.
+
+    This is a small orchestration layer that composes VSCodeWindowSet and
+    ChatButtonAnalyzer to extend the existing single-window workflows:
+
+    - Enumerates all visible Code.exe / VS Code windows.
+    - For each, focuses the window and OCR-captures the configured chat ROI.
+    - When OCR text indicates an actionable state (e.g. "continue generating"),
+      it clicks a primary button inside that ROI.
+
+    The goal is to prevent agent workflows from stalling when multiple VS Code
+    windows are open and any of them block on a chat-UI button.
+    """
+
+    def __init__(
+        self,
+        ctrl: Controller,
+        ocr: CopilotOCR,
+        winman: Optional[WindowsManager] = None,
+        log: Optional[JsonActionLogger] = None,
+        delay_ms: int = 400,
+        action_hints: Optional[Sequence[str]] = None,
+    ) -> None:
+        self.ctrl = ctrl
+        self.ocr = ocr
+        self.winman = winman or WindowsManager()
+        self.windows = VSCodeWindowSet(self.winman)
+        self.buttons = ChatButtonAnalyzer(ocr=self.ocr, ctrl=self.ctrl, winman=self.winman, delay_ms=delay_ms)
+        root = Path(__file__).resolve().parent.parent
+        self.log = log or JsonActionLogger(root / "logs" / "actions" / "vscode_multi_keepalive.jsonl")
+        self.delay_s = max(0, int(delay_ms)) / 1000.0
+        self.action_hints = tuple(action_hints) if action_hints is not None else tuple(ChatButtonAnalyzer.DEFAULT_ACTION_HINTS)
+
+    def _log_event(self, event: str, **data: Any) -> None:
+        try:
+            self.log.log(event, **data)
+        except Exception:
+            pass
+
+    def cycle_once(self, max_windows: Optional[int] = None, target_key: str = "vscode_chat") -> Dict[str, Any]:
+        """Run a single keepalive pass over all VS Code windows.
+
+        Returns a summary dict with per-window results, suitable for piping
+        into higher-level assessment or self-improvement flows.
+        """
+        ws = self.windows.list_vscode_windows()
+        if max_windows is not None and max_windows >= 0:
+            ws = ws[:max_windows]
+
+        results: List[Dict[str, Any]] = []
+        actions = 0
+        for w in ws:
+            try:
+                rec = self.buttons.click_primary_chat_button(
+                    hwnd=w.hwnd,
+                    target_key=target_key,
+                    action_hints=self.action_hints,
+                )
+                rec["window_title"] = w.title
+                rec["window_process"] = w.process
+                results.append(rec)
+                if rec.get("clicked"):
+                    actions += 1
+                    # Small delay between windows to avoid rapid thrash.
+                    time.sleep(self.delay_s)
+            except Exception as e:
+                results.append({
+                    "hwnd": int(getattr(w, "hwnd", 0) or 0),
+                    "window_title": getattr(w, "title", ""),
+                    "error": str(e),
+                })
+
+        summary = {
+            "windows_scanned": len(ws),
+            "actions_taken": actions,
+            "results": results,
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        }
+        self._log_event("vscode_multi_keepalive_cycle", **summary)
+        return summary
+
+    def run_loop(self, interval_s: float = 5.0, max_cycles: Optional[int] = None) -> None:
+        """Optional helper: background-style loop for keepalive.
+
+        The caller is responsible for choosing safe lifecycle integration.
+        This method does not spawn threads; it is a simple blocking loop.
+        """
+        cycles = 0
+        while True:
+            self.cycle_once()
+            cycles += 1
+            if max_cycles is not None and cycles >= max_cycles:
+                break
+            time.sleep(max(0.1, float(interval_s)))

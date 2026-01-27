@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+
+# Build artifacts
+build/
+dist/
+
+# Virtual env (this repo contains a venv-style layout)
+.venv/
+venv/
+ENV/
+Lib/
+Include/
+pyvenv.cfg
+
+# Keep Scripts/*.py, ignore venv executables/binaries
+Scripts/python*.exe
+Scripts/pip*.exe
+Scripts/pip*.py
+Scripts/activate*
+Scripts/Activate.ps1
+Scripts/*.dll
+Scripts/*.pyd
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+logs/
+recordings/
+Archive_OCR_Images_Assessments/
+Archive_old_files/
+Copilot_Attachments/
+External_Upload/
+
+temp_*.md
+*.log
+*.mp4
+*.png
+
+# Secrets / local overrides
+*.env
+config/*local*.json

@@ -1,0 +1,490 @@
+[# Metadata Summary]
+Root: C:\Users\yerbr\AI_Coder_Controller
+Generated: 2025-12-25T20:57:09
+
+[# Modules and Functions]
+- src\agent_terminal.py:
+  - __init__()
+  - _log()
+  - run_command()
+  - type_command_no_enter()
+  - commit_enter()
+  - queue_post_stop_send()
+  - has_pending()
+  - commit_pending()
+  - run_script()
+  - run_python_module()
+  - launch_ui()
+- src\capture.py:
+  - __init__()
+  - start()
+  - grab_frame()
+  - stop()
+  - __init__()
+  - _open_writer()
+  - start()
+  - _rotate_if_needed()
+  - grab_frame()
+  - stop()
+- src\cleanup.py:
+  - _log()
+  - _has_marker()
+  - _should_delete()
+  - clean_once()
+- src\control.py:
+  - _window_reset_if_needed()
+  - _check_global_rate_limit()
+  - _record_action()
+  - move_mouse()
+  - click_at()
+  - click()
+  - type_text()
+  - press_keys()
+  - _update_mouse_cycle()
+  - is_controls_allowed()
+  - is_keyboard_allowed()
+  - mouse_window_state()
+  - _load_pause_state()
+  - _save_pause_state()
+  - set_controls_paused()
+  - toggle_controls_paused()
+  - control_phase_info()
+  - rate_limit_info()
+  - set_window_gate()
+  - idle_seconds()
+  - actions_in_window()
+  - rate_limit_headroom()
+- src\control_state.py:
+  - _now()
+  - _state_path()
+  - get_controls_state()
+  - is_state_stale()
+  - set_controls_owner()
+  - update_control_window()
+- src\image_compose.py:
+  - _load_font()
+  - _wrap_text()
+- src\jsonlog.py:
+  - _now_iso()
+  - __init__()
+  - log()
+  - _record_error()
+  - _prune_old_errors()
+  - error_rate()
+  - all_error_rates()
+  - total_errors_in_window()
+- src\main.py:
+  - ensure_dirs()
+  - timestamp()
+  - __init__()
+  - __call__()
+  - _validate_config()
+  - _save_shutdown_state()
+  - _signal_handler()
+  - _best_template_match()
+  - _capture_and_measure()
+  - _safe_workspace_path()
+  - _append_summary_to_file()
+  - _append_copilot_text()
+  - load_ui_state()
+  - save_ui_state()
+  - on_run()
+  - on_pause()
+  - on_resume()
+  - on_stop()
+  - on_user_msg()
+  - on_upload_files()
+  - on_select_project()
+  - on_focus_vscode()
+  - on_focus_terminal()
+  - on_toggle_controls()
+  - on_send_metadata()
+  - _execute_objectives_once()
+  - format_entry()
+  - on_list_windows_ui()
+  - on_select_target_ui()
+  - on_scroll_chat_down()
+  - on_scroll_chat_up()
+  - on_toggle_automation()
+  - on_toggle_agent()
+  - on_toggle_ocr()
+  - on_test_planner()
+  - window_gate()
+  - controls_owner_gate()
+  - composite_gate()
+  - on_press()
+  - tick()
+- src\messaging.py:
+  - __init__()
+  - _preconditions()
+  - send_or_plan()
+- src\ocr.py:
+  - __init__()
+  - _percent_roi_to_bbox()
+  - _stamp()
+  - _save_image()
+  - capture_image()
+  - capture_chat_text()
+  - capture_bbox_text()
+  - detect_ui_elements_from_path()
+  - _iou()
+  - _load_templates()
+- src\ocr_observer.py:
+  - __init__()
+  - _write_stream()
+  - poll()
+- src\phi4_client.py:
+  - __init__()
+  - _headers()
+  - _post_json()
+  - _get_json()
+  - ping()
+  - compose()
+- src\phi4_planner.py:
+  - compose_prompt_and_contingencies()
+- src\policy.py:
+  - __init__()
+  - parse_objectives()
+  - decide()
+- src\self_improve.py:
+  - list_python_modules()
+  - extract_functions()
+  - build_metadata_text()
+  - write_metadata_file()
+- src\ui.py:
+  - __init__()
+  - toggle_record()
+  - toggle_pause()
+  - emergency_stop()
+  - __init__()
+  - upload_files()
+  - list_projects()
+  - _load_project()
+  - _send_msg()
+  - _send_metadata()
+  - _get_scroll_steps()
+  - _scroll_chat_down()
+  - _scroll_chat_up()
+  - start()
+  - set_controls_timer()
+  - set_automation_state()
+  - set_agent_state()
+  - set_ocr_state()
+  - _toggle_automation()
+  - _toggle_agent()
+  - _toggle_controls()
+  - _toggle_ocr()
+  - _focus_terminal()
+  - _test_planner()
+  - set_controls_timer()
+  - open_recordings_folder()
+  - open_logs_folder()
+  - _refresh_windows()
+  - set_target_options()
+  - _on_select_target()
+  - set_foreground_status()
+  - interactive_banner()
+- src\vsbridge.py:
+  - __init__()
+  - _press_keys_copilot()
+  - _copilot_app_focused_name()
+  - _copilot_app_click_attach_button()
+  - _log_error_event()
+  - _record_focus()
+  - set_ocr()
+  - _ocr_observe()
+  - _ocr_detect_wrong_field()
+  - press_tab()
+  - _type_path()
+  - open_vscode()
+  - command_palette()
+  - focus_copilot_chat_view()
+  - focus_copilot_app()
+  - ask_copilot_app()
+  - _gate()
+  - compose_message_vscode_chat()
+  - scroll_chat()
+  - _expected_visible()
+  - _clipboard_satisfies()
+  - _uia_focus_info()
+  - _uia_is_message_item()
+  - _uia_is_input()
+  - _observe()
+  - _press_move()
+  - _clipboard_set_sentinel()
+  - _clipboard_read()
+  - _attempt_copy_with_fallback()
+  - _attempt_enter_copy_button()
+  - _smart_step()
+  - _verify_vscode_foreground()
+  - _verify_copilot_foreground()
+  - focus_terminal()
+  - run_terminal_command()
+  - _vscode_chat_input_ready()
+  - _looks_like_vscode_ui()
+  - focus_vscode_window()
+  - _copilot_app_input_ready()
+  - _copilot_app_prepare_for_send()
+  - _copilot_app_assess_context()
+  - _copilot_app_open_most_recent_conversation()
+  - _observe_step()
+  - _observe_point()
+  - _mouse_pos()
+  - _probe_control_at_point()
+  - _in_input_region()
+  - _move_observe_probe_then_maybe_click()
+  - _move_observe_probe_then_click_any()
+  - _press()
+  - _type()
+  - _is_file_dialog_foreground()
+  - _detect_file_picker_controls()
+  - _wait_file_picker()
+  - _wait_file_dialog()
+  - _open_more_options_menu_then_upload()
+  - _click_conversation_starter_upload()
+  - _ocr_scan_more_options_labels()
+  - _infer_flyout_accels()
+  - _kb_try()
+  - _press_nav()
+  - _press_action()
+  - _type_action()
+  - _click_input_more_options()
+  - _click_attach_near_input()
+  - _focused_attach_anchor()
+  - _sanitize_windows_path()
+  - _clipboard_set_verify()
+  - _contains_expected()
+- src\windows.py:
+  - _get_window_text()
+  - _get_class_name()
+  - _is_window_visible()
+  - _get_window_pid()
+  - _get_process_path()
+  - _enum_windows()
+  - _cb()
+  - list_windows()
+  - _collect()
+  - find_first()
+  - _check()
+  - _check()
+  - focus_hwnd()
+  - get_foreground()
+  - get_window_info()
+  - get_window_process_name()
+  - get_window_rect()
+  - close_hwnd()
+  - get_clipboard_text()
+  - set_clipboard_text()
+  - send_input_keys()
+  - _clipboard_get_unicode_text()
+  - _now_s()
+  - _clipboard_get_text()
+  - _now_s()
+  - _clipboard_set_unicode_text()
+  - _now_s()
+  - _send_input_hotkey()
+  - _vk_for()
+  - _key_input()
+
+[# Filesystem (focused)]
+- .gitignore | 71 bytes
+- .pytest_cache\.gitignore | 39 bytes
+- .pytest_cache\CACHEDIR.TAG | 191 bytes
+- .pytest_cache\README.md | 310 bytes
+- .pytest_cache\v\cache\nodeids | 805 bytes
+- .vscode\tasks.json | 9002 bytes
+- Archive_OCR_Images_Assessments\AGENT_ERROR_REPORT_20251218.md | 2333 bytes
+- Archive_OCR_Images_Assessments\OBSERVED_OCR_IMAGES_20251218.md | 32211 bytes
+- Archive_old_files\module_composer_backup_12182025.py | 27035 bytes
+- assets\ui_templates\.gitkeep | 76 bytes
+- assets\ui_templates\auto_extracted_1.png | 842 bytes
+- assets\ui_templates\auto_extracted_2.png | 1874 bytes
+- assets\ui_templates\auto_extracted_3.png | 923 bytes
+- assets\ui_templates\auto_extracted_4.png | 682 bytes
+- assets\ui_templates\auto_extracted_5.png | 691 bytes
+- assets\ui_templates\auto_extracted_6.png | 1471 bytes
+- assets\ui_templates\auto_template_1.png | 185150 bytes
+- assets\ui_templates\curated\auto_template_1.png | 125353 bytes
+- assets\ui_templates\curated\curated_1.png | 584 bytes
+- assets\ui_templates\curated\curated_2.png | 1501 bytes
+- assets\ui_templates\curated\curated_3.png | 620 bytes
+- assets\ui_templates\curated\curated_4.png | 590 bytes
+- assets\ui_templates\curated\curated_5.png | 631 bytes
+- assets\ui_templates\curated\curated_6.png | 1505 bytes
+- config\chat_input_template.png | 5916 bytes
+- config\controls_state.json | 154 bytes
+- config\instructions.md | 3284 bytes
+- config\objectives.md | 661 bytes
+- config\objectives_orchestrator.md | 1040 bytes
+- config\objectives_test.md | 194 bytes
+- config\ocr.json | 551 bytes
+- config\policy_rules.json | 2431 bytes
+- config\templates.json | 212 bytes
+- config\ui_state.json | 296 bytes
+- config\vscode_orchestrator.json | 2086 bytes
+- Copilot_Attachments\.vscode_fs_structure.txt | 123 bytes
+- Copilot_Attachments\__pycache___fs_structure.txt | 295 bytes
+- Copilot_Attachments\AgentModeModules.txt | 4792 bytes
+- Copilot_Attachments\Archive_OCR_Images_Assessments_fs_structure.txt | 465 bytes
+- Copilot_Attachments\Archive_old_files_fs_structure.txt | 221 bytes
+- Copilot_Attachments\assets_fs_structure.txt | 2171 bytes
+- Copilot_Attachments\config_fs_structure.txt | 927 bytes
+- Copilot_Attachments\Copilot_Attachments_fs_structure.txt | 1366 bytes
+- Copilot_Attachments\docs_fs_structure.txt | 383 bytes
+- Copilot_Attachments\External_Upload_fs_structure.txt | 181 bytes
+- Copilot_Attachments\fs_diagram.py | 1567 bytes
+- Copilot_Attachments\fs_diagram_split_inventory.py | 2830 bytes
+- Copilot_Attachments\Include_fs_structure.txt | 47 bytes
+- Copilot_Attachments\Lib_fs_structure.txt | 1014122 bytes
+- Copilot_Attachments\logs_fs_structure.txt | 92680 bytes
+- Copilot_Attachments\projects_fs_structure.txt | 1778 bytes
+- Copilot_Attachments\recordings_fs_structure.txt | 3105 bytes
+- Copilot_Attachments\Scripts_fs_structure.txt | 7104 bytes
+- Copilot_Attachments\src_fs_structure.txt | 5664 bytes
+- Copilot_Attachments\vscode_automation_fs_structure.txt | 2160 bytes
+- docs\AGENT_HEALTH_CHECKLIST.md | 2706 bytes
+- docs\COPILOT_CONTEXT_PACK.md | 4027 bytes
+- docs\ERROR_COMMANDS.md | 2585 bytes
+- docs\PHI4_Commit_Tuning.md | 3555 bytes
+- docs\SETUP_OCR.md | 1632 bytes
+- docs\VSCode_Agent_Integration.md | 6183 bytes
+- External_Upload\module_composer.txt | 27035 bytes
+- fs_structure.txt | 1132420 bytes
+- Instructions_1.md | 26131 bytes
+- Instructions_2.md | 4664 bytes
+- logs\actions\actions.jsonl | 1199149 bytes
+- logs\actions\agent_run_module_smoke.jsonl | 369 bytes
+- logs\actions\agent_terminal_smoke.jsonl | 745 bytes
+- logs\actions\cleanup_daemon_20251217_071059.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_072012.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_072430.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_073145.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_073315.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_073536.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_073650.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_074054.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_074124.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_075106.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_075221.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_075358.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_075532.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_075651.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_080109.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_081638.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_081738.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_081921.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_082104.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_082234.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_082419.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_082540.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_083603.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_083819.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_084051.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_084648.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085159.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085212.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085302.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085546.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085552.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_085632.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_090138.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_090709.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_090712.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_090808.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_090850.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_091121.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_091938.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_092346.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_092531.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_092905.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_093043.log | 147 bytes
+- logs\actions\cleanup_daemon_20251217_094013.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_013824.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_014707.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_025450.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_034757.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_035344.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_035404.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_040939.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_064914.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_070649.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_215146.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_215831.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_220037.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_220444.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_220711.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_220815.log | 147 bytes
+- logs\actions\cleanup_daemon_20251218_221159.log | 147 bytes
+- logs\actions\commit_verify_2plus2.log | 2645 bytes
+- logs\actions\commit_verify_2plus2_manual_stderr.txt | 18 bytes
+- logs\actions\commit_verify_2plus2_manual_stdout.txt | 649 bytes
+- logs\actions\commit_verify_2plus2_stderr.txt | 140 bytes
+- logs\actions\commit_verify_2plus2_stdout.txt | 128 bytes
+- logs\actions\commit_verify_4_stderr.txt | 18 bytes
+- logs\actions\commit_verify_4_stdout.txt | 455 bytes
+- logs\actions\commit_verify_focus_stderr.txt | 18 bytes
+- logs\actions\commit_verify_focus_stdout.txt | 463 bytes
+- logs\actions\commit_verify_kt99_stderr.txt | 18 bytes
+- logs\actions\commit_verify_kt99_stdout.txt | 641 bytes
+- logs\actions\commit_verify_kt_verify_stderr.txt | 18 bytes
+- logs\actions\commit_verify_kt_verify_stdout.txt | 696 bytes
+- logs\actions\commit_verify_longwait.log | 290 bytes
+- logs\actions\commit_verify_longwait.process.log | 704 bytes
+- logs\actions\commit_verify_longwait_stderr.txt | 18 bytes
+- logs\actions\commit_verify_longwait_stdout.txt | 464 bytes
+- logs\actions\commit_verify_message_check.json | 55 bytes
+- logs\actions\commit_verify_stability.log | 4488 bytes
+- logs\actions\commit_verify_stability_100.log | 4731 bytes
+- logs\actions\commit_verify_test.log | 577 bytes
+- logs\actions\commit_verify_test.process.log | 791 bytes
+- logs\actions\commit_verify_token.log | 828 bytes
+- logs\actions\commit_verify_token_smoke.log | 488 bytes
+- logs\actions\copilot_commit.log | 247430 bytes
+- logs\actions\copilot_commit_focus.log | 464 bytes
+- logs\actions\copilot_commit_kt99.log | 464 bytes
+- logs\actions\copilot_commit_longwait.log | 464 bytes
+- logs\actions\copilot_commit_please4.log | 462 bytes
+- logs\actions\copilot_commit_safe.log | 10537 bytes
+- logs\actions\copilot_commit_smoke.log | 181 bytes
+- logs\actions\copilot_commit_token.log | 413 bytes
+- logs\actions\loop_vscode.log | 1505 bytes
+- logs\actions\no_web_test.log | 613 bytes
+- logs\actions\test_capture_stderr.txt | 0 bytes
+- logs\actions\test_capture_stdout.txt | 45 bytes
+- logs\actions\token_image_match.json | 340 bytes
+- logs\actions\token_template.png | 1493 bytes
+- logs\actions\verify_cursor_smoke.process.log | 717 bytes
+- logs\actions\verify_token_frames.process.log | 1038 bytes
+- logs\actions\verify_token_frames_multiscale.process.log | 671 bytes
+- logs\actions\verify_token_test.process.log | 537 bytes
+- logs\actions\vscode_multi_keepalive.jsonl | 839171 bytes
+- logs\auto_extract\capture_copilot_chat_1766111173789545000.png | 141463 bytes
+- logs\errors\events.jsonl | 2680129 bytes
+- logs\events.jsonl | 24067 bytes
+- logs\ocr\capture_attach_point_input_plus_more_options | 0 bytes
+- logs\ocr\capture_attach_point_more_options_upload | 0 bytes
+- logs\ocr\capture_attach_point_more_options_upload_direct | 0 bytes
+- logs\ocr\capture_attach_point_more_options_upload_force | 0 bytes
+- logs\ocr\capture_copilot_chat_1766717763364863600.png | 82860 bytes
+- logs\ocr\capture_copilot_chat_1766717764284234800.png | 82880 bytes
+- logs\ocr\capture_copilot_chat_1766717765200690100.png | 82900 bytes
+- logs\ocr\capture_copilot_chat_1766717765956298600.png | 60695 bytes
+- logs\ocr\capture_copilot_chat_1766717766826300900.png | 60579 bytes
+- logs\ocr\capture_copilot_chat_1766717767538563100.png | 82865 bytes
+- logs\ocr\capture_copilot_chat_1766717768789222600.png | 82885 bytes
+- logs\ocr\capture_copilot_chat_1766717769496745700.png | 82860 bytes
+- logs\ocr\capture_copilot_chat_1766717770204184900.png | 82890 bytes
+- logs\ocr\capture_copilot_chat_1766717770959658700.png | 60669 bytes
+- logs\ocr\capture_copilot_chat_1766717771836852900.png | 60603 bytes
+- logs\ocr\capture_copilot_chat_1766717772665848800.png | 52065 bytes
+- logs\ocr\capture_copilot_chat_1766717773625917500.png | 80628 bytes
+- logs\ocr\capture_copilot_chat_1766717774835211500.png | 56592 bytes
+- logs\ocr\capture_copilot_chat_1766717775710282500.png | 89195 bytes
+- logs\ocr\capture_copilot_chat_1766717776543133600.png | 84044 bytes
+- logs\ocr\capture_copilot_chat_1766717777418465800.png | 84044 bytes
+- logs\ocr\capture_copilot_chat_1766717778297667600.png | 84054 bytes
+- logs\ocr\capture_copilot_chat_1766717779176088100.png | 84054 bytes
+- logs\ocr\capture_copilot_chat_1766717779963076700.png | 98838 bytes
+- logs\ocr\capture_copilot_chat_1766717781172137500.png | 99761 bytes
+- logs\ocr\capture_copilot_chat_1766717782091897800.png | 74292 bytes
+

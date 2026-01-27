@@ -1,0 +1,4 @@
+Focus VSCode
+agent: terminal: echo UI Control OK
+Scroll chat down x 1
+stop

@@ -1,0 +1,3 @@
+agent: terminal: echo Agent Routed OK
+terminal: echo Secondary Route OK
+stop

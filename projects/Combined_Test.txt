@@ -1,0 +1,6 @@
+agent: terminal: echo Agent Combined OK
+agent: run module: scripts.test_module
+Ask Copilot: Please reply "Hi" then summarize the last message.
+insert summary
+Scroll chat down x 1
+stop

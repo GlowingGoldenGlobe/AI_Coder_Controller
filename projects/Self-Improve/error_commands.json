@@ -1,0 +1,21 @@
+{
+  "ts": "2025-12-18 22:17:20",
+  "since_ts": "2025-12-18 22:16:38",
+  "num_events": 0,
+  "event_types": [],
+  "palette_commands": [
+    "GitHub Copilot Chat: Focus on Chat View",
+    "Open View: GitHub Copilot Chat",
+    "View: Focus on Chat"
+  ],
+  "event_commands": [],
+  "all_commands": [
+    "GitHub Copilot Chat: Focus on Chat View",
+    "Open View: GitHub Copilot Chat",
+    "View: Focus on Chat"
+  ],
+  "evidence": {
+    "errors": "logs\\errors\\events.jsonl",
+    "commit_log": "logs\\actions\\copilot_commit_safe.log"
+  }
+}

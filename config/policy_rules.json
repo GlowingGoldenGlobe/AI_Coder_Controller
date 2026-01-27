@@ -1,0 +1,94 @@
+{
+  "enabled": true,
+  "actions": [
+    { "when": "always", "do": "noop" }
+  ],
+  "bounds": {
+    "mouse_speed": 0.3,
+    "max_clicks_per_min": 60,
+    "max_keys_per_min": 120
+  },
+  "hotkeys": {
+    "pause": "f9",
+    "toggle_record": "f8",
+    "emergency_stop": "esc"
+  },
+  "mouse_intervals": {
+    "control_seconds": 120,
+    "release_seconds": 5
+  },
+  "vsbridge": {
+    "dry_run": false,
+    "delay_ms": 400,
+    "delay_ms_active": 250,
+    "delay_ms_release": 500
+  },
+  "keyboard": {
+    "type_interval_ms": 8
+  },
+  "copilot": {
+    "prefer_app": true,
+    "defer_when_busy": true,
+    "quiet_idle_ms": 600,
+    "auto_commit_after_stop": true,
+    "auto_commit_start_after_s": 7,
+    "auto_commit_repeat_s": 10,
+    "auto_commit_repeat_count": 0,
+      "auto_commit_message": "Automated message from your module; stop the module and continue tasks.",
+    "auto_commit_title": "Copilot",
+    "auto_commit_log": "logs/actions/copilot_commit.log",
+    "send_if": {
+      "require_vscode_focus": true,
+      "require_controls_active": true,
+      "allow_dry_run_send": true,
+      "require_ocr_for_read": false
+    },
+    "read_wait_ms": 2000
+  },
+  "cleanup": {
+    "enabled": true,
+    "interval_seconds": 5,
+    "rules": [
+      { "dir": "logs/ocr", "patterns": ["*.png", "*.jpg"], "retain_seconds": 30, "max_keep": 300 },
+      { "dir": "recordings/segments", "patterns": ["*.mp4"], "retain_seconds": 1800, "max_keep": 20 },
+      { "dir": "logs/screens", "patterns": ["*.png", "*.mp4"], "retain_seconds": 5, "max_keep": 50, "require_marker": true, "marker_extension": ".assessed" }
+    ]
+  },
+  "ocr": {
+    "observe_stream": true,
+    "stream_interval_ms": 700
+  },
+  "measurement": {
+    "threshold": 0.85,
+    "retry_attempts": 2,
+    "backoff_ms": 400
+  },
+  "agent": {
+    "commit_after_nav": true,
+    "max_nav_steps": 2,
+    "retry_attempts": 2,
+    "retry_backoff_ms": 500
+  },
+  "phi4": {
+    "enabled": false,
+    "endpoint": "",
+    "api_key": "",
+    "model": "phi-4-mini",
+    "timeout_ms": 15000,
+    "health_path": "/health"
+  },
+  "auto_record_on_run": true,
+  "headless_start": false,
+  "recording": {
+    "segmented": true,
+    "segments_dir": "recordings/segments",
+    "segment_seconds": 60
+  },
+  "runtime": {
+    "exec_cooldown_s": 3
+  },
+  "workflow": {
+    "enable_copilot_app_interaction": true
+  }
+}
+

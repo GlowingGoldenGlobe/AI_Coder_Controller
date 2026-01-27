@@ -1,0 +1,2 @@
+terminal after stop: echo Post Stop OK
+stop
