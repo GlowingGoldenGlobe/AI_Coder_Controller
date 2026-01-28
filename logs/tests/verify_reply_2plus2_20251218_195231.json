@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-12-18 19:52:31",
-  "chars": 698,
-  "preview": "he 2+2 workflow is now working end-to-end.\n‘© | fixed the indentation issues in both * ocrpy (CopilotOCR\nclass/docstring and © _init_ ) and  vsbridgepy (the\nCopilot app copy loop), so they import clea",
-  "contains_4": false,
-  "source": "chat"
-}

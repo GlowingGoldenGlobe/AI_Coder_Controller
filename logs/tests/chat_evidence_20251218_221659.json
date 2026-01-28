@@ -1,8 +1,0 @@
-{
-  "timestamp": "2025-12-18 22:16:59",
-  "elements_count": 48,
-  "preview_elements": "[{'type': 'button', 'bbox': {'left': 0, 'top': 0, 'width': 395, 'height': 942}, 'score': 372090.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 162, 'width': 332, 'height': 19}, 'score': 6308.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 251, 'width': 302, 'height': 19}, 'score': 5738.0}, {'type': 'button', 'bbox': {'left': 7, 'top': 182, 'width': 162, 'height': 19}, 'score': 3078.0}, {'type': 'button', 'bbox': {'left': 29, 'top': 134, 'width': 167, 'height': 18}, 'score': 3006.0}]",
-  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766117819572953700.png",
-  "chars": 288,
-  "preview": "echo NAV TEST\nRunning your requested shell command in the integrated\nterminal to show its output.\necho NAV TEST ®>\n‘The command ran successfully; the terminal printed:\nNav\nTest\n9oCVOH@\nDescribe what t"
-}

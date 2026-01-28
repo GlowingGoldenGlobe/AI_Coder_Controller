@@ -1,1 +1,0 @@
-OK: captured image and detected 47 elements

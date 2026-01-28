@@ -1,3 +1,0 @@
-OCR Verification Report
-Source: logs\errors\events.jsonl
-

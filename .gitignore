@@ -39,6 +39,18 @@ Archive_old_files/
 Copilot_Attachments/
 External_Upload/
 
+# Runtime artifacts
+logs/
+recordings/
+
+# Shared runtime state (generated/updated at runtime)
+config/controls_state.json
+
+# Self-Improve outputs (generated during runs)
+projects/Self-Improve/*.json
+projects/Self-Improve/*.jsonl
+projects/Self-Improve/improvements.md
+
 temp_*.md
 *.log
 *.mp4

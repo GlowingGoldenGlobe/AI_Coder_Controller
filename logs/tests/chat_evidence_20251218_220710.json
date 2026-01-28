@@ -1,8 +1,0 @@
-{
-  "timestamp": "2025-12-18 22:07:10",
-  "elements_count": 33,
-  "preview_elements": "[{'type': 'button', 'bbox': {'left': 0, 'top': 0, 'width': 652, 'height': 942}, 'score': 614184.0}, {'type': 'button', 'bbox': {'left': 305, 'top': 858, 'width': 257, 'height': 36}, 'score': 9252.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 983, 'width': 652, 'height': 14}, 'score': 9128.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 578, 'width': 307, 'height': 19}, 'score': 5833.0}, {'type': 'button', 'bbox': {'left': 29, 'top': 555, 'width': 188, 'height': 19}, 'score': 3572.0}, {'type': 'button', 'bbox': {'left': 0, 'top': 97, 'width': 169, 'height': 19}, 'score': 3211.0}]",
-  "image_path": "C:\\Users\\yerbr\\AI_Coder_Controller\\logs\\ocr\\capture_copilot_chat_1766117229832562700.png",
-  "chars": 148,
-  "preview": "a\nC3\nBuild with Agent\nVisual Studio Code x\nChat: Updating workflow to remove OCR\nnext dependencies\n8 New chat response\nea _1oTPM\nLd © @ FM vpsjace:\n"
-}
