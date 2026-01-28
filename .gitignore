@@ -43,6 +43,10 @@ External_Upload/
 logs/
 recordings/
 
+# Runtime state (generated/updated during runs)
+config/controls_state.json
+config/ui_state.json
+
 # Shared runtime state (generated/updated at runtime)
 config/controls_state.json
 
