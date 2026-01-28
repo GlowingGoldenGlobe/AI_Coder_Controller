@@ -2670,16 +2670,47 @@ class VSBridge:
                 return True
         except Exception:
             pass
-        # Common window title patterns for VS Code
+
+        def _focus_and_verify(hwnd: int, method: str) -> bool:
+            if not hwnd:
+                return False
+            ok = False
+            try:
+                ok = bool(self.winman.focus_hwnd(hwnd))
+            except Exception:
+                ok = False
+            try:
+                time.sleep(max(self.delay / 2, 0.12))
+            except Exception:
+                pass
+            try:
+                if ok and self._verify_vscode_foreground():
+                    self.log("Focused VS Code window")
+                    self._record_focus("vscode", True, method=method)
+                    return True
+            except Exception:
+                pass
+            self._record_focus("vscode", False, method=f"{method}_unverified")
+            return False
+
+        # Prefer a process-based match (robust across localized/atypical titles).
+        try:
+            if hasattr(self.winman, "find_first_any"):
+                hwnd = self.winman.find_first_any(process_contains="code")
+                if hwnd and _focus_and_verify(hwnd, method="process_match"):
+                    return True
+        except Exception:
+            pass
+
+        # Fallback: common window title patterns for VS Code.
         candidates = ["visual studio code", " - visual studio code", "code"]
         for sub in candidates:
-            hwnd = self.winman.find_first(title_contains=sub)
-            if hwnd:
-                ok = self.winman.focus_hwnd(hwnd)
-                if ok:
-                    self.log("Focused VS Code window")
-                    self._record_focus("vscode", True, method="title_match")
-                    return True
+            try:
+                hwnd = self.winman.find_first(title_contains=sub)
+            except Exception:
+                hwnd = None
+            if hwnd and _focus_and_verify(hwnd, method="title_match"):
+                return True
         self.log("VS Code window not found to focus")
         self._record_focus("vscode", False, method="not_found")
         return False
