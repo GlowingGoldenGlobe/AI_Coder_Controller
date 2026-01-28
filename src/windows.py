@@ -52,6 +52,17 @@ def _get_process_path(pid: int) -> str:
             buf = ctypes.create_unicode_buffer(buf_len.value)
             if kernel32.QueryFullProcessImageNameW(handle, 0, buf, ctypes.byref(buf_len)):
                 return buf.value or ""
+            # Fallback: psapi.GetProcessImageFileNameW (often returns a device path)
+            try:
+                psapi = ctypes.windll.psapi
+                psapi.GetProcessImageFileNameW.argtypes = [wintypes.HANDLE, wintypes.LPWSTR, wintypes.DWORD]
+                psapi.GetProcessImageFileNameW.restype = wintypes.DWORD
+                buf2 = ctypes.create_unicode_buffer(4096)
+                n = psapi.GetProcessImageFileNameW(handle, buf2, wintypes.DWORD(4096))
+                if n:
+                    return buf2.value or ""
+            except Exception:
+                pass
             return ""
         finally:
             kernel32.CloseHandle(handle)

@@ -38,6 +38,26 @@ class VSBridge:
         # Track palette commands attempted this process to avoid repeats
         self._palette_attempted: List[str] = []
         self._ocr = None
+        # Editor detection hints (for focusing/foreground verification).
+        # Default supports VS Code stable/insiders and common forks.
+        self._editor_process_hints = ["code", "codium", "vscodium", "cursor"]
+        self._editor_title_hints = ["visual studio code", "vscode", "vscodium", "cursor"]
+        try:
+            env = os.environ.get("AI_CONTROLLER_EDITOR_PROCESS_HINTS") or os.environ.get("AI_CONTROLLER_VSCODE_PROCESS_HINTS")
+            if env:
+                parts = [p.strip().lower() for p in str(env).split(",") if p.strip()]
+                if parts:
+                    self._editor_process_hints = parts
+        except Exception:
+            pass
+        try:
+            envt = os.environ.get("AI_CONTROLLER_EDITOR_TITLE_HINTS")
+            if envt:
+                parts = [p.strip().lower() for p in str(envt).split(",") if p.strip()]
+                if parts:
+                    self._editor_title_hints = parts
+        except Exception:
+            pass
         # Focus thrash detection
         self._focus_events = deque(maxlen=30)  # items: {"ts": float, "target": str, "ok": bool}
         # Optional: use Win32 SendInput for certain keypresses in Copilot app.
@@ -2035,11 +2055,23 @@ class VSBridge:
             info = self.winman.get_window_info(fg)
             title = (info.get("title") or "").lower()
             proc = (info.get("process") or "").lower()
-            if proc and (proc == "code.exe" or proc.startswith("code")):
-                return True
+            # Prefer process-name based checks.
+            if proc:
+                # Preserve the original intent (VS Code), but allow common forks/variants.
+                if proc == "code.exe" or proc.startswith("code"):
+                    return True
+                for hint in getattr(self, "_editor_process_hints", []) or []:
+                    if hint and hint in proc:
+                        return True
             # Do not use the window class alone for VS Code detection.
             # Many non-VSCode apps (including WebView2 surfaces) also use Chrome_WidgetWin_*.
-            return ("visual studio code" in title) or ("code" == title) or ("vscode" in title)
+            if title:
+                if ("visual studio code" in title) or ("code" == title) or ("vscode" in title):
+                    return True
+                for hint in getattr(self, "_editor_title_hints", []) or []:
+                    if hint and hint in title:
+                        return True
+            return False
         except Exception:
             return False
 
@@ -2696,14 +2728,34 @@ class VSBridge:
         # Prefer a process-based match (robust across localized/atypical titles).
         try:
             if hasattr(self.winman, "find_first_any"):
-                hwnd = self.winman.find_first_any(process_contains="code")
-                if hwnd and _focus_and_verify(hwnd, method="process_match"):
-                    return True
+                # Try common editor processes first; allow env override.
+                proc_hints = getattr(self, "_editor_process_hints", None) or ["code"]
+                for hint in proc_hints:
+                    try:
+                        hwnd = self.winman.find_first_any(process_contains=str(hint))
+                    except Exception:
+                        hwnd = None
+                    if hwnd and _focus_and_verify(hwnd, method=f"process_match:{hint}"):
+                        return True
         except Exception:
             pass
 
         # Fallback: common window title patterns for VS Code.
-        candidates = ["visual studio code", " - visual studio code", "code"]
+        candidates = [
+            "visual studio code",
+            " - visual studio code",
+            "vscode",
+            "vscodium",
+            "cursor",
+            "code",
+        ]
+        try:
+            title_hints = getattr(self, "_editor_title_hints", []) or []
+            for h in title_hints:
+                if h and h not in candidates:
+                    candidates.insert(0, h)
+        except Exception:
+            pass
         for sub in candidates:
             try:
                 hwnd = self.winman.find_first(title_contains=sub)
