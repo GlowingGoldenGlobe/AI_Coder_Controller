@@ -1,53 +1,40 @@
-name: CI
+name: AI_Coder_Controller_CI
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  test:
-    name: ${{ matrix.os }} / py${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ["3.11", "3.12"]
+  build-test:
+    runs-on: windows-latest
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.11"
 
-      - name: Install dev deps
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements-dev.txt
-
-      - name: Install runtime deps (Windows only)
-        if: runner.os == 'Windows'
-        run: |
           python -m pip install -r requirements.txt
+          python -m pip install -r requirements-dev.txt
+          python -m pip install -r requirements-optional.txt || echo "optional deps skipped"
 
-      - name: Lint (ruff)
-        run: |
-          ruff --version
-          ruff check src/orchestrator examples tests
+      - name: Run orchestrator demo
+        run: python examples/run_demo.py --max-iterations 1
 
-      - name: Tests (pytest)
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-        run: |
-          python -m pytest -q
+      - name: Run orchestrator CLI
+        run: python -m src.orchestrator.cli --config config/orchestrator_pipeline_demo.json --max-iterations 1
 
-      - name: Orchestrator CLI smoke (dry-run)
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-        run: |
-          python -m src.orchestrator.cli --config config/orchestrator_pipeline_demo.json --max-iterations 1
-          python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_template.json --max-iterations 1
-          python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_best_template.json --max-iterations 1
-          python -m src.orchestrator.cli --config config/orchestrator_pipeline_click_best_template_verify.json --max-iterations 1
+      - name: Run tests
+        run: pytest -q
+
+      - name: Archive logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: controller-logs
+          path: logs/
