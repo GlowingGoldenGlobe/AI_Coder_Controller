@@ -24,6 +24,11 @@ This document summarizes how AI_Coder_Controller integrates with VS Code and Git
 3. Copilot flow: focus chat → send message → optional scroll → image capture + analysis (templates/elements, optional OCR text) → append to `projects/Self-Improve/improvements.md` (de‑duplicated).
 4. Edits and terminal runs are driven by hotkeys and typed commands.
 
+## Terminal + venv Rule (Agent Requirement)
+- For any terminal commands that operate on venv projects, Agent AIs must first run `Scripts/activate` in that terminal.
+- Keep using the same terminal session after activation to avoid losing the venv context.
+- If a terminal is not activated, prefer `Scripts/python.exe` for Python commands to ensure the correct interpreter is used.
+
 ## Safety & Guardrails
 - ESC emergency pause; UI “Pause Controls”.
 - Intermittent control cycle (default 120s active / 5s release).
@@ -51,6 +56,12 @@ For quick inspection, you can run the helper script Scripts/controls_inspect.py,
 - python Scripts/controls_inspect.py --stale-seconds 300
 
 This prints the current controls_state.json contents, reports whether the snapshot looks older than the threshold you provided, and shows the currently recorded owner. It does not change ownership or modify the state file; it is safe to run while other workflows are active.
+
+If a workflow run is interrupted and leaves ownership stuck on `workflow_test`, you can clear it safely with:
+
+- python Scripts/controls_release_owner.py --if-owner workflow_test
+
+This only clears ownership when the current owner matches `workflow_test` (unless you pass `--force`). It does not change the paused state.
 
 ## Self‑Improve Integration
 - Metadata generation: `src/self_improve.py::write_metadata_file()`.

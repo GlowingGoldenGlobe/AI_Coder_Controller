@@ -113,6 +113,72 @@ Recommended tools to validate the setup:
 - OCR smoke test: `python Scripts/ocr_smoke_test.py`
 - OCR commit test (captures and appends to notes): `python Scripts/ocr_commit_test.py`
 
+### Workflow + Deferred Actions
+
+The repo includes an end-to-end workflow runner that may defer interactive UI actions when Agent Mode is active.
+
+- Observation recipe (5s capture + assessment loop):
+  1. Before or immediately after a workflow cycle, run `Scripts/python.exe Scripts/capture.py --duration 5` (or a sensible variant such as `--duration 10`) to record fresh screen evidence under `recordings/segments/`.
+  2. Execute the workflow via `Scripts/workflow_test_gather_assess.py` or the **"Test/Gather/Assess Workflow"** task.
+  3. Review the new media alongside the run artifacts in `logs/tests/workflow_summary_<run_id>.json` and `logs/tests/workflow_recommendations_<run_id>.md`.
+  4. Log any automation defects (palette misfires, window thrash, missing chat tabs, etc.) in the recommendation markdown and capture required remediation tasks.
+  5. When fixes are safe to apply immediately (no live automation, configs valid), implement them; otherwise, record upgrade tasks per `docs/ASSESSMENT_LOGIC.md` and defer execution until conditions allow.
+
+- How to interpret Agent Mode automation results (DEFERRED, queue health, what to report): `docs/TUNING.md` (see “Agent Mode: automation performance”).
+
+- Workflow runner: `Scripts/workflow_test_gather_assess.py`
+  - Emits `logs/tests/workflow_summary_*.json` with `status` in `{PASS, FAIL, DEFERRED}`.
+  - `DEFERRED` means interactive steps were queued (not executed), so the run is not a PASS but is also not treated as a failure.
+  - Validates the assessment schedule during the workflow (Agent Mode requirement):
+    - `config/assessment_schedule.json`
+    - `logs/tests/assessment_schedule_<run_id>.md`
+    - Logic guide: `docs/ASSESSMENT_LOGIC.md`
+
+- Reset module (runs before workflow start when enabled): `Scripts/reset_workflow_state.py`
+  - Refreshes `controls_state.json` and clears stale owner if needed.
+  - Auto-unpauses controls when policy allows and no active control window is detected.
+  - Writes `logs/tests/workflow_reset_*.json`.
+
+- Start module (simultaneous workflow system): `Scripts/start_simultaneous_workflow.py`
+  - Initializes Chat Lanes, opens Copilot Chat tabs for Agent Mode lanes (best-effort), launches the user-activity monitor, and launches the orchestrator agent if not running.
+  - Writes `logs/tests/start_simultaneous_workflow_*.json`.
+
+- Agent Mode tab opener (best-effort): `Scripts/open_agent_mode_tabs.py`
+  - Opens Copilot Chat tabs using the command palette (respects `controls_state.json`).
+  - Writes `logs/tests/open_agent_mode_tabs_*.json`.
+
+- User activity monitor: `Scripts/user_activity_monitor.py`
+  - Pauses automation on user keypress or large mouse movement and shows a resume popup.
+  - Honors `config/policy_rules.json` under `user_activity` for thresholds and auto-resume.
+  - Writes `logs/actions/user_activity_events.jsonl` and updates `config/controls_state.json`.
+
+- Deferred queue runner: `Scripts/run_deferred_workflow_actions.py`
+  - Executes queued actions from `logs/actions/deferred_workflow_actions.jsonl` when safe.
+
+Safe inspection (no execution):
+- `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --list --max 20`
+- `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --max 5`
+- Prefer scoping to a specific workflow run (recommended for repeatable actions):
+  - `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --list --run-id <run_id> --max 20`
+  - `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --run-id <run_id> --max 5`
+- Target a single deferred action id:
+  - `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --id <action_id> --max 1`
+  - (recommended) also scope to a run id:
+    - `Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --run-id <run_id> --id <action_id> --max 1`
+
+VS Code tasks (recommended):
+- "Test/Gather/Assess Workflow"
+- "Workflow: Preflight Settings Check" (prints current Agent Mode / controls / defer policy / queue snapshot)
+- "Workflow: Reset State" (auto-unpause when safe, refreshes controls_state + writes workflow_reset report)
+- "Start Simultaneous Workflow System" (initializes Chat Lanes, opens Agent Mode tabs, launches orchestrator agent if needed)
+- "Start Simultaneous Workflow System" (initializes Chat Lanes, opens Agent Mode tabs, launches user activity monitor, launches orchestrator agent if needed)
+- "User Activity Monitor (pause on input)"
+- "Run Deferred Workflow Actions" (requires Agent Mode OFF and controls not paused)
+- "Controls: Unpause (paused=false)" / "Controls: Pause (paused=true)"
+- "Run Deferred Workflow Actions (Agent Mode OFF, max=1)" (forces `AI_CONTROLLER_AGENT_MODE=0` for that run)
+- "Deferred: Drain 1 (safe)" / "Deferred: Drain 5 (safe)" (auto unpause → run bounded deferred actions → pause)
+- "Deferred: Drain Until Empty (safe)" (forces Agent Mode OFF; drains in batches; always re-pauses)
+
 ## Structure
 - config/: policy, objectives, instructions, ocr.json
 - projects/Self-Improve/: objectives, instructions, improvements.md
@@ -275,12 +341,7 @@ Quick smoke test:
   - OCR text delta and hashes (for de-dup)
   - Retry counts and time spent per objective
 
-- Config knobs to tune behavior (examples for `config/policy_rules.json`)
-  - `agent.retry_attempts`: 2
-  - `agent.retry_backoff_ms`: 500
-  - `agent.max_nav_steps`: 5
-  - `ocr.chat_settle_ms` / `ocr.app_settle_ms` for longer waits when UI is slow
-  - `copilot.defer_when_busy` and `copilot.quiet_idle_ms`
+- Tuning knobs (timing/thresholds/OCR): see `docs/TUNING.md`.
 
 - Pseudocode (refined)
 
@@ -491,6 +552,9 @@ Reusable pattern:
 ## Commit Tuning (PHI‑4)
 - See docs/PHI4_Commit_Tuning.md for Conventional Commits, safe branching, and a Copilot prompt to prepare messages.
 
+## Tuning
+- Controller/workflow tuning (timing, thresholds, OCR ROIs, env var overrides): `docs/TUNING.md`
+
 ## OCR Setup
 - See docs/SETUP_OCR.md
 - Ensure Tesseract is installed and config/ocr.json points to it (or it’s on PATH)
@@ -563,6 +627,8 @@ Reusable pattern:
 - Cleanup Old Movies/Images: Runs the cleanup utility to delete old PNG/MP4 according to `config/policy_rules.json`.
  - Mark Navigation Media Assessed: Adds `.assessed` markers to `logs/screens` so the 5s cleanup can safely delete reviewed media.
  - Test/Gather/Assess Workflow: Runs navigation test, OCR commit test, observe/react, short recording (auto-marked), cleanup, and writes a workflow summary under `logs/tests/`.
+ - Run Deferred Workflow Actions: Executes queued deferred interactive steps when Agent Mode is OFF and controls are available.
+ - Release workflow_test controls owner: Clears stuck `workflow_test` ownership in `config/controls_state.json` (does not change paused state).
 
 ## Test / Gather / Assess
 
@@ -624,7 +690,8 @@ Reusable pattern:
 
 - One-click end-to-end:
   - VS Code Task: "Test/Gather/Assess Workflow"
-  - Produces `logs/tests/workflow_summary_*.json` summarizing step results and artifacts, including PASS/FAIL per step and overall. The task returns non-zero on FAIL for visibility.
+  - Produces `logs/tests/workflow_summary_*.json` summarizing step results and artifacts.
+  - If Agent Mode is active (and policy defers interactions), interactive steps are queued to `logs/actions/deferred_workflow_actions.jsonl` and the run is marked `DEFERRED`.
 
 - Context pack for Copilot:
   - The Test/Gather/Assess workflow now also runs `Scripts/prepare_context_pack.py`.

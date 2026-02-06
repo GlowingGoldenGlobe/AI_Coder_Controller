@@ -355,6 +355,107 @@ class VSBridge:
         except Exception:
             return False
 
+    def _focused_control_snapshot(self) -> dict:
+        info: dict = {
+            "name": "",
+            "automation_id": "",
+            "class": "",
+            "ctrl": "",
+            "bbox": None,
+        }
+        try:
+            import uiautomation as auto  # type: ignore
+
+            ctl = auto.GetFocusedControl()
+            try:
+                info["name"] = str(getattr(ctl, "Name", "") or "")
+            except Exception:
+                info["name"] = ""
+            try:
+                info["automation_id"] = str(getattr(ctl, "AutomationId", "") or "")
+            except Exception:
+                info["automation_id"] = ""
+            try:
+                info["class"] = str(getattr(ctl, "ClassName", "") or "")
+            except Exception:
+                info["class"] = ""
+            try:
+                info["ctrl"] = str(getattr(ctl, "ControlTypeName", "") or "")
+            except Exception:
+                info["ctrl"] = ""
+            try:
+                br = getattr(ctl, "BoundingRectangle", None)
+                if br:
+                    info["bbox"] = {
+                        "left": int(getattr(br, "left", 0)),
+                        "top": int(getattr(br, "top", 0)),
+                        "right": int(getattr(br, "right", 0)),
+                        "bottom": int(getattr(br, "bottom", 0)),
+                    }
+            except Exception:
+                info["bbox"] = None
+        except Exception:
+            info["error"] = "uia_snapshot_failed"
+        return info
+
+    def _focus_is_palette_input(self, info: dict) -> bool:
+        try:
+            ctrl = str(info.get("ctrl", "") or "").lower()
+            if ctrl not in {"editcontrol", "textcontrol", "documentcontrol"}:
+                return False
+            tokens = [
+                str(info.get("name", "") or "").lower(),
+                str(info.get("automation_id", "") or "").lower(),
+                str(info.get("class", "") or "").lower(),
+            ]
+            palette_terms = [
+                "command palette",
+                "search for command",
+                "search commands",
+                "type to search",
+                "show all commands",
+                "quick open",
+                "run command",
+                "command:",
+            ]
+            for token in tokens:
+                if any(term in token for term in palette_terms if term):
+                    return True
+            if any("quickinput" in token or "quickopen" in token for token in tokens):
+                return True
+            bbox = info.get("bbox") or {}
+            try:
+                top = float(bbox.get("top", 0.0) or 0.0)
+                bottom = float(bbox.get("bottom", 0.0) or 0.0)
+                if bottom and bottom > top and top < 450:
+                    width = float(bbox.get("right", 0.0) or 0.0) - float(bbox.get("left", 0.0) or 0.0)
+                    if width > 200:
+                        return True
+            except Exception:
+                pass
+            return False
+        except Exception:
+            return False
+
+    def _focus_looks_like_chat_input(self, info: dict) -> bool:
+        try:
+            ctrl = str(info.get("ctrl", "") or "").lower()
+            name = str(info.get("name", "") or "").lower()
+            if ctrl in {"editcontrol", "textcontrol", "documentcontrol"}:
+                if any(token in name for token in ("type a message", "send a message", "ask copilot", "message copilot", "chat input")):
+                    return True
+            bbox = info.get("bbox") or {}
+            try:
+                top = float(bbox.get("top", 0.0) or 0.0)
+                bottom = float(bbox.get("bottom", 0.0) or 0.0)
+                if bottom and bottom > top and top > 500:
+                    return True
+            except Exception:
+                pass
+            return False
+        except Exception:
+            return False
+
     def press_tab(self):
         try:
             self._ocr_observe("before_tab")
@@ -387,7 +488,7 @@ class VSBridge:
             return True
         return bool(self.focus_vscode_window())
 
-    def command_palette(self, command: str) -> bool:
+    def command_palette(self, command: str, allow_repeat: bool = False, allow_unverified: bool = False) -> bool:
         """Open VS Code command palette and run a command string.
         Enforces palette policy (banned/repeated) and foreground gating.
         """
@@ -400,11 +501,11 @@ class VSBridge:
             if any(b in low for b in (self._banned_palette or [])):
                 self._log_error_event("palette_command_bypassed", command=cmd, reason="banned")
                 return False
-            if low in [c.lower() for c in (self._palette_attempted or [])]:
-                self._log_error_event("palette_command_repeated", command=cmd)
-                return False
-
-            self._palette_attempted.append(cmd)
+            if not allow_repeat:
+                if low in [c.lower() for c in (self._palette_attempted or [])]:
+                    self._log_error_event("palette_command_repeated", command=cmd)
+                    return False
+                self._palette_attempted.append(cmd)
             if self.dry_run:
                 self.log(f"DRY-RUN command palette: {cmd}")
                 return True
@@ -418,13 +519,50 @@ class VSBridge:
                 prev_gate = None
 
             try:
-                if not self._verify_vscode_foreground():
-                    self._log_error_event("foreground_not_vscode_before_send", command=cmd)
+                if not allow_unverified:
+                    if not self._verify_vscode_foreground():
+                        self._log_error_event("foreground_not_vscode_before_send", command=cmd)
+                        return False
+                focus_info = {}
+                focus_ok = False
+                attempts = [(["ctrl", "shift", "p"], "ctrl_shift_p"), (["f1"], "f1")]  # F1 also opens palette
+                for idx, (keys, label) in enumerate(attempts):
+                    tag_before = "palette_before_open" if idx == 0 else f"palette_before_open_{label}"
+                    tag_after = "palette_after_open" if idx == 0 else f"palette_after_open_{label}"
+                    try:
+                        self._ocr_observe(tag_before)
+                    except Exception:
+                        pass
+                    self.ctrl.press_keys(keys)
+                    time.sleep(self.delay)
+                    try:
+                        self._ocr_observe(tag_after)
+                    except Exception:
+                        pass
+                    focus_info = self._focused_control_snapshot()
+                    if self._focus_is_palette_input(focus_info):
+                        focus_ok = True
+                        break
+                    if self._focus_looks_like_chat_input(focus_info):
+                        try:
+                            self.ctrl.press_keys(["esc"])
+                            time.sleep(max(self.delay / 2, 0.1))
+                        except Exception:
+                            pass
+                if not focus_ok:
+                    self._log_error_event(
+                        "palette_focus_not_detected",
+                        command=cmd,
+                        focus_snapshot=focus_info,
+                    )
                     return False
-                self._ocr_observe("palette_before_open")
-                self.ctrl.press_keys(["ctrl", "shift", "p"])
-                time.sleep(self.delay)
-                self._ocr_observe("palette_after_open")
+                try:
+                    self.ctrl.press_keys(["ctrl", "a"])
+                    time.sleep(max(self.delay / 3, 0.1))
+                    self.ctrl.press_keys(["backspace"])
+                    time.sleep(max(self.delay / 3, 0.1))
+                except Exception:
+                    pass
                 if not bool(self.ctrl.type_text(cmd)):
                     self._log_error_event("terminal_type_failed", context="command_palette", command_preview=cmd[:120])
                     return False
@@ -434,6 +572,35 @@ class VSBridge:
                     return False
                 time.sleep(self.delay)
                 self._ocr_observe("palette_after_enter")
+                try:
+                    if self.winman:
+                        fg = self.winman.get_foreground()
+                        info = self.winman.get_window_info(fg) if fg else {}
+                        proc = (info.get("process") or "").lower()
+                        title = (info.get("title") or "").lower()
+                        browser_procs = {
+                            "msedge.exe",
+                            "chrome.exe",
+                            "firefox.exe",
+                            "brave.exe",
+                            "opera.exe",
+                            "vivaldi.exe",
+                            "iexplore.exe",
+                        }
+                        if proc in browser_procs:
+                            self._log_error_event(
+                                "external_browser_opened",
+                                command=cmd,
+                                fg_process=proc,
+                                fg_title=title,
+                            )
+                            try:
+                                self.focus_vscode_window()
+                            except Exception:
+                                pass
+                            return False
+                except Exception:
+                    pass
                 return True
             finally:
                 try:
@@ -446,15 +613,16 @@ class VSBridge:
         except Exception:
             return False
 
-    def focus_copilot_chat_view(self) -> bool:
+    def focus_copilot_chat_view(self, skip_focus: bool = False) -> bool:
         """Focus the Copilot/Chat panel inside VS Code (not the Windows Copilot app)."""
         self.log("VSBridge: Focus Copilot chat view (cursor-select input)")
         if self.dry_run:
             self.log("DRY-RUN focus copilot chat view")
             return True
         try:
-            if not self.focus_vscode_window():
-                return False
+            if not skip_focus:
+                if not self.focus_vscode_window():
+                    return False
         except Exception:
             return False
         # Preferred path: use cursor to select the input field inside the Chat tab
@@ -2703,6 +2871,20 @@ class VSBridge:
         except Exception:
             pass
 
+        # Fallback: treat current foreground as VS Code if process/title hints match.
+        try:
+            fg = self.winman.get_foreground()
+            info = self.winman.get_window_info(fg) if fg else {}
+            proc = str(info.get("process") or "").lower()
+            title = str(info.get("title") or "").lower()
+            hints = set(getattr(self, "_editor_process_hints", []) or [])
+            hints |= set(getattr(self, "_editor_title_hints", []) or [])
+            if any(h and h in proc for h in hints) or any(h and h in title for h in hints):
+                self._record_focus("vscode", True, method="foreground_hint")
+                return True
+        except Exception:
+            pass
+
         def _focus_and_verify(hwnd: int, method: str) -> bool:
             if not hwnd:
                 return False
@@ -2763,6 +2945,14 @@ class VSBridge:
                 hwnd = None
             if hwnd and _focus_and_verify(hwnd, method="title_match"):
                 return True
+
+        # Final fallback: match common Chromium window class used by VS Code.
+        try:
+            hwnd = self.winman.find_first_any(class_contains="chrome_widgetwin")
+        except Exception:
+            hwnd = None
+        if hwnd and _focus_and_verify(hwnd, method="class_match"):
+            return True
         self.log("VS Code window not found to focus")
         self._record_focus("vscode", False, method="not_found")
         return False

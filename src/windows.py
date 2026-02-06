@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import ctypes
 import os
+import time
 from ctypes import wintypes
 from typing import Callable, List, Optional, Dict
 
@@ -90,6 +91,10 @@ class WindowsManager:
     """
 
     SW_RESTORE = 9
+    SW_MAXIMIZE = 3
+
+    def __init__(self) -> None:
+        self._maximized_at: Dict[int, float] = {}
 
     def list_windows(self, include_empty_titles: bool = False) -> List[Dict[str, str]]:
         out: List[Dict[str, str]] = []
@@ -164,6 +169,14 @@ class WindowsManager:
             return False
         # Restore if minimized
         user32.ShowWindowAsync(hwnd, self.SW_RESTORE)
+        now = time.time()
+        last = self._maximized_at.get(hwnd)
+        if last is None or (now - last) > 5.0:
+            try:
+                user32.ShowWindowAsync(hwnd, self.SW_MAXIMIZE)
+            except Exception:
+                pass
+            self._maximized_at[hwnd] = now
 
         # Attach thread input trick to allow SetForegroundWindow
         fg = user32.GetForegroundWindow()

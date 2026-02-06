@@ -191,6 +191,12 @@ def main() -> int:
     if get_controls_state is not None and set_controls_owner is not None:
         try:
             st = get_controls_state(root) or {}
+            if bool(st.get("paused", False)):
+                try:
+                    print("Controls are paused; skipping Copilot app interaction test.", flush=True)
+                except Exception:
+                    pass
+                return 0
             owner = str(st.get("owner", "") or "")
             orig_owner = owner or None
             if owner and owner != "copilot_app_test":
@@ -207,11 +213,19 @@ def main() -> int:
 
     # Ensure we restore the original owner on normal/abrupt exit as well.
     def _restore_owner() -> None:
-        try:
-            if 'set_controls_owner' in globals() and set_controls_owner is not None:
+        if set_controls_owner is None:
+            return
+        # Best-effort retries: file writes can transiently fail if another
+        # process is touching controls_state.json at the same time.
+        for _ in range(3):
+            try:
                 set_controls_owner(root, orig_owner)
-        except Exception:
-            pass
+                return
+            except Exception:
+                try:
+                    time.sleep(0.05)
+                except Exception:
+                    return
     atexit.register(_restore_owner)
 
     try:
@@ -657,8 +671,7 @@ def main() -> int:
         pass
     # Release shared controls ownership (best-effort).
     try:
-        if set_controls_owner is not None:
-            set_controls_owner(root, orig_owner)
+        _restore_owner()
     except Exception:
         pass
 

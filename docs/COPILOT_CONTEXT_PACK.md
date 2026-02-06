@@ -1,3 +1,4 @@
+GitHub Copilot Chat: New Chat
 # Copilot Context Pack Workflow
 
 This project can generate a compact **Context Pack** that summarizes the AI_Coder_Controller workspace for Copilot (VS Code Chat or the Windows Copilot app).

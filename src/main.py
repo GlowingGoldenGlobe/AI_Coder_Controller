@@ -255,6 +255,20 @@ def run(
                 base=root,
                 dirs=cleanup_cfg.get("dirs", ["logs/ocr"]),
                 patterns=cleanup_cfg.get("patterns", ["*.png", "*.jpg"]),
+
+        # Vision gate: require recent OCR observation before allowing inputs (Agent Mode safety)
+        try:
+            controls_cfg = (rules.get("controls") or {}) if isinstance(rules, dict) else {}
+            require_vision = bool(controls_cfg.get("require_vision_for_input", False))
+            vision_max_age_s = float(controls_cfg.get("vision_max_age_s", 2.0) or 2.0)
+            if require_vision:
+                if ocr_obs is None:
+                    # No OCR stream -> block inputs when vision is required
+                    ctrl.set_vision_gate(lambda: False)
+                else:
+                    ctrl.set_vision_gate(lambda: (time.time() - float(ocr_obs.last_ok_ts or 0.0)) <= vision_max_age_s)
+        except Exception:
+            pass
                 retain_seconds=int(cleanup_cfg.get("retain_seconds", 30)),
                 logger=action_log,
                 rules=cleanup_cfg.get("rules"),
@@ -1055,7 +1069,8 @@ def run(
 
                 # VS Code multi-window orchestrator tick (headless)
                 try:
-                    if keepalive is not None:
+                    auto_keepalive = bool(orchestrator_cfg.get("auto_keepalive_enabled", False))
+                    if auto_keepalive and keepalive is not None and state.get("agent_mode") and state.get("running") and (not state.get("paused")):
                         interval = float(orchestrator_cfg.get("interval_s", 6.0))
                         if interval > 0:
                             now_t = time.time()
@@ -1070,6 +1085,24 @@ def run(
                                         windows=int(summary.get("windows_scanned", 0)),
                                         actions=int(summary.get("actions_taken", 0)),
                                     )
+                                except Exception:
+                                    pass
+                except Exception:
+                    pass
+
+                # Generic error inference: browser focus after recent input
+                try:
+                    if state.get("agent_mode") and state.get("running") and (not state.get("paused")):
+                        if ctrl.idle_seconds() < 1.5 and winman is not None:
+                            fg = winman.get_foreground()
+                            info = winman.get_window_info(fg) if fg else {}
+                            proc = str(info.get("process") or "").lower()
+                            title = str(info.get("title") or "")
+                            browser_procs = {"msedge.exe", "chrome.exe", "firefox.exe", "brave.exe", "opera.exe", "vivaldi.exe", "iexplore.exe"}
+                            if proc in browser_procs:
+                                action_log.log("workflow_error", kind="external_browser_opened", process=proc, title=title)
+                                try:
+                                    ctrl.set_controls_paused(True)
                                 except Exception:
                                     pass
                 except Exception:
@@ -1442,27 +1475,46 @@ def run(
             except Exception:
                 pass
 
-            # VS Code multi-window orchestrator tick (UI mode)
-            try:
-                if keepalive is not None:
-                    interval = float(orchestrator_cfg.get("interval_s", 6.0))
-                    if interval > 0:
-                        now_t = time.time()
-                        if now_t - last_keepalive_t["t"] >= interval:
-                            summary = keepalive.cycle_once()
-                            last_keepalive_t["t"] = now_t
-                            try:
-                                action_log.log(
-                                    "orchestrator",
-                                    op="multi_window_keepalive",
-                                    mode="ui",
-                                    windows=int(summary.get("windows_scanned", 0)),
-                                    actions=int(summary.get("actions_taken", 0)),
-                                )
-                            except Exception:
-                                pass
-            except Exception:
-                pass
+                # VS Code multi-window orchestrator tick (UI mode)
+                try:
+                    auto_keepalive = bool(orchestrator_cfg.get("auto_keepalive_enabled", False))
+                    if auto_keepalive and keepalive is not None and state.get("agent_mode") and state.get("running") and (not state.get("paused")):
+                        interval = float(orchestrator_cfg.get("interval_s", 6.0))
+                        if interval > 0:
+                            now_t = time.time()
+                            if now_t - last_keepalive_t["t"] >= interval:
+                                summary = keepalive.cycle_once()
+                                last_keepalive_t["t"] = now_t
+                                try:
+                                    action_log.log(
+                                        "orchestrator",
+                                        op="multi_window_keepalive",
+                                        mode="ui",
+                                        windows=int(summary.get("windows_scanned", 0)),
+                                        actions=int(summary.get("actions_taken", 0)),
+                                    )
+                                except Exception:
+                                    pass
+                except Exception:
+                    pass
+
+                # Generic error inference: browser focus after recent input (UI mode)
+                try:
+                    if state.get("agent_mode") and state.get("running") and (not state.get("paused")):
+                        if ctrl.idle_seconds() < 1.5 and winman is not None:
+                            fg = winman.get_foreground()
+                            info = winman.get_window_info(fg) if fg else {}
+                            proc = str(info.get("process") or "").lower()
+                            title = str(info.get("title") or "")
+                            browser_procs = {"msedge.exe", "chrome.exe", "firefox.exe", "brave.exe", "opera.exe", "vivaldi.exe", "iexplore.exe"}
+                            if proc in browser_procs:
+                                action_log.log("workflow_error", kind="external_browser_opened", process=proc, title=title)
+                                try:
+                                    ctrl.set_controls_paused(True)
+                                except Exception:
+                                    pass
+                except Exception:
+                    pass
             # Quiet-send any deferred Copilot messages when idle and no other work performed
             try:
                 cp_cfg = (rules.get("copilot") or {})

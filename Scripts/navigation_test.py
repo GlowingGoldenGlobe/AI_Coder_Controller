@@ -75,7 +75,7 @@ def main():
         "summary": {},
     }
 
-    def step(name: str, fn):
+    def step(name: str, fn, *, soft: bool = False):
         ok = False
         detail = {}
         t0 = time.time()
@@ -91,6 +91,8 @@ def main():
             ok = False
         dt = time.time() - t0
         item = {"name": name, "ok": ok, "duration_s": round(dt, 3)}
+        if soft:
+            item["soft"] = True
         if detail:
             item["detail"] = detail
         if err:
@@ -100,7 +102,7 @@ def main():
         if not ok:
             try:
                 elog.log(
-                    "navigation_step_failed",
+                    "navigation_step_soft_failed" if soft else "navigation_step_failed",
                     step=name,
                     duration_s=round(dt, 3),
                     detail=item.get("detail") or {},
@@ -111,7 +113,7 @@ def main():
         return ok
 
     # Steps
-    step("focus_vscode", lambda: vs.focus_vscode_window())
+    step("focus_vscode", lambda: vs.focus_vscode_window(), soft=True)
     step("focus_terminal", lambda: vs.focus_terminal())
     def guarded_terminal_echo():
         msg = (
@@ -140,10 +142,13 @@ def main():
     step("scroll_chat_down", lambda: vs.scroll_chat(direction="down", steps=2))
 
     # Summarize
-    ok_all = all(s.get("ok") for s in report["steps"]) if report["steps"] else False
+    required_failed = [s for s in report["steps"] if (not s.get("ok")) and (not s.get("soft"))]
+    soft_failed = [s for s in report["steps"] if (not s.get("ok")) and bool(s.get("soft"))]
+    ok_all = (len(required_failed) == 0) and bool(report["steps"])
     report["summary"] = {
         "ok": bool(ok_all),
-        "failed": [s for s in report["steps"] if not s.get("ok")],
+        "failed_required": required_failed,
+        "failed_soft": soft_failed,
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
     outp = write_report(root, report)

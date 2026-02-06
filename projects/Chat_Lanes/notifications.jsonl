@@ -1,0 +1,137 @@
+{"ts": "2026-01-28 04:47:39", "type": "lanes_init", "lanes": ["primary", "workflow", "ocr", "triage"], "note": "Parallel chat lanes initialized/updated"}
+{"ts": "2026-01-28 04:47:59", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_044759_141536", "lane": "workflow"}
+{"ts": "2026-01-28 04:48:10", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=15 (see logs\\tests\\deferred_queue_assessment_20260128_044759_141536.md)", "run_id": "20260128_044759_141536", "lane": "workflow"}
+{"ts": "2026-01-28 04:48:10", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_044759_141536.json)", "run_id": "20260128_044759_141536", "lane": "workflow"}
+{"ts": "2026-01-28 04:53:52", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_045352_143372", "lane": "workflow"}
+{"ts": "2026-01-28 04:54:03", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=22 (see logs\\tests\\deferred_queue_assessment_20260128_045352_143372.md)", "run_id": "20260128_045352_143372", "lane": "workflow"}
+{"ts": "2026-01-28 04:54:03", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_045352_143372.json)", "run_id": "20260128_045352_143372", "lane": "workflow"}
+{"ts": "2026-01-28 04:56:03", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_045603_142180", "lane": "workflow"}
+{"ts": "2026-01-28 04:56:14", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=29 (see logs\\tests\\deferred_queue_assessment_20260128_045603_142180.md)", "run_id": "20260128_045603_142180", "lane": "workflow"}
+{"ts": "2026-01-28 04:56:14", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_045603_142180.json)", "run_id": "20260128_045603_142180", "lane": "workflow"}
+{"ts": "2026-01-28 05:03:43", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_050343_138048", "lane": "workflow"}
+{"ts": "2026-01-28 05:03:54", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=34 (see logs\\tests\\deferred_queue_assessment_20260128_050343_138048.md)", "run_id": "20260128_050343_138048", "lane": "workflow"}
+{"ts": "2026-01-28 05:03:54", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_050343_138048.json)", "run_id": "20260128_050343_138048", "lane": "workflow"}
+{"ts": "2026-01-28 05:20:48", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_052048_379108", "lane": "workflow"}
+{"ts": "2026-01-28 05:20:59", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=40 (see logs\\tests\\deferred_queue_assessment_20260128_052048_379108.md)", "run_id": "20260128_052048_379108", "lane": "workflow"}
+{"ts": "2026-01-28 05:20:59", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_052048_379108.json)", "run_id": "20260128_052048_379108", "lane": "workflow"}
+{"ts": "2026-01-28 05:22:35", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_052235_396208", "lane": "workflow"}
+{"ts": "2026-01-28 05:23:38", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=46 (see logs\\tests\\deferred_queue_assessment_20260128_052235_396208.md)", "run_id": "20260128_052235_396208", "lane": "workflow"}
+{"ts": "2026-01-28 05:23:38", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_052235_396208.json)", "run_id": "20260128_052235_396208", "lane": "workflow"}
+{"ts": "2026-01-28 05:47:26", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_054726_545072", "lane": "workflow"}
+{"ts": "2026-01-28 05:47:26", "type": "preflight_warning", "message": "Agent Mode is ON and defer policy is enabled (interactive steps will be queued as DEFERRED)", "run_id": "20260128_054726_545072", "lane": "triage"}
+{"ts": "2026-01-28 05:50:39", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_055039_80468", "lane": "workflow"}
+{"ts": "2026-01-28 05:50:39", "type": "preflight_warning", "message": "controls are currently unpaused and unowned (safe for live runs, but consider pausing when idle); Agent Mode is ON and defer policy is enabled (interactive steps will be queued as DEFERRED)", "run_id": "20260128_055039_80468", "lane": "triage"}
+{"ts": "2026-01-28 05:53:37", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_055337_108628", "lane": "workflow"}
+{"ts": "2026-01-28 05:53:37", "type": "preflight_warning", "message": "controls_state.paused=true (live UI automation will be blocked/DEFERRED); Agent Mode is ON and defer policy is enabled (interactive steps will be queued as DEFERRED)", "run_id": "20260128_055337_108628", "lane": "triage"}
+{"ts": "2026-01-28 05:53:48", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=65 (see logs\\tests\\deferred_queue_assessment_20260128_055337_108628.md)", "run_id": "20260128_055337_108628", "lane": "workflow"}
+{"ts": "2026-01-28 05:53:48", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_055337_108628.json)", "run_id": "20260128_055337_108628", "lane": "workflow"}
+{"ts": "2026-01-28 05:54:33", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260128_055433_646016", "lane": "workflow"}
+{"ts": "2026-01-28 05:54:33", "type": "preflight_warning", "message": "controls_state.paused=true (live UI automation will be blocked/DEFERRED); Agent Mode is ON and defer policy is enabled (interactive steps will be queued as DEFERRED)", "run_id": "20260128_055433_646016", "lane": "triage"}
+{"ts": "2026-01-28 05:54:44", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=72 (see logs\\tests\\deferred_queue_assessment_20260128_055433_646016.md)", "run_id": "20260128_055433_646016", "lane": "workflow"}
+{"ts": "2026-01-28 05:54:44", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260128_055433_646016.json)", "run_id": "20260128_055433_646016", "lane": "workflow"}
+{"ts": "2026-01-28 06:00:44", "type": "lanes_init", "lanes": ["primary", "workflow", "ocr", "triage"], "note": "Parallel chat lanes initialized/updated"}
+{"ts": "2026-01-29 05:19:20", "type": "workflow_started", "message": "Test/Gather/Assess workflow started", "run_id": "20260129_051920_5460", "lane": "workflow"}
+{"ts": "2026-01-29 05:19:20", "type": "preflight_warning", "message": "Agent Mode is ON and defer policy is enabled (interactive steps will be queued as DEFERRED)", "run_id": "20260129_051920_5460", "lane": "triage"}
+{"ts": "2026-01-29 05:19:32", "type": "deferred_queue_assessed", "message": "Deferred queue assessed: unique=8 total_lines=79 (see logs\\tests\\deferred_queue_assessment_20260129_051920_5460.md)", "run_id": "20260129_051920_5460", "lane": "workflow"}
+{"ts": "2026-01-29 05:19:32", "type": "assessment_schedule_checked", "message": "Assessment schedule checked: ok=True entries=6 (see logs\\tests\\assessment_schedule_20260129_051920_5460.md)", "run_id": "20260129_051920_5460", "lane": "triage"}
+{"ts": "2026-01-29 05:19:32", "type": "lanes_assessed", "message": "Chat lanes assessed: events_total=36 open_workflows=3 (see logs\\tests\\chat_lanes_assessment_20260129_051920_5460.md)", "run_id": "20260129_051920_5460", "lane": "triage"}
+{"ts": "2026-01-29 05:19:32", "type": "workflow_finished", "message": "Test/Gather/Assess finished: status=DEFERRED exit_code=0 (summary: logs\\tests\\workflow_summary_20260129_051920_5460.json)", "run_id": "20260129_051920_5460", "lane": "workflow"}
+{"ts": "2026-01-29 05:46:49", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 05:46:49", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 05:46:49", "type": "orchestrator_launched", "message": "Orchestrator agent launched", "lane": "workflow"}
+{"ts": "2026-01-29 05:51:03", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 05:51:03", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 05:51:03", "type": "orchestrator_launched", "message": "Orchestrator agent launched", "lane": "workflow"}
+{"ts": "2026-01-29 05:53:35", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 05:53:35", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 05:53:35", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 07:44:17", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 07:44:17", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 07:44:17", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 07:44:17", "type": "orchestrator_launched", "message": "Orchestrator agent launched", "lane": "workflow"}
+{"ts": "2026-01-29 07:46:07", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 07:46:07", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 07:46:07", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 07:46:07", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:12", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:12", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:12", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:12", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:49", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:49", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:49", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 07:52:49", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 07:56:33", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 07:56:33", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 07:56:33", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 07:56:33", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 08:05:41", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:05:41", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:05:41", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:05:41", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 08:10:38", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:10:38", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:10:38", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:10:38", "type": "orchestrator_launched", "message": "Orchestrator agent launched", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:37", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:37", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:37", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:37", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:55", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:55", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:55", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:12:55", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 08:14:13", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:14:13", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:14:13", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:14:13", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 08:28:50", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 08:28:50", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 08:28:50", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 08:28:50", "type": "orchestrator_detected", "message": "Orchestrator agent already running", "lane": "workflow"}
+{"ts": "2026-01-29 21:59:35", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 21:59:35", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 21:59:35", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:06:23", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:06:23", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 22:06:23", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:06:23", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:20:50", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:20:50", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:27:00", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:27:00", "type": "agent_tabs_requested", "message": "Requested opening 4 Agent Mode chat tabs", "lane": "workflow"}
+{"ts": "2026-01-29 22:27:00", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:27:00", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:30:47", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:30:47", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:32:11", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:32:11", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (unknown error)", "lane": "workflow"}
+{"ts": "2026-01-29 22:32:11", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:32:11", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:35:10", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:35:10", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (VS Code window not found to focus\nVSBridge: Focus Copilot chat view (cursor-select input)\nVSBridge: Focus Copilot chat view (cursor-select input)\nVS Code window not found to focus\n)", "lane": "workflow"}
+{"ts": "2026-01-29 22:35:10", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:35:10", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:39:27", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:39:27", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (unknown error)", "lane": "workflow"}
+{"ts": "2026-01-29 22:39:27", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:39:27", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:41:11", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:41:11", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\open_agent_mode_tabs.py\", line 382, in <module>\n    raise SystemExit(main())\n                 )", "lane": "workflow"}
+{"ts": "2026-01-29 22:41:11", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:41:11", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:44:28", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:44:28", "type": "user_monitor_existing", "message": "User activity monitor already running", "lane": "workflow"}
+{"ts": "2026-01-29 22:44:28", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:46:19", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:46:19", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (Traceback (most recent call last):\n  File \"C:\\Users\\yerbr\\AI_Coder_Controller\\Scripts\\open_agent_mode_tabs.py\", line 383, in <module>\n    raise SystemExit(main())\n                 )", "lane": "workflow"}
+{"ts": "2026-01-29 22:46:19", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:46:19", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:49:55", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:49:55", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (unknown error)", "lane": "workflow"}
+{"ts": "2026-01-29 22:49:55", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:49:55", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}
+{"ts": "2026-01-29 22:53:23", "type": "simultaneous_system_start", "message": "Simultaneous workflow system start requested", "lane": "workflow"}
+{"ts": "2026-01-29 22:53:23", "type": "agent_tabs_failed", "message": "Failed to open Agent Mode chat tabs (unknown error)", "lane": "workflow"}
+{"ts": "2026-01-29 22:53:23", "type": "user_monitor_launched", "message": "User activity monitor started", "lane": "workflow"}
+{"ts": "2026-01-29 22:53:23", "type": "orchestrator_missing", "message": "Orchestrator agent not running", "lane": "workflow"}

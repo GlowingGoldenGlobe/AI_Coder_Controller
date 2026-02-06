@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import time
+import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
@@ -8,6 +9,7 @@ from src.control import Controller
 from src.ocr import CopilotOCR
 from src.windows import WindowsManager
 from src.jsonlog import JsonActionLogger
+from src.control_state import get_controls_state, is_state_stale
 
 from .window_set import VSCodeWindowSet
 from .chat_buttons import ChatButtonAnalyzer
@@ -68,6 +70,28 @@ class MultiWindowChatKeepalive:
 		Returns a summary dict with per-window results, suitable for piping
 		into higher-level assessment or self-improvement flows.
 		"""
+		root = Path(__file__).resolve().parent.parent
+		try:
+			st = get_controls_state(root) or {}
+			rules_path = root / "config" / "policy_rules.json"
+			rules = json.loads(rules_path.read_text(encoding="utf-8")) if rules_path.exists() else {}
+			controls_cfg = (rules.get("controls") or {}) if isinstance(rules, dict) else {}
+			stale_after_s = float(controls_cfg.get("stale_after_s", 10.0) or 10.0)
+			paused = bool(st.get("paused", False))
+			stale = bool(is_state_stale(st, stale_after_s))
+			if paused and not stale:
+				summary = {
+					"windows_scanned": 0,
+					"actions_taken": 0,
+					"results": [],
+					"timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+					"skipped": "controls_paused",
+				}
+				self._log_event("vscode_multi_keepalive_cycle_skipped", reason="controls_paused")
+				return summary
+		except Exception:
+			pass
+
 		ws = self.windows.list_vscode_windows()
 		limit = max_windows
 		if limit is None or limit < 0:

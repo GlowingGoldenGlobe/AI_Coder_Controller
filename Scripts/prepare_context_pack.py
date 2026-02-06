@@ -130,6 +130,50 @@ def build_context_pack(root: Path) -> Path:
         lines.append("```")
         lines.append("")
 
+    # Runtime state (safety): these frequently explain why interactive steps defer.
+    lines.append("## Runtime state (safety)")
+    lines.append("")
+
+    # Controls state
+    controls_state_path = cfg_dir / "controls_state.json"
+    paused = None
+    owner = ""
+    updated = ""
+    if controls_state_path.exists():
+        try:
+            st = json.loads(controls_state_path.read_text(encoding="utf-8")) or {}
+        except Exception:
+            st = {}
+        if isinstance(st, dict):
+            paused = st.get("paused")
+            owner = str(st.get("owner", "") or "")
+            updated = str(st.get("updated", "") or "")
+    lines.append(f"- `config/controls_state.json`: paused={paused!s}, owner={owner!r}, updated={updated!r}")
+
+    # Agent mode state
+    agent_mode = None
+    ui_state_path = cfg_dir / "ui_state.json"
+    if ui_state_path.exists():
+        try:
+            ui = json.loads(ui_state_path.read_text(encoding="utf-8")) or {}
+        except Exception:
+            ui = {}
+        if isinstance(ui, dict):
+            agent_mode = ui.get("agent_mode")
+    lines.append(f"- `config/ui_state.json`: agent_mode={agent_mode!s}")
+    lines.append("")
+    lines.append("Quick resume commands (only run when you actually want automation to act):")
+    lines.append("")
+    lines.append("```powershell")
+    lines.append("# Unpause controls")
+    lines.append("Scripts/python.exe Scripts/controls_set_paused.py --paused false")
+    lines.append("# If a stale owner is blocking you")
+    lines.append("Scripts/python.exe Scripts/controls_release_owner.py")
+    lines.append("# Optional: force Agent Mode OFF just for one process")
+    lines.append("$env:AI_CONTROLLER_AGENT_MODE='0'")
+    lines.append("```")
+    lines.append("")
+
     # Structure inventories / attachments
     lines.append("## Project structure inventories (attachments)")
     lines.append("")
@@ -159,9 +203,23 @@ def build_context_pack(root: Path) -> Path:
             lines.append("")
 
     # Recent workflow summary
+    schedule_path = cfg_dir / "assessment_schedule.json"
+    if schedule_path.exists():
+        rel = schedule_path.relative_to(root)
+        logic_guide = root / "docs" / "ASSESSMENT_LOGIC.md"
+        lines.append("## Assessment schedule")
+        lines.append("")
+        lines.append(f"Assessment schedule: [{rel}]({rel})")
+        if logic_guide.exists():
+            rlg = logic_guide.relative_to(root)
+            lines.append(f"Assessment logic guide: [{rlg}]({rlg})")
+        lines.append("")
+
+    # Recent workflow summary
     lines.append("## Recent Test/Gather/Assess workflow (if any)")
     lines.append("")
     latest_summary = _latest_glob(str(root / "logs/tests/workflow_summary_*.json"))
+    summary_run_id = ""
     if latest_summary and latest_summary.exists():
         rel = latest_summary.relative_to(root)
         lines.append(f"Latest workflow summary: [{rel}]({rel})")
@@ -170,16 +228,141 @@ def build_context_pack(root: Path) -> Path:
         except Exception:
             obj = None
         if isinstance(obj, dict):
-            overall = bool(obj.get("pass", False))
+            try:
+                summary_run_id = str(obj.get("run_id") or "").strip()
+            except Exception:
+                summary_run_id = ""
+            status = str(obj.get("status") or "").strip().upper()
+            if status not in {"PASS", "FAIL", "DEFERRED"}:
+                status = "PASS" if bool(obj.get("pass", False)) else "FAIL"
             steps = obj.get("steps") or []
             lines.append("")
-            lines.append(f"- Overall status: {'PASS' if overall else 'FAIL'}")
+            lines.append(f"- Overall status: {status}")
             lines.append(f"- Steps recorded: {len(steps)}")
             errs = obj.get("errors") or []
             lines.append(f"- Error entries: {len(errs)}")
         lines.append("")
     else:
         lines.append("No workflow_summary_*.json found under logs/tests/ yet.")
+        lines.append("")
+
+    # Recent workflow recommendations (if any)
+    latest_reco = None
+    if summary_run_id:
+        candidate = root / "logs" / "tests" / f"workflow_recommendations_{summary_run_id}.md"
+        if candidate.exists():
+            latest_reco = candidate
+    if latest_reco is None:
+        latest_reco = _latest_glob(str(root / "logs/tests/workflow_recommendations_*.md"))
+    if latest_reco and latest_reco.exists():
+        rel = latest_reco.relative_to(root)
+        lines.append(f"Latest workflow recommendations: [{rel}]({rel})")
+        lines.append("")
+
+    # Deferred queue assessment report (if any)
+    latest_dq_assess = None
+    if summary_run_id:
+        candidate = root / "logs" / "tests" / f"deferred_queue_assessment_{summary_run_id}.md"
+        if candidate.exists():
+            latest_dq_assess = candidate
+    if latest_dq_assess is None:
+        latest_dq_assess = _latest_glob(str(root / "logs/tests/deferred_queue_assessment_*.md"))
+    if latest_dq_assess and latest_dq_assess.exists():
+        rel = latest_dq_assess.relative_to(root)
+        lines.append(f"Latest deferred queue assessment: [{rel}]({rel})")
+        lines.append("")
+
+    # Chat lanes assessment (if any)
+    try:
+        latest_lanes_assess = None
+        if summary_run_id:
+            candidate = root / "logs" / "tests" / f"chat_lanes_assessment_{summary_run_id}.md"
+            if candidate.exists():
+                latest_lanes_assess = candidate
+        if latest_lanes_assess is None:
+            latest_lanes_assess = _latest_glob(str(root / "logs/tests/chat_lanes_assessment_*.md"))
+        if latest_lanes_assess and latest_lanes_assess.exists():
+            rel = latest_lanes_assess.relative_to(root)
+            lines.append(f"Latest chat lanes assessment: [{rel}]({rel})")
+            lines.append("")
+    except Exception:
+        pass
+
+    # Deferred workflow actions queue (if any)
+    deferred_q = root / "logs" / "actions" / "deferred_workflow_actions.jsonl"
+    if deferred_q.exists():
+        rel = deferred_q.relative_to(root)
+        lines.append(f"Deferred workflow actions queue: [{rel}]({rel})")
+        try:
+            raw = deferred_q.read_text(encoding="utf-8", errors="ignore")
+            ids = set()
+            total = 0
+            for line in raw.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                total += 1
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                if isinstance(obj, dict):
+                    ids.add(str(obj.get("id") or ""))
+            ids.discard("")
+            lines.append(f"- Queue entries: {total} (unique action ids: {len(ids)})")
+        except Exception:
+            pass
+        lines.append("")
+        lines.append("Workflow does not auto-clean this queue. Review and prune only when you're OK with it.")
+        lines.append("")
+        lines.append("To review/run deferred actions later (when Agent Mode is OFF and controls are free):")
+        lines.append("")
+        lines.append("```powershell")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --list")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --live")
+        lines.append("# Filter to a specific workflow run_id (recommended for repeatable actions)")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --list --run-id <run_id>")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --run-id <run_id>")
+        lines.append("# Run only one specific action id (useful when recommendations suggest an id)")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --id <action_id> --max 1")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --live --id <action_id> --max 1")
+        lines.append("# Run only one action for a specific run (strongly recommended)")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --dry-run --run-id <run_id> --id <action_id> --max 1")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --live --run-id <run_id> --id <action_id> --max 1")
+        lines.append("# Optional manual cleanup (keeps latest per action id, makes a backup)")
+        lines.append("Scripts/python.exe Scripts/run_deferred_workflow_actions.py --prune")
+        lines.append("```")
+        lines.append("")
+
+    # Parallel chat lanes (VS Code chat tabs) (optional)
+    lanes_dir = root / "projects" / "Chat_Lanes"
+    lanes_board = lanes_dir / "BOARD.md"
+    lanes_notif = lanes_dir / "notifications.jsonl"
+    if lanes_board.exists():
+        rel = lanes_board.relative_to(root)
+        lines.append(f"Parallel chat lanes board: [{rel}]({rel})")
+        if lanes_notif.exists():
+            reln = lanes_notif.relative_to(root)
+            lines.append(f"- Lane notifications log: [{reln}]({reln})")
+        lines.append("- Assessment schedule (Agent Mode ON): every 10 minutes")
+        lines.append("  - `Scripts/python.exe Scripts/assess_chat_lanes.py --every-s 600 --count 6`")
+        lines.append("  - (Set `AI_CONTROLLER_AGENT_MODE=1` for this process)")
+        try:
+            lane_files = sorted([p for p in lanes_dir.glob("lane_*.md") if p.is_file()])
+            if lane_files:
+                for lf in lane_files[:12]:
+                    rlf = lf.relative_to(root)
+                    lines.append(f"- Lane file: [{rlf}]({rlf})")
+        except Exception:
+            pass
+        lines.append("")
+    else:
+        lines.append("Parallel chat lanes (optional): initialize file-based lanes for multiple VS Code chat tabs:")
+        lines.append("")
+        lines.append("```powershell")
+        lines.append("Scripts/python.exe Scripts/parallel_chat_lanes.py init")
+        lines.append("```")
         lines.append("")
 
     # OCR observation report (if present)
@@ -209,6 +392,10 @@ def build_context_pack(root: Path) -> Path:
         ("src/policy.py", "Policy/action definitions driven by config/policy_rules.json."),
         ("src/vscode_automation", "VS Code multi-window orchestrator and chat keepalive components."),
         ("Scripts/workflow_test_gather_assess.py", "End-to-end Test/Gather/Assess workflow runner."),
+        ("Scripts/reset_workflow_state.py", "Reset module for controls_state + preflight refresh."),
+        ("Scripts/start_simultaneous_workflow.py", "Start module for Chat Lanes + Agent Mode tab opening + user activity monitor + orchestrator agent launch."),
+        ("Scripts/open_agent_mode_tabs.py", "Best-effort opener for Copilot Chat tabs for Agent Mode lanes."),
+        ("Scripts/user_activity_monitor.py", "Pause automation on user input; shows resume popup and auto-resume options."),
     ]
     for rel_str, desc in key_files:
         p = root / rel_str

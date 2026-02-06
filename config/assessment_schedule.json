@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "updated": "2026-01-29",
+  "timezone": "local",
+  "logic_guide": "docs/ASSESSMENT_LOGIC.md",
+  "notes": [
+    "Schedules are guidance for operators/agents. Some items run per workflow run; others are manual or on a timer."
+  ],
+  "assessments": [
+    {
+      "id": "workflow_run_artifacts",
+      "name": "Workflow summary + recommendations",
+      "cadence": "per_run",
+      "agent_mode": "inherit",
+      "commands": [
+        "Scripts/workflow_test_gather_assess.py"
+      ],
+      "artifacts": [
+        "logs/tests/workflow_summary_<run_id>.json",
+        "logs/tests/workflow_recommendations_<run_id>.md"
+      ]
+    },
+    {
+      "id": "deferred_queue_assessment",
+      "name": "Deferred queue assessment (non-destructive)",
+      "cadence": "per_run",
+      "agent_mode": "inherit",
+      "commands": [
+        "(emitted by Scripts/workflow_test_gather_assess.py)"
+      ],
+      "artifacts": [
+        "logs/tests/deferred_queue_assessment_<run_id>.md"
+      ]
+    },
+    {
+      "id": "assessment_schedule_check",
+      "name": "Assessment schedule validation",
+      "cadence": "per_run",
+      "agent_mode": "inherit",
+      "commands": [
+        "(emitted by Scripts/workflow_test_gather_assess.py)"
+      ],
+      "artifacts": [
+        "logs/tests/assessment_schedule_<run_id>.md"
+      ]
+    },
+    {
+      "id": "chat_lanes_assessment",
+      "name": "Chat Lanes coordination health",
+      "cadence": "interval",
+      "interval_seconds": 600,
+      "agent_mode": "on",
+      "commands": [
+        "Scripts/assess_chat_lanes.py --every-s 600 --count 6"
+      ],
+      "artifacts": [
+        "logs/tests/chat_lanes_assessment_<run_id>.md"
+      ]
+    },
+    {
+      "id": "agent_health_checklist",
+      "name": "Agent Health Checklist",
+      "cadence": "manual",
+      "agent_mode": "either",
+      "reference": "docs/AGENT_HEALTH_CHECKLIST.md"
+    },
+    {
+      "id": "ocr_assessment_report",
+      "name": "OCR assessment report",
+      "cadence": "manual",
+      "agent_mode": "either",
+      "commands": [
+        "Scripts/generate_ocr_observations_md.py --out <path> --file-substr <pattern>"
+      ],
+      "artifacts": [
+        "Archive_OCR_Images_Assessments/OBSERVED_OCR_IMAGES_*.md"
+      ]
+    }
+  ]
+}

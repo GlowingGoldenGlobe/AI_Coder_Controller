@@ -13,6 +13,8 @@ class OcrObserver:
         self.interval = max(100, int(interval_ms)) / 1000.0
         self._last_run = 0.0
         self._last_hash: Optional[str] = None
+        self.last_ok_ts: float = 0.0
+        self.last_obs_ts: float = 0.0
 
         if self.stream_dir:
             self.stream_dir.mkdir(parents=True, exist_ok=True)
@@ -28,14 +30,52 @@ class OcrObserver:
         except Exception:
             pass
 
+    def _load_notify_cfg(self) -> dict:
+        try:
+            import json
+
+            root = Path(__file__).resolve().parent.parent
+            cfg_path = root / "config" / "policy_rules.json"
+            if cfg_path.exists():
+                obj = json.loads(cfg_path.read_text(encoding="utf-8"))
+                if isinstance(obj, dict):
+                    return (obj.get("ocr") or {}) if isinstance(obj.get("ocr"), dict) else {}
+        except Exception:
+            return {}
+        return {}
+
+    def _notify_lane(self, message: str, lane: str = "workflow", image: str | None = None) -> None:
+        try:
+            import json
+
+            root = Path(__file__).resolve().parent.parent
+            d = root / "projects" / "Chat_Lanes"
+            d.mkdir(parents=True, exist_ok=True)
+            notif = d / "notifications.jsonl"
+            evt = {
+                "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "type": "ocr_ready",
+                "message": message,
+                "lane": lane,
+            }
+            if image:
+                evt["image"] = image
+            with notif.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(evt, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
     def poll(self):
         now = time.time()
         if (now - self._last_run) < self.interval:
             return
         self._last_run = now
+        self.last_obs_ts = now
         try:
             res = self.ocr.capture_chat_text(save_dir=self.stream_dir)
             ok = bool(res.get("ok"))
+            if ok:
+                self.last_ok_ts = now
             img = res.get("image_path")
             changed = False
             h = None
@@ -64,5 +104,15 @@ class OcrObserver:
             })
             if self.log and changed:
                 self.log.log("ocr_stream", ok=ok, image=str(img) if img else None, text_chars=text_chars)
+            if changed:
+                try:
+                    cfg = self._load_notify_cfg()
+                    notify = bool(cfg.get("notify_on_ready", False))
+                    if notify and ok:
+                        lane = str(cfg.get("notify_lane", "workflow") or "workflow")
+                        msg = str(cfg.get("notify_message", "OCR image ready") or "OCR image ready")
+                        self._notify_lane(msg, lane=lane, image=str(img) if img else None)
+                except Exception:
+                    pass
         except Exception:
             pass

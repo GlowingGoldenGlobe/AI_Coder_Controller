@@ -39,6 +39,8 @@ class Controller:
         self._controls_paused = False  # manual pause (e.g., via ESC)
         # Optional callable to enforce foreground window gating
         self._window_gate = None  # type: Optional[Callable[[], bool]]
+        # Optional callable to enforce vision gating (requires recent OCR observation)
+        self._vision_gate = None  # type: Optional[Callable[[], bool]]
         # Grace period for window gate (prevents rapid focus changes from blocking input)
         self._window_gate_last_ok_ts = 0.0
         self._window_gate_grace_s = 1.5  # Accept input for this long after gate was last true
@@ -199,6 +201,12 @@ class Controller:
             return False
         if not self._mouse_in_control:
             return False
+        if self._vision_gate is not None:
+            try:
+                if not bool(self._vision_gate()):
+                    return False
+            except Exception:
+                return False
         if self._window_gate is not None:
             try:
                 now = time.time()
@@ -220,6 +228,12 @@ class Controller:
         """Keyboard gate: respects pause + optional window gate with grace period."""
         if self._controls_paused:
             return False
+        if self._vision_gate is not None:
+            try:
+                if not bool(self._vision_gate()):
+                    return False
+            except Exception:
+                return False
         if self._window_gate is not None:
             try:
                 now = time.time()
@@ -333,6 +347,10 @@ class Controller:
     # Window gating
     def set_window_gate(self, fn: Optional[Callable[[], bool]]):
         self._window_gate = fn
+
+    # Vision gating
+    def set_vision_gate(self, fn: Optional[Callable[[], bool]]):
+        self._vision_gate = fn
 
     # Idle time helper
     def idle_seconds(self) -> float:
